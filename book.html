@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Reading | Clair de Lune</title>
+  <meta name="description" content="Book a 1-on-1 tarot or spiritual guidance session with Geetika Saha. Pick your reading and choose an available slot." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── Navigation ────────────────────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="nav-logo"><em>Clair de Lune</em></a>
+  <button class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="book.html">Book</a></li>
+    <li><a href="https://wa.me/917999634730" target="_blank" class="nav-wa">WhatsApp</a></li>
+  </ul>
+</nav>
+
+<!-- ── Page Hero ─────────────────────────────────────────────────────── -->
+<div class="page-hero">
+  <div class="ornament">☽ ✦ ☾</div>
+  <h1>Book Your <em>Reading</em></h1>
+  <p>Choose your session, pick a slot, and we'll confirm everything on WhatsApp.</p>
+</div>
+
+<!-- ── Booking Flow ───────────────────────────────────────────────────── -->
+<section>
+  <div class="container" style="max-width:780px;">
+
+    <!-- Step indicators -->
+    <div class="booking-steps">
+      <div class="step-indicator active" data-step="1">
+        <div class="step-num">1</div>
+        <span>Choose Reading</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-indicator" data-step="2">
+        <div class="step-num">2</div>
+        <span>Pick a Slot</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-indicator" data-step="3">
+        <div class="step-num">3</div>
+        <span>Confirm</span>
+      </div>
+    </div>
+
+    <!-- Step 1: Choose service -->
+    <div class="booking-section active" data-step="1">
+      <h2 class="booking-heading">What kind of reading do you need?</h2>
+      <p class="booking-hint">Select the session that resonates with you. Not sure? <a href="https://wa.me/917999634730?text=Hi%20Geetika!%20I%20need%20help%20choosing%20a%20reading." target="_blank" style="color:var(--gold);">Ask on WhatsApp.</a></p>
+
+      <div class="service-options" id="service-options">
+        <!-- Rendered by book.js -->
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="btn-to-step2" disabled>Choose a Slot &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Pick slot -->
+    <div class="booking-section" data-step="2">
+      <h2 class="booking-heading">When works for you?</h2>
+      <p class="booking-hint">All times are in IST. Greyed-out slots are already booked.</p>
+
+      <p class="slots-heading">Available Slots</p>
+      <div class="slots-grid" id="slots-grid">
+        <!-- Rendered by book.js -->
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-ghost" id="btn-back-1">&larr; Back</button>
+        <button class="btn btn-primary" id="btn-to-step3" disabled>Continue &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Confirm -->
+    <div class="booking-section" data-step="3">
+      <h2 class="booking-heading">Confirm your booking</h2>
+      <p class="booking-hint">We'll open WhatsApp for you with your booking details pre-filled. Geetika will confirm from there.</p>
+
+      <div class="confirm-block">
+        <label class="confirm-label" for="user-name">Your Name</label>
+        <input
+          type="text"
+          id="user-name"
+          class="name-input"
+          placeholder="e.g. Priya Sharma"
+          autocomplete="name"
+        />
+
+        <div class="booking-summary">
+          <div class="summary-row">
+            <span>Reading</span>
+            <span id="summary-service">—</span>
+          </div>
+          <div class="summary-row">
+            <span>Slot</span>
+            <span id="summary-slot">—</span>
+          </div>
+          <div class="summary-row">
+            <span>Total</span>
+            <strong id="summary-price">—</strong>
+          </div>
+        </div>
+
+        <p class="wa-note">Clicking below will open WhatsApp. Payment is arranged with Geetika directly after confirmation.</p>
+
+        <div class="btn-row">
+          <button class="btn-ghost" id="btn-back-2">&larr; Back</button>
+          <button class="btn btn-primary" id="btn-confirm">
+            Confirm on WhatsApp &nbsp;→
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Clair de Lune</div>
+    <p class="footer-tagline">Tarot · Chart Reading · Spiritual Guidance</p>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="book.html">Book</a>
+      <a href="https://wa.me/917999634730" target="_blank">WhatsApp</a>
+    </nav>
+    <p class="footer-copyright">© 2026 Clair de Lune &nbsp;·&nbsp; Geetika Saha</p>
+  </div>
+</footer>
+
+<!-- ── WhatsApp Float ─────────────────────────────────────────────────── -->
+<a href="https://wa.me/917999634730" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.117 1.529 5.845L.057 23.428a.5.5 0 00.617.6l5.758-1.507A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.031-1.378l-.36-.214-3.732.977.998-3.645-.235-.374A9.861 9.861 0 012.1 12c0-5.462 4.438-9.9 9.9-9.9 5.462 0 9.9 4.438 9.9 9.9 0 5.462-4.438 9.9-9.9 9.9z"/>
+  </svg>
+</a>
+
+<script src="js/slots.js"></script>
+<script src="js/book.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
