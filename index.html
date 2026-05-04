@@ -67,7 +67,7 @@
     <h1>Clair de <em>Lune</em></h1>
     <p class="hero-subtitle">Tarot &nbsp;·&nbsp; Chart Reading &nbsp;·&nbsp; Spiritual Guidance</p>
     <div class="hero-divider"></div>
-    <p class="hero-tagline">"When you are at your lowest, you are often closest to your greatest pivot."</p>
+    <p class="hero-tagline">"The chaos is not your enemy. It is the first honest thing that will ever speak to you."</p>
     <div class="btn-group">
       <a href="book.html" class="btn btn-primary">Book a Reading</a>
       <a href="services.html" class="btn btn-outline">View Services</a>
@@ -82,34 +82,34 @@
     <div class="text-center">
       <span class="section-label">What I offer</span>
       <h2 class="section-title">Choose Your <em>Reading</em></h2>
-      <p class="section-subtitle">Every session is a 1-on-1 energetic consultation — no scripts, no generalised spreads. Just precision.</p>
+      <p class="section-subtitle">Every session is a 1-on-1 space to go inward. No scripts, no generalised spreads — just you, the cards, and the truth already waiting inside you.</p>
     </div>
     <div class="cards-grid">
       <div class="card">
         <span class="card-icon">✦</span>
         <h3>Spiritual Guidance</h3>
-        <p>A holistic session connecting your energy, life path, and highest soul-purpose.</p>
+        <p>You already know. This session helps you finally hear it — through the stillness waiting beneath your chaos.</p>
         <div class="card-price">₹1,000</div>
         <div class="card-duration">30 minutes</div>
       </div>
       <div class="card">
         <span class="card-icon">◦</span>
         <h3>1 Question Tarot</h3>
-        <p>One focused question. One clear, unambiguous energetic answer.</p>
+        <p>One thing is burning in you. The cards don't predict — they reveal what you already sense is true.</p>
         <div class="card-price">₹200</div>
         <div class="card-duration">~15 minutes</div>
       </div>
       <div class="card">
         <span class="card-icon">⋆</span>
         <h3>3 Question Tarot</h3>
-        <p>Three illuminated paths for layered situations that need multi-dimensional clarity.</p>
+        <p>Three areas of your life asking to be seen. Bring them all. Leave with clarity that was already inside you.</p>
         <div class="card-price">₹600</div>
         <div class="card-duration">~20 minutes</div>
       </div>
       <div class="card">
         <span class="card-icon">☽</span>
         <h3>Full Reading</h3>
-        <p>A comprehensive 30-card spread covering all dimensions of your current energetic reality.</p>
+        <p>A 30-card spread that lays open the full landscape of your energy — what's moving, what's blocked, what's already in motion.</p>
         <div class="card-price">₹1,000</div>
         <div class="card-duration">30 minutes</div>
       </div>
@@ -125,15 +125,50 @@
   <div class="container">
     <div class="about-teaser-inner">
       <blockquote class="about-quote">
-        "I don't just read cards — I map the energetic trajectories that define your reality."
+        "I don't read the future. I read what you already know but have been afraid to hear."
       </blockquote>
       <div>
         <span class="section-label">About Geetika</span>
-        <h2 class="section-title">The Architect <em>of Fate</em></h2>
+        <h2 class="section-title">The Reader <em>of Chaos</em></h2>
         <p class="section-subtitle" style="margin-bottom:1.5rem;">
-          A decade of high-stakes survival. A profound awakening in 2024. A structured lens shaped by a background in Program Management — brought to bear on your life's energetic blueprint.
+          A decade of collapse and searching. A profound awakening in 2024. Two forces — Krishna's stillness and Kaali's truth — brought together to help you find the answer already living inside your noise.
         </p>
         <a href="about.html" class="btn btn-outline">Read My Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ────────────────────────────────────────────────────── -->
+<section id="testimonials-section">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">What people say</span>
+      <h2 class="section-title">Voices from <em>the Circle</em></h2>
+      <p class="section-subtitle">Real words from people who sat with the chaos and finally heard themselves.</p>
+    </div>
+
+    <div class="testimonials-grid" id="testimonials-grid">
+      <div class="testimonials-loading"><span class="slots-spinner"></span> Loading…</div>
+    </div>
+
+    <!-- Submit a testimonial -->
+    <div class="testimonial-submit-wrap">
+      <button class="btn btn-outline" id="btn-open-testimonial">Share Your Experience</button>
+
+      <div class="testimonial-form-wrap" id="testimonial-form-wrap" style="display:none;">
+        <h3>Your <em>words</em></h3>
+        <p>Share what shifted for you. It stays authentic — no edits, only your truth.</p>
+        <form id="testimonial-form">
+          <input class="lead-input" type="text" id="t-name" placeholder="Your name" required />
+          <input class="lead-input" type="text" id="t-city" placeholder="Your city" required />
+          <textarea class="lead-input t-textarea" id="t-text" placeholder="What changed after your reading?" rows="4" required></textarea>
+          <button type="submit" class="lead-submit" id="t-submit">Send My Words</button>
+        </form>
+        <div class="testimonial-thanks" id="testimonial-thanks" style="display:none;">
+          <span class="lead-success-icon">✦</span>
+          <p>Thank you. Your words will appear here once Geetika has read them.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -143,8 +178,8 @@
 <section class="cta-banner">
   <div class="container">
     <div class="ornament">☽ ✦ ☾</div>
-    <h2>Ready to find <em>clarity?</em></h2>
-    <p>Pick a slot that works for you and let's begin your session.</p>
+    <h2>Ready to hear <em>yourself?</em></h2>
+    <p>The answer is already in you. Let's find it together.</p>
     <a href="book.html" class="btn btn-primary">Book Your Reading</a>
   </div>
 </section>
@@ -177,5 +212,6 @@
 <script src="js/animate.js"></script>
 <script src="js/analytics.js"></script>
 <script src="js/leads.js"></script>
+<script src="js/testimonials.js"></script>
 </body>
 </html>
