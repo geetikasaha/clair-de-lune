@@ -146,9 +146,51 @@ document.getElementById('btn-confirm').addEventListener('click', () => {
       currency: 'INR'
     });
   }
+
+  // Save pending booking so we can show waiting screen on return
+  localStorage.setItem('cdl_pending_booking', JSON.stringify({
+    name,
+    service: selectedService.name,
+    slot: `${selectedSlot.day} at ${selectedSlot.time}`,
+    price: `₹${selectedService.price.toLocaleString('en-IN')}`,
+    sentAt: Date.now()
+  }));
+
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank');
+
+  // Show the pending screen after a short delay (user returns to tab)
+  setTimeout(showPendingScreen, 800);
+});
+
+// ── Pending confirmation screen ───────────────────────────────────────────────
+function showPendingScreen() {
+  const pending = JSON.parse(localStorage.getItem('cdl_pending_booking') || 'null');
+  if (!pending) return;
+
+  document.getElementById('booking-flow').style.display = 'none';
+  const screen = document.getElementById('booking-pending');
+  screen.style.display = 'block';
+  document.getElementById('pending-service').textContent = pending.service;
+  document.getElementById('pending-slot').textContent    = pending.slot;
+  document.getElementById('pending-price').textContent   = pending.price;
+}
+
+document.getElementById('btn-new-booking').addEventListener('click', () => {
+  localStorage.removeItem('cdl_pending_booking');
+  document.getElementById('booking-pending').style.display = 'none';
+  document.getElementById('booking-flow').style.display    = 'block';
+  selectedService = null;
+  selectedSlot    = null;
+  renderServices();
+  showStep(1);
 });
 
 // ── Init ──────────────────────────────────────────────────────────────────────
-renderServices();
-showStep(1);
+// Check if user is returning after a WhatsApp redirect
+const pendingBooking = JSON.parse(localStorage.getItem('cdl_pending_booking') || 'null');
+if (pendingBooking) {
+  showPendingScreen();
+} else {
+  renderServices();
+  showStep(1);
+}

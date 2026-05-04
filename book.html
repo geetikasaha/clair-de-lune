@@ -43,6 +43,29 @@
 <section>
   <div class="container" style="max-width:780px;">
 
+    <!-- ── Pending confirmation screen (shown after WhatsApp redirect) ── -->
+    <div id="booking-pending" style="display:none;" class="pending-screen">
+      <div class="pending-icon">🌙</div>
+      <h2 class="pending-title">Your request is <em>with Geetika</em></h2>
+      <p class="pending-subtitle">
+        You've been redirected to WhatsApp. Once you send your message,<br>
+        expect a confirmation <strong>within 24 hours.</strong>
+      </p>
+      <div class="pending-card">
+        <div class="summary-row"><span>Reading</span><span id="pending-service">—</span></div>
+        <div class="summary-row"><span>Slot</span><span id="pending-slot">—</span></div>
+        <div class="summary-row"><span>Amount</span><span id="pending-price">—</span></div>
+      </div>
+      <a href="https://wa.me/917999634730" target="_blank" class="btn btn-primary" style="margin-bottom:1rem;">
+        Open WhatsApp to follow up
+      </a>
+      <br>
+      <button class="btn-ghost" id="btn-new-booking">Make a different booking</button>
+    </div>
+
+    <!-- ── Normal booking flow ─────────────────────────────────────────── -->
+    <div id="booking-flow">
+
     <!-- Step indicators -->
     <div class="booking-steps">
       <div class="step-indicator active" data-step="1">
@@ -131,6 +154,8 @@
         </div>
       </div>
     </div>
+
+    </div><!-- end booking-flow -->
 
   </div>
 </section>

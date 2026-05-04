@@ -971,6 +971,47 @@ footer {
   .btn-row { flex-wrap: wrap; }
 }
 
+/* ── Booking Pending Screen ─────────────────────────────────────────────── */
+.pending-screen {
+  text-align: center;
+  padding: 2rem 0 4rem;
+}
+
+.pending-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  animation: moonPulse 4s ease-in-out infinite;
+  display: block;
+}
+
+.pending-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.pending-title em { font-style: italic; color: var(--gold); }
+
+.pending-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.85;
+}
+
+.pending-subtitle strong { color: var(--gold); font-weight: 400; }
+
+.pending-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  max-width: 400px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+
 /* ── Lead Capture Modal ─────────────────────────────────────────────────── */
 .lead-overlay {
   position: fixed;
