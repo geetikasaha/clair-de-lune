@@ -5,7 +5,7 @@ let liveSlots = [];
 const WA_NUMBER = '917999634730';
 
 // ── PASTE YOUR APPS SCRIPT URL HERE after setup ───────────────────────────────
-const SHEET_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwINebaAueE436lZ8xeJ4EmpZRRnKk_9gl5xBQK_6EpuOTg71azkIwT6ne8fAaStR_hUw/exec';
 // ─────────────────────────────────────────────────────────────────────────────
 
 function showStep(n) {
