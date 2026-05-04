@@ -18,6 +18,33 @@
 </head>
 <body>
 
+<!-- ── Lead Capture Modal ─────────────────────────────────────────────── -->
+<div class="lead-overlay" id="lead-overlay">
+  <div class="lead-modal">
+    <button class="lead-modal-close" id="lead-close" aria-label="Close">✕</button>
+
+    <div id="lead-form-wrap">
+      <span class="lead-modal-moon">☽ ✦ ☾</span>
+      <h2>Step into the <em>Moonlight</em></h2>
+      <p>Leave your details and receive guidance, updates, and the occasional mystical nudge from Geetika.</p>
+
+      <form class="lead-form" id="lead-form">
+        <input class="lead-input" id="lead-name"  type="text"  placeholder="Your name"           required />
+        <input class="lead-input" id="lead-email" type="email" placeholder="Your email"          required />
+        <input class="lead-input" id="lead-phone" type="tel"   placeholder="WhatsApp (optional)"          />
+        <button class="lead-submit" id="lead-submit" type="submit">Enter the Circle</button>
+      </form>
+      <button class="lead-skip" id="lead-skip">Maybe later</button>
+    </div>
+
+    <div class="lead-success" id="lead-success">
+      <span class="lead-success-icon">✦</span>
+      <h3>Welcome to the <em>circle</em></h3>
+      <p>Geetika will be in touch. The stars are already aligning.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ── Navigation ────────────────────────────────────────────────────── -->
 <nav>
   <a href="index.html" class="nav-logo"><em>Clair de Lune</em></a>
@@ -149,5 +176,6 @@
 <script src="js/nav.js"></script>
 <script src="js/animate.js"></script>
 <script src="js/analytics.js"></script>
+<script src="js/leads.js"></script>
 </body>
 </html>
