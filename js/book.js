@@ -1,11 +1,14 @@
 let selectedService = null;
 let selectedSlot = null;
-let currentStep = 1;
+let liveSlots = [];
 
 const WA_NUMBER = '917999634730';
 
+// ── PASTE YOUR APPS SCRIPT URL HERE after setup ───────────────────────────────
+const SHEET_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+// ─────────────────────────────────────────────────────────────────────────────
+
 function showStep(n) {
-  currentStep = n;
   document.querySelectorAll('.booking-section').forEach(el => {
     el.classList.toggle('active', el.dataset.step == n);
   });
@@ -36,40 +39,51 @@ function selectService(id) {
   document.getElementById('btn-to-step2').disabled = false;
 }
 
-document.getElementById('btn-to-step2').addEventListener('click', () => {
+document.getElementById('btn-to-step2').addEventListener('click', async () => {
   if (!selectedService) return;
-  renderSlots();
+  await loadAndRenderSlots();
   showStep(2);
 });
 
-// ── Step 2: Slots ─────────────────────────────────────────────────────────────
-function renderSlots() {
+// ── Step 2: Slots (fetched live from Google Sheets) ───────────────────────────
+async function loadAndRenderSlots() {
   const container = document.getElementById('slots-grid');
   const btn3 = document.getElementById('btn-to-step3');
+  btn3.disabled = true;
+  btn3.style.display = '';
 
-  if (SLOTS.length === 0) {
-    container.innerHTML = '<div class="no-slots">No slots currently available.<br>Please reach out on WhatsApp to schedule.</div>';
+  container.innerHTML = '<div class="slots-loading"><span class="slots-spinner"></span> Checking availability…</div>';
+
+  try {
+    const res = await fetch(SHEET_URL);
+    if (!res.ok) throw new Error('Failed to fetch');
+    liveSlots = await res.json();
+  } catch {
+    container.innerHTML = `
+      <div class="no-slots">
+        Could not load slots right now.<br>
+        <a href="https://wa.me/${WA_NUMBER}" target="_blank" style="color:var(--gold);">Reach out on WhatsApp</a> to book.
+      </div>`;
     btn3.style.display = 'none';
     return;
   }
 
-  btn3.style.display = '';
-  container.innerHTML = SLOTS.map((slot, i) => `
-    <button
-      class="slot-btn"
-      data-index="${i}"
-      onclick="selectSlot(${i})"
-      ${!slot.available ? 'disabled' : ''}
-    >
+  if (liveSlots.length === 0) {
+    container.innerHTML = '<div class="no-slots">No slots available right now.<br>Check back soon or reach out on WhatsApp.</div>';
+    btn3.style.display = 'none';
+    return;
+  }
+
+  container.innerHTML = liveSlots.map((slot, i) => `
+    <button class="slot-btn" data-index="${i}" onclick="selectSlot(${i})">
       <div class="slot-date">${slot.day}</div>
       <div class="slot-time">${slot.time}</div>
-      ${!slot.available ? '<div class="slot-booked-label">Booked</div>' : ''}
     </button>
   `).join('');
 }
 
 function selectSlot(index) {
-  selectedSlot = SLOTS[index];
+  selectedSlot = liveSlots[index];
   document.querySelectorAll('.slot-btn').forEach(el => {
     el.classList.toggle('selected', +el.dataset.index === index);
   });
