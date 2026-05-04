@@ -1,4 +1,4 @@
-// ── Floating firefly particles in hero ────────────────────────────────────────
+// ── Floating firefly particles ────────────────────────────────────────────────
 function initParticles() {
   const hero = document.querySelector('.hero');
   if (!hero) return;
@@ -6,33 +6,53 @@ function initParticles() {
   for (let i = 0; i < 30; i++) {
     const p = document.createElement('span');
     p.className = 'particle';
-    const size = 1 + Math.random() * 2.5;
-    p.style.cssText = `
-      left:${Math.random() * 100}%;
-      top:${10 + Math.random() * 80}%;
-      width:${size}px;
-      height:${size}px;
-      animation-delay:${Math.random() * 12}s;
-      animation-duration:${9 + Math.random() * 9}s;
-    `;
+    const size = 1.5 + Math.random() * 2.5;
+    p.style.left            = Math.random() * 100 + '%';
+    p.style.top             = (10 + Math.random() * 80) + '%';
+    p.style.width           = size + 'px';
+    p.style.height          = size + 'px';
+    p.style.animationDelay    = (Math.random() * 12) + 's';
+    p.style.animationDuration = (9 + Math.random() * 9) + 's';
     hero.appendChild(p);
   }
 }
 
-// ── Parallax hero content on scroll ──────────────────────────────────────────
-function initParallax() {
-  const content = document.querySelector('.hero-content');
-  if (!content) return;
+// ── Hero text staggered reveal ────────────────────────────────────────────────
+function initHeroReveal() {
+  const selectors = [
+    '.hero-moon', '.hero h1', '.hero-subtitle',
+    '.hero-divider', '.hero-tagline', '.btn-group', '.hero-scroll'
+  ];
 
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    content.style.transform = `translateY(${y * 0.22}px)`;
-    content.style.opacity   = String(Math.max(0, 1 - y / 480));
-  }, { passive: true });
+  selectors.forEach((sel, i) => {
+    const el = document.querySelector(sel);
+    if (!el) return;
+
+    el.style.opacity    = '0';
+    el.style.transform  = 'translateY(24px)';
+    el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
+
+    setTimeout(() => {
+      el.style.opacity   = '1';
+      el.style.transform = 'translateY(0)';
+    }, 150 + i * 130);
+  });
 }
 
 // ── Scroll-triggered fade-up ──────────────────────────────────────────────────
 function initScrollAnimations() {
+  // Cards — staggered per position in grid
+  document.querySelectorAll('.card').forEach((el, i) => {
+    el.classList.add('fade-up');
+    el.style.transitionDelay = (i * 0.1) + 's';
+  });
+
+  // Other content blocks
+  document.querySelectorAll(
+    '.about-content p, .about-content h2, .about-highlight, .about-quote'
+  ).forEach(el => el.classList.add('fade-up'));
+
+  // Observe all fade-up elements
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -40,23 +60,27 @@ function initScrollAnimations() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-  document.querySelectorAll('.card').forEach((el, i) => {
-    el.classList.add('fade-up');
-    el.style.transitionDelay = `${i * 0.1}s`;
-    observer.observe(el);
-  });
-
-  document.querySelectorAll(
-    '.about-content p, .about-content h2, .about-highlight, .about-quote, .fade-up'
-  ).forEach(el => {
-    if (!el.classList.contains('fade-up')) el.classList.add('fade-up');
-    observer.observe(el);
-  });
+  // Small delay so elements start hidden before being observed
+  setTimeout(() => {
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  }, 200);
 }
 
-// ── Gold cursor glow on hero (desktop only) ───────────────────────────────────
+// ── Parallax on hero content ──────────────────────────────────────────────────
+function initParallax() {
+  const content = document.querySelector('.hero-content');
+  if (!content) return;
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    content.style.transform = 'translateY(' + (y * 0.22) + 'px)';
+    content.style.opacity   = Math.max(0, 1 - y / 500);
+  }, { passive: true });
+}
+
+// ── Gold cursor glow (desktop only) ──────────────────────────────────────────
 function initCursorGlow() {
   const hero = document.querySelector('.hero');
   if (!hero || window.matchMedia('(pointer: coarse)').matches) return;
@@ -66,35 +90,17 @@ function initCursorGlow() {
   hero.appendChild(glow);
 
   hero.addEventListener('mousemove', e => {
-    const rect = hero.getBoundingClientRect();
-    glow.style.left = `${e.clientX - rect.left}px`;
-    glow.style.top  = `${e.clientY - rect.top}px`;
+    const rect  = hero.getBoundingClientRect();
+    glow.style.left = (e.clientX - rect.left) + 'px';
+    glow.style.top  = (e.clientY - rect.top)  + 'px';
   });
 }
 
-// ── Staggered hero text reveal on load ───────────────────────────────────────
-function initHeroReveal() {
-  const targets = document.querySelectorAll(
-    '.hero-moon, .hero h1, .hero-subtitle, .hero-divider, .hero-tagline, .btn-group, .hero-scroll'
-  );
-  targets.forEach((el, i) => {
-    el.style.opacity   = '0';
-    el.style.transform = 'translateY(22px)';
-    el.style.transition = `opacity 0.9s ease, transform 0.9s ease`;
-    el.style.transitionDelay = `${0.15 + i * 0.13}s`;
-
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      el.style.opacity   = '';
-      el.style.transform = '';
-    }));
-  });
-}
-
-// ── Init ──────────────────────────────────────────────────────────────────────
+// ── Boot ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initParticles();
-  initParallax();
-  initScrollAnimations();
-  initCursorGlow();
   initHeroReveal();
+  initScrollAnimations();
+  initParallax();
+  initCursorGlow();
 });
