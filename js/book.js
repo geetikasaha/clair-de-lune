@@ -3,7 +3,7 @@ let selectedSlot = null;
 let liveSlots = [];
 
 const WA_NUMBER = '917999634730';
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwINebaAueE436lZ8xeJ4EmpZRRnKk_9gl5xBQK_6EpuOTg71azkIwT6ne8fAaStR_hUw/exec';
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR0MXRboqA1jtrPMaIKo9lhaJujOLWdGJUzyFYe1glAjodT-1SBqVXgYOpJm_LDHafLp-tx3hPnkHhu/pub?gid=0&single=true&output=csv';
 
 function showStep(n) {
   document.querySelectorAll('.booking-section').forEach(el => {
@@ -15,27 +15,12 @@ function showStep(n) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── JSONP loader (bypasses CORS entirely) ─────────────────────────────────────
-function fetchJSONP(url) {
-  return new Promise((resolve, reject) => {
-    const cbName = '__cdl_slots_' + Date.now();
-    const script = document.createElement('script');
-
-    window[cbName] = function(data) {
-      delete window[cbName];
-      document.head.removeChild(script);
-      resolve(data);
-    };
-
-    script.onerror = function() {
-      delete window[cbName];
-      document.head.removeChild(script);
-      reject(new Error('Failed to load slots'));
-    };
-
-    script.src = `${url}?callback=${cbName}`;
-    document.head.appendChild(script);
-  });
+function parseCSV(text) {
+  const lines = text.trim().split('\n').slice(1); // skip header row
+  return lines
+    .map(line => line.split(',').map(c => c.trim().replace(/^"|"$/g, '')))
+    .filter(cols => cols.length >= 4 && cols[3].toUpperCase() === 'TRUE')
+    .map(cols => ({ date: cols[0], day: cols[1], time: cols[2] }));
 }
 
 // ── Step 1: Services ──────────────────────────────────────────────────────────
@@ -75,7 +60,10 @@ async function loadAndRenderSlots() {
   container.innerHTML = '<div class="slots-loading"><span class="slots-spinner"></span> Checking availability…</div>';
 
   try {
-    liveSlots = await fetchJSONP(SHEET_URL);
+    const res = await fetch(CSV_URL);
+    if (!res.ok) throw new Error('fetch failed');
+    const text = await res.text();
+    liveSlots = parseCSV(text);
   } catch {
     container.innerHTML = `
       <div class="no-slots">
