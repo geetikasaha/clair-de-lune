@@ -3,10 +3,7 @@ let selectedSlot = null;
 let liveSlots = [];
 
 const WA_NUMBER = '917999634730';
-
-// ── PASTE YOUR APPS SCRIPT URL HERE after setup ───────────────────────────────
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwINebaAueE436lZ8xeJ4EmpZRRnKk_9gl5xBQK_6EpuOTg71azkIwT6ne8fAaStR_hUw/exec';
-// ─────────────────────────────────────────────────────────────────────────────
 
 function showStep(n) {
   document.querySelectorAll('.booking-section').forEach(el => {
@@ -16,6 +13,29 @@ function showStep(n) {
     el.classList.toggle('active', +el.dataset.step <= n);
   });
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── JSONP loader (bypasses CORS entirely) ─────────────────────────────────────
+function fetchJSONP(url) {
+  return new Promise((resolve, reject) => {
+    const cbName = '__cdl_slots_' + Date.now();
+    const script = document.createElement('script');
+
+    window[cbName] = function(data) {
+      delete window[cbName];
+      document.head.removeChild(script);
+      resolve(data);
+    };
+
+    script.onerror = function() {
+      delete window[cbName];
+      document.head.removeChild(script);
+      reject(new Error('Failed to load slots'));
+    };
+
+    script.src = `${url}?callback=${cbName}`;
+    document.head.appendChild(script);
+  });
 }
 
 // ── Step 1: Services ──────────────────────────────────────────────────────────
@@ -45,7 +65,7 @@ document.getElementById('btn-to-step2').addEventListener('click', async () => {
   showStep(2);
 });
 
-// ── Step 2: Slots (fetched live from Google Sheets) ───────────────────────────
+// ── Step 2: Slots ─────────────────────────────────────────────────────────────
 async function loadAndRenderSlots() {
   const container = document.getElementById('slots-grid');
   const btn3 = document.getElementById('btn-to-step3');
@@ -55,10 +75,7 @@ async function loadAndRenderSlots() {
   container.innerHTML = '<div class="slots-loading"><span class="slots-spinner"></span> Checking availability…</div>';
 
   try {
-    const res = await fetch(SHEET_URL, { redirect: 'follow', credentials: 'omit' });
-    if (!res.ok) throw new Error('Failed to fetch');
-    const text = await res.text();
-    liveSlots = JSON.parse(text);
+    liveSlots = await fetchJSONP(SHEET_URL);
   } catch {
     container.innerHTML = `
       <div class="no-slots">
@@ -69,7 +86,7 @@ async function loadAndRenderSlots() {
     return;
   }
 
-  if (liveSlots.length === 0) {
+  if (!liveSlots.length) {
     container.innerHTML = '<div class="no-slots">No slots available right now.<br>Check back soon or reach out on WhatsApp.</div>';
     btn3.style.display = 'none';
     return;
