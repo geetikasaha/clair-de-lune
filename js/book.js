@@ -51,6 +51,9 @@ function selectService(id) {
     el.classList.toggle('selected', el.dataset.id === id);
   });
   document.getElementById('btn-to-step2').disabled = false;
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'service_selected', { service_name: selectedService.name, value: selectedService.price });
+  }
 }
 
 document.getElementById('btn-to-step2').addEventListener('click', async () => {
@@ -103,6 +106,9 @@ function selectSlot(index) {
     el.classList.toggle('selected', +el.dataset.index === index);
   });
   document.getElementById('btn-to-step3').disabled = false;
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'slot_selected', { slot_day: selectedSlot.day, slot_time: selectedSlot.time });
+  }
 }
 
 document.getElementById('btn-back-1').addEventListener('click', () => showStep(1));
@@ -132,6 +138,14 @@ document.getElementById('btn-confirm').addEventListener('click', () => {
     `Amount: ₹${selectedService.price.toLocaleString('en-IN')}\n\n` +
     `Please confirm my booking!`
   );
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion', {
+      event_category: 'booking',
+      service_name: selectedService.name,
+      value: selectedService.price,
+      currency: 'INR'
+    });
+  }
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank');
 });
 
