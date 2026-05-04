@@ -55,9 +55,10 @@ async function loadAndRenderSlots() {
   container.innerHTML = '<div class="slots-loading"><span class="slots-spinner"></span> Checking availability…</div>';
 
   try {
-    const res = await fetch(SHEET_URL);
+    const res = await fetch(SHEET_URL, { redirect: 'follow', credentials: 'omit' });
     if (!res.ok) throw new Error('Failed to fetch');
-    liveSlots = await res.json();
+    const text = await res.text();
+    liveSlots = JSON.parse(text);
   } catch {
     container.innerHTML = `
       <div class="no-slots">
