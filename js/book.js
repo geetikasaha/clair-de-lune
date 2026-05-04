@@ -16,10 +16,19 @@ function showStep(n) {
 }
 
 function parseCSV(text) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   const lines = text.trim().split('\n').slice(1); // skip header row
   return lines
     .map(line => line.split(',').map(c => c.trim().replace(/^"|"$/g, '')))
-    .filter(cols => cols.length >= 4 && cols[3].toUpperCase() === 'TRUE')
+    .filter(cols => {
+      if (cols.length < 4 || cols[3].toUpperCase() !== 'TRUE') return false;
+      // Date format from sheet: DD/MM/YYYY
+      const [d, m, y] = cols[0].split('/');
+      const slotDate = new Date(+y, +m - 1, +d);
+      return slotDate >= today;
+    })
     .map(cols => ({ date: cols[0], day: cols[1], time: cols[2] }));
 }
 
