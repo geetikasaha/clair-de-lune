@@ -1,12 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services | Clair de Lune</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offerings | Clair de Lune</title>
   <meta name="description" content="1-on-1 tarot, chart reading and spiritual guidance sessions with Geetika Saha. View all reading types and pricing." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/enchanted.css" />
+  <style>
+    .page-hero {
+      padding: 160px 24px 80px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero .eyebrow {
+      display: flex; align-items: center; justify-content: center; gap: 18px;
+      font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--fgDim); margin-bottom: 24px;
+    }
+    .page-hero .eyebrow .line {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accentSoft), transparent);
+    }
+    .page-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 400; line-height: 1; margin: 0 0 20px;
+      color: var(--fg); letter-spacing: 0.01em;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--accent); }
+    .page-hero p {
+      font-family: var(--serif); font-style: italic; font-size: 18px;
+      color: var(--fgDim); max-width: 540px; margin: 0 auto; line-height: 1.7;
+    }
+
+    .services-section {
+      position: relative;
+      padding: 60px 24px 80px;
+      z-index: 2;
+    }
+
+    .services-note {
+      max-width: 1240px;
+      margin: 48px auto 0;
+      background: linear-gradient(180deg, rgba(23,40,33,0.4), rgba(13,24,18,0.6));
+      border: 1px solid rgba(232,220,178,0.15);
+      padding: 2rem 2.5rem;
+    }
+    .services-note-label {
+      font-size: 10px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .services-note p {
+      font-family: var(--serif); font-style: italic;
+      font-size: 15px; color: var(--fgDim);
+      line-height: 1.75; margin: 0;
+    }
+
+    .services-cta {
+      position: relative; z-index: 2;
+      padding: 80px 24px;
+      background: linear-gradient(180deg, transparent, rgba(23,40,33,0.3), transparent);
+      text-align: center;
+    }
+    .services-cta h2 {
+      font-family: var(--display);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 400; line-height: 1.1;
+      margin: 24px 0 16px; color: var(--fg);
+    }
+    .services-cta h2 em { font-style: italic; color: var(--accent); }
+    .services-cta p {
+      font-family: var(--serif); font-style: italic;
+      font-size: 17px; color: var(--fgDim);
+      margin: 0 auto 2rem; max-width: 480px;
+    }
+    .btn-group {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    }
+  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG8635ZVCL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,145 +93,154 @@
 </head>
 <body>
 
-<!-- ── Navigation ────────────────────────────────────────────────────── -->
-<nav>
-  <a href="index.html" class="nav-logo"><em>Clair de Lune</em></a>
-  <button class="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="book.html">Book</a></li>
-    <li><a href="https://wa.me/917999634730" target="_blank" class="nav-wa">WhatsApp</a></li>
-  </ul>
+<!-- ── Navigation ───────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <a href="index.html" class="nav-mark">
+    <svg width="36" height="18" viewBox="0 0 120 60" fill="none" stroke="var(--accent)" stroke-width="1.4">
+      <path d="M30 30 A14 14 0 1 0 30 31 Z" fill="var(--accent)" fill-opacity="0.2" />
+      <circle cx="60" cy="30" r="14" />
+      <path d="M90 30 A14 14 0 1 1 90 31 Z" fill="var(--accent)" fill-opacity="0.2" transform="rotate(180 90 30)" />
+    </svg>
+    <span>Clair de Lune</span>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">about</a>
+    <a href="services.html" style="color:var(--accent);">readings</a>
+    <a href="book.html">book</a>
+  </div>
+  <div class="nav-actions">
+    <a href="https://wa.me/917999634730" target="_blank" class="nav-wa-btn">whatsapp</a>
+  </div>
 </nav>
 
-<!-- ── Page Hero ─────────────────────────────────────────────────────── -->
+<!-- ── Page Hero ────────────────────────────────────────────────────────── -->
 <div class="page-hero">
-  <div class="ornament">☽ ✦ ☾</div>
+  <div class="eyebrow">
+    <span class="line"></span>
+    <span>· offerings ·</span>
+    <span class="line"></span>
+  </div>
   <h1>Services &amp; <em>Pricing</em></h1>
   <p>Every session is a 1-on-1 space to stop, look inward, and finally hear what the noise has been covering.</p>
 </div>
 
-<!-- ── Services Detail ───────────────────────────────────────────────── -->
-<section>
-  <div class="container">
-
-    <!-- Spiritual Guidance -->
-    <div class="card" style="margin-bottom:1.5rem; display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:start;">
-      <div>
-        <span class="section-label">Session</span>
-        <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">Spiritual Guidance</h2>
-        <p style="color:var(--text-muted); margin-bottom:1rem; max-width:540px; line-height:1.85;">
-          You already sense what's true — this session helps you hear it clearly. In 30 minutes, we sit with your energy, your life, and what your soul is actually asking for. Not advice. Not a roadmap. Just you, finally listening to yourself — with someone who can hold the silence steady enough for the truth to surface.
-        </p>
-        <p style="font-size:0.85rem; color:var(--text-muted);">Duration: 30 minutes &nbsp;·&nbsp; Format: 1-on-1, online</p>
-        <a href="book.html" class="btn btn-primary" style="margin-top:1.2rem; display:inline-block;">Book This Session</a>
-      </div>
-      <div style="text-align:right; min-width:120px;">
-        <div class="card-price" style="font-size:2rem;">₹1,000</div>
-        <div class="card-duration">per session</div>
-        <div style="font-size:2rem; margin-top:0.75rem; opacity:0.5;">✦</div>
-      </div>
+<!-- ── Services Grid ─────────────────────────────────────────────────────── -->
+<div class="services-section">
+  <div class="section-inner">
+    <div class="sec-label">
+      <span class="sec-num">02</span>
+      <span class="sec-line"></span>
+      <span>four lanterns · choose the one that flickers</span>
     </div>
 
-    <!-- 1 Question -->
-    <div class="card" style="margin-bottom:1.5rem; display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:start;">
-      <div>
-        <span class="section-label">Tarot</span>
-        <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">1 Question Reading</h2>
-        <p style="color:var(--text-muted); margin-bottom:1rem; max-width:540px; line-height:1.85;">
-          One thing is burning in you right now. The cards don't predict — they reflect back what you already know in your body but haven't let yourself say out loud. Bring your one burning question. Leave with the clarity that was always there, just buried under fear.
-        </p>
-        <p style="font-size:0.85rem; color:var(--text-muted);">Duration: ~15 minutes &nbsp;·&nbsp; Format: 1-on-1, online</p>
-        <a href="book.html" class="btn btn-primary" style="margin-top:1.2rem; display:inline-block;">Book This Session</a>
+    <div class="readings-grid readings-grid-4" style="margin-top:60px;">
+
+      <div class="reading-card">
+        <div class="reading-glyph">✦</div>
+        <div class="reading-sub">a holistic session</div>
+        <h3 class="reading-name">Spiritual Guidance</h3>
+        <p class="reading-desc">You already sense what's true — this session helps you hear it clearly. Sit with your energy, your life, and what your soul is actually asking for. Not advice. Not a roadmap. Just you, finally listening — with someone who can hold the silence steady enough for the truth to surface.</p>
+        <div class="reading-meta">
+          <div><span class="meta-k">time</span><span class="meta-v">30 min</span></div>
+          <div><span class="meta-k">offering</span><span class="meta-v">₹1,000</span></div>
+        </div>
+        <a href="book.html" class="reading-cta">book this sitting →</a>
       </div>
-      <div style="text-align:right; min-width:120px;">
-        <div class="card-price" style="font-size:2rem;">₹200</div>
-        <div class="card-duration">per session</div>
-        <div style="font-size:2rem; margin-top:0.75rem; opacity:0.5;">◦</div>
+
+      <div class="reading-card">
+        <div class="reading-glyph">◦</div>
+        <div class="reading-sub">a single truth</div>
+        <h3 class="reading-name">1 Question Tarot</h3>
+        <p class="reading-desc">One thing is burning in you right now. The cards don't predict — they reflect back what you already know in your body but haven't let yourself say out loud. Bring your one burning question. Leave with the clarity that was always there, just buried under fear.</p>
+        <div class="reading-meta">
+          <div><span class="meta-k">time</span><span class="meta-v">~15 min</span></div>
+          <div><span class="meta-k">offering</span><span class="meta-v">₹200</span></div>
+        </div>
+        <a href="book.html" class="reading-cta">book this sitting →</a>
       </div>
+
+      <div class="reading-card featured">
+        <div class="reading-glyph">⋆</div>
+        <div class="reading-sub">layered clarity</div>
+        <h3 class="reading-name">3 Question Tarot</h3>
+        <p class="reading-desc">Life rarely breaks down into one clean question. When three things are pulling at you at once — love, work, self — this reading holds space for all of them. Bring what's tangled. The cards will show you where each thread is actually leading, and what you've been avoiding seeing.</p>
+        <div class="reading-meta">
+          <div><span class="meta-k">time</span><span class="meta-v">~20 min</span></div>
+          <div><span class="meta-k">offering</span><span class="meta-v">₹600</span></div>
+        </div>
+        <a href="book.html" class="reading-cta">book this sitting →</a>
+      </div>
+
+      <div class="reading-card">
+        <div class="reading-glyph">☽</div>
+        <div class="reading-sub">30-card spread</div>
+        <h3 class="reading-name">Full Reading</h3>
+        <p class="reading-desc">A 30-card spread that opens the full picture — what you've been carrying from the past, where you are blocked right now, what is already moving toward you. For the moments when you know something big is shifting. Be ready to go deep. The cards will not hold back.</p>
+        <div class="reading-meta">
+          <div><span class="meta-k">time</span><span class="meta-v">30 min</span></div>
+          <div><span class="meta-k">offering</span><span class="meta-v">₹1,000</span></div>
+        </div>
+        <a href="book.html" class="reading-cta">book this sitting →</a>
+      </div>
+
     </div>
 
-    <!-- 3 Questions -->
-    <div class="card" style="margin-bottom:1.5rem; display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:start;">
-      <div>
-        <span class="section-label">Tarot</span>
-        <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">3 Question Reading</h2>
-        <p style="color:var(--text-muted); margin-bottom:1rem; max-width:540px; line-height:1.85;">
-          Life rarely breaks down into one clean question. When three things are pulling at you at once — love, work, self — this reading holds space for all of them. Bring what's tangled. The cards will show you where each thread is actually leading, and what you've been avoiding seeing.
-        </p>
-        <p style="font-size:0.85rem; color:var(--text-muted);">Duration: ~20 minutes &nbsp;·&nbsp; Format: 1-on-1, online</p>
-        <a href="book.html" class="btn btn-primary" style="margin-top:1.2rem; display:inline-block;">Book This Session</a>
-      </div>
-      <div style="text-align:right; min-width:120px;">
-        <div class="card-price" style="font-size:2rem;">₹600</div>
-        <div class="card-duration">per session</div>
-        <div style="font-size:2rem; margin-top:0.75rem; opacity:0.5;">⋆</div>
-      </div>
-    </div>
-
-    <!-- Full Reading -->
-    <div class="card" style="margin-bottom:1.5rem; display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:start;">
-      <div>
-        <span class="section-label">Tarot</span>
-        <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">Full Reading (30 Cards)</h2>
-        <p style="color:var(--text-muted); margin-bottom:1rem; max-width:540px; line-height:1.85;">
-          A 30-card spread that opens the full picture — what you've been carrying from the past, where you are blocked right now, what is already moving toward you. This is for the moments when you know something big is shifting and you need to understand what it is. Be ready to go deep. The cards will not hold back.
-        </p>
-        <p style="font-size:0.85rem; color:var(--text-muted);">Duration: 30 minutes &nbsp;·&nbsp; Format: 1-on-1, online</p>
-        <a href="book.html" class="btn btn-primary" style="margin-top:1.2rem; display:inline-block;">Book This Session</a>
-      </div>
-      <div style="text-align:right; min-width:120px;">
-        <div class="card-price" style="font-size:2rem;">₹1,000</div>
-        <div class="card-duration">per session</div>
-        <div style="font-size:2rem; margin-top:0.75rem; opacity:0.5;">☽</div>
-      </div>
-    </div>
-
-    <!-- Note -->
-    <div style="background:var(--cream-dark); border:1px solid var(--border); border-radius:12px; padding:2rem; margin-top:2.5rem;">
-      <span class="section-label">Good to know</span>
-      <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.85; margin:0;">
-        All sessions are conducted online. After you book a slot, you'll be connected via WhatsApp to confirm the session details and receive the meeting link. Payment is discussed and confirmed over WhatsApp before the session begins.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── CTA Banner ─────────────────────────────────────────────────────── -->
-<section class="cta-banner">
-  <div class="container">
-    <div class="ornament">☽ ✦ ☾</div>
-    <h2>Not sure which <em>reading</em> to pick?</h2>
-    <p>Trust what you're drawn to — or reach out on WhatsApp and we'll find the right fit together.</p>
-    <div class="btn-group">
-      <a href="book.html" class="btn btn-primary">Book a Slot</a>
-      <a href="https://wa.me/917999634730?text=Hi%20Geetika!%20I%20need%20help%20choosing%20a%20reading." target="_blank" class="btn btn-outline">Ask on WhatsApp</a>
+    <div class="services-note">
+      <div class="services-note-label">✶ good to know</div>
+      <p>All sessions are conducted online. After you book a slot, you'll be connected via WhatsApp to confirm the session details and receive the meeting link. Payment is discussed and confirmed over WhatsApp before the session begins.</p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ── Footer ─────────────────────────────────────────────────────────── -->
-<footer>
-  <div class="container">
-    <div class="footer-logo">Clair de Lune</div>
-    <p class="footer-tagline">Tarot · Chart Reading · Spiritual Guidance</p>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="book.html">Book</a>
-      <a href="https://wa.me/917999634730" target="_blank">WhatsApp</a>
-    </nav>
-    <p class="footer-copyright">© 2026 Clair de Lune &nbsp;·&nbsp; Geetika Saha</p>
+<!-- ── CTA ───────────────────────────────────────────────────────────────── -->
+<div class="services-cta">
+  <div class="sec-label" style="justify-content:center; margin-bottom:16px;">
+    <span class="sec-num">·</span>
+    <span class="sec-line"></span>
+    <span>not sure which reading to pick?</span>
+  </div>
+  <h2>Trust what you're <em>drawn to.</em></h2>
+  <p>Or reach out on WhatsApp and we'll find the right fit together.</p>
+  <div class="btn-group">
+    <a href="book.html" class="btn-primary">book a sitting</a>
+    <a href="https://wa.me/917999634730?text=Hi%20Geetika!%20I%20need%20help%20choosing%20a%20reading." target="_blank" class="btn-ghost">ask on whatsapp</a>
+  </div>
+</div>
+
+<!-- ── Footer ────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="wordmark-sm">Clair de Lune</div>
+        <p class="footer-tag">a candle in the window for the wandering.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-h">the grove</div>
+          <a href="about.html">about</a>
+          <a href="services.html">offerings</a>
+          <a href="book.html">book a sitting</a>
+        </div>
+        <div>
+          <div class="footer-h">reach out</div>
+          <a href="https://wa.me/917999634730" target="_blank">whatsapp</a>
+          <a href="https://wa.me/917999634730?text=I%20have%20a%20question" target="_blank">ask a question</a>
+        </div>
+        <div>
+          <div class="footer-h">a quiet word</div>
+          <p class="footer-note">readings are not a replacement for medical, legal, or therapeutic guidance — only a companion alongside.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 clair de lune · geetika saha</span>
+      <span>✶ ☽ ✦</span>
+    </div>
   </div>
 </footer>
 
-<!-- ── WhatsApp Float ─────────────────────────────────────────────────── -->
+<!-- ── WhatsApp Float ────────────────────────────────────────────────────── -->
 <a href="https://wa.me/917999634730" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -163,20 +248,6 @@
   </svg>
 </a>
 
-<script src="js/nav.js"></script>
-<script src="js/animate.js"></script>
 <script src="js/analytics.js"></script>
-
-<style>
-  @media (max-width: 600px) {
-    .card[style*="grid-template-columns"] {
-      display: block !important;
-    }
-    .card[style*="grid-template-columns"] > div:last-child {
-      text-align: left !important;
-      margin-top: 1rem;
-    }
-  }
-</style>
 </body>
 </html>

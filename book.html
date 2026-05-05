@@ -1,12 +1,292 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Book a Reading | Clair de Lune</title>
   <meta name="description" content="Book a 1-on-1 tarot or spiritual guidance session with Geetika Saha. Pick your reading and choose an available slot." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/enchanted.css" />
+  <style>
+    .page-hero {
+      padding: 160px 24px 80px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero .eyebrow {
+      display: flex; align-items: center; justify-content: center; gap: 18px;
+      font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--fgDim); margin-bottom: 24px;
+    }
+    .page-hero .eyebrow .line {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accentSoft), transparent);
+    }
+    .page-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 400; line-height: 1; margin: 0 0 20px;
+      color: var(--fg); letter-spacing: 0.01em;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--accent); }
+    .page-hero p {
+      font-family: var(--serif); font-style: italic; font-size: 18px;
+      color: var(--fgDim); max-width: 540px; margin: 0 auto; line-height: 1.7;
+    }
+
+    /* ── Booking Shell ──────────────────────────────────────────────────── */
+    .booking-shell {
+      position: relative; z-index: 2;
+      padding: 0 24px 120px;
+    }
+    .booking-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── Steps indicator ─────────────────────────────────────────────────── */
+    .booking-steps {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.5rem; margin-bottom: 56px; flex-wrap: wrap;
+    }
+    .step-indicator {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: lowercase;
+      color: var(--fgDim); transition: color 0.3s;
+    }
+    .step-indicator.active { color: var(--accent); }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1px solid rgba(232,220,178,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-family: var(--serif);
+      transition: all 0.3s;
+    }
+    .step-indicator.active .step-num {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .step-connector {
+      width: 36px; height: 1px;
+      background: rgba(232,220,178,0.2);
+    }
+
+    /* ── Booking sections ────────────────────────────────────────────────── */
+    .booking-section { display: none; }
+    .booking-section.active { display: block; }
+
+    .booking-heading {
+      font-family: var(--display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 400; line-height: 1.1;
+      margin: 0 0 10px; color: var(--fg);
+    }
+    .booking-hint {
+      font-family: var(--serif); font-style: italic;
+      font-size: 16px; color: var(--fgDim);
+      margin-bottom: 2rem; line-height: 1.6;
+    }
+    .booking-hint a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── Service options ─────────────────────────────────────────────────── */
+    .service-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px; margin-bottom: 2.5rem;
+    }
+    .service-option {
+      border: 1px solid rgba(232,220,178,0.15);
+      padding: 1.5rem;
+      cursor: pointer; transition: all 0.3s;
+      background: linear-gradient(180deg, rgba(23,40,33,0.4), rgba(13,24,18,0.6));
+      text-align: left;
+      display: flex; flex-direction: column;
+    }
+    .service-option:hover {
+      border-color: rgba(232,220,178,0.4);
+      transform: translateY(-3px);
+    }
+    .service-option.selected {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, rgba(40,32,72,0.5), rgba(20,18,40,0.7));
+      box-shadow: 0 0 30px rgba(232,220,178,0.1);
+    }
+    .service-option h4 {
+      font-family: var(--display);
+      font-size: 22px; font-weight: 400;
+      color: var(--fg); margin-bottom: 6px;
+    }
+    .service-option .svc-desc {
+      font-family: var(--serif); font-style: italic;
+      font-size: 14px; color: var(--fgDim);
+      margin-bottom: 1rem; line-height: 1.6;
+      flex: 1;
+    }
+    .service-option .price {
+      font-family: var(--serif); font-style: italic;
+      font-size: 22px; color: var(--accent);
+    }
+    .service-option .duration {
+      font-size: 11px; letter-spacing: 0.15em;
+      color: var(--fgDim); text-transform: lowercase;
+      margin-top: 4px;
+    }
+
+    /* ── Slots ───────────────────────────────────────────────────────────── */
+    .slots-heading {
+      font-size: 10px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--fgDim);
+      margin-bottom: 16px;
+    }
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px; margin-bottom: 2.5rem;
+    }
+    .slot-btn {
+      padding: 1rem;
+      border: 1px solid rgba(232,220,178,0.15);
+      background: linear-gradient(180deg, rgba(23,40,33,0.4), rgba(13,24,18,0.6));
+      cursor: pointer; transition: all 0.25s;
+      text-align: center;
+      font-family: var(--sans);
+      color: var(--fg);
+    }
+    .slot-btn:hover:not(:disabled) {
+      border-color: rgba(232,220,178,0.4);
+      transform: translateY(-2px);
+    }
+    .slot-btn.selected {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, rgba(40,32,72,0.5), rgba(20,18,40,0.7));
+      box-shadow: 0 0 20px rgba(232,220,178,0.12);
+    }
+    .slot-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+    .slot-date {
+      font-size: 10px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--fgDim);
+      margin-bottom: 4px;
+    }
+    .slot-time {
+      font-family: var(--serif); font-size: 18px;
+      color: var(--fg);
+    }
+    .slots-loading {
+      grid-column: 1 / -1; text-align: center;
+      padding: 3rem; color: var(--fgDim);
+      font-family: var(--serif); font-style: italic;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+    }
+    .slots-spinner {
+      display: inline-block; width: 18px; height: 18px;
+      border: 1.5px solid rgba(232,220,178,0.2);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .no-slots {
+      text-align: center; padding: 3rem;
+      color: var(--fgDim); font-family: var(--serif); font-style: italic;
+      font-size: 1.1rem;
+      border: 1px solid rgba(232,220,178,0.15);
+      background: linear-gradient(180deg, rgba(23,40,33,0.4), rgba(13,24,18,0.6));
+    }
+    .no-slots a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── Confirm step ────────────────────────────────────────────────────── */
+    .confirm-block { max-width: 500px; }
+    .confirm-label {
+      font-size: 10px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--fgDim);
+      margin-bottom: 8px; display: block;
+    }
+    .name-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(232,220,178,0.3);
+      padding: 10px 0;
+      font-family: var(--serif); font-style: italic;
+      font-size: 18px; color: var(--fg);
+      margin-bottom: 2rem; transition: border-color 0.2s;
+    }
+    .name-input:focus { outline: none; border-bottom-color: var(--accent); }
+    .name-input::placeholder { color: var(--fgDim); }
+
+    .booking-summary {
+      background: linear-gradient(180deg, rgba(23,40,33,0.4), rgba(13,24,18,0.6));
+      border: 1px solid rgba(232,220,178,0.15);
+      padding: 1.5rem 2rem; margin-bottom: 2rem;
+    }
+    .summary-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.65rem 0; font-size: 14px;
+      border-bottom: 1px solid rgba(232,220,178,0.1);
+      color: var(--fg);
+    }
+    .summary-row:last-child {
+      border-bottom: none;
+      font-family: var(--serif); font-size: 20px;
+      color: var(--accent); padding-top: 1rem; margin-top: 4px;
+    }
+    .summary-row span:first-child { color: var(--fgDim); letter-spacing: 0.08em; }
+    .wa-note {
+      font-family: var(--serif); font-style: italic;
+      font-size: 14px; color: var(--fgDim);
+      margin-bottom: 1.5rem; line-height: 1.6;
+    }
+
+    /* ── Button row ──────────────────────────────────────────────────────── */
+    .btn-row {
+      display: flex; gap: 12px; align-items: center;
+      margin-top: 1.5rem; flex-wrap: wrap;
+    }
+
+    /* ── Pending screen ──────────────────────────────────────────────────── */
+    .pending-screen {
+      text-align: center; padding: 2rem 0 4rem;
+    }
+    .pending-icon {
+      font-size: 3rem; color: var(--accent);
+      display: block; margin-bottom: 1.5rem;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+    .pending-title {
+      font-family: var(--display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 400; margin-bottom: 1rem; color: var(--fg);
+    }
+    .pending-title em { font-style: italic; color: var(--accent); }
+    .pending-subtitle {
+      font-family: var(--serif); font-style: italic;
+      font-size: 17px; color: var(--fgDim);
+      max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75;
+    }
+    .pending-subtitle strong { color: var(--accent); font-weight: 400; }
+    .pending-card {
+      background: linear-gradient(180deg, rgba(23,40,33,0.4), rgba(13,24,18,0.6));
+      border: 1px solid rgba(232,220,178,0.15);
+      padding: 1.5rem 2rem; max-width: 400px;
+      margin: 0 auto 2.5rem; text-align: left;
+    }
+    .pending-card .summary-row { font-size: 14px; }
+
+    @media (max-width: 900px) {
+      .service-options { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .service-options { grid-template-columns: 1fr; }
+      .slots-grid { grid-template-columns: repeat(2, 1fr); }
+      .booking-steps { gap: 0.25rem; }
+      .step-connector { width: 16px; }
+    }
+  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG8635ZVCL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,35 +297,44 @@
 </head>
 <body>
 
-<!-- ── Navigation ────────────────────────────────────────────────────── -->
-<nav>
-  <a href="index.html" class="nav-logo"><em>Clair de Lune</em></a>
-  <button class="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="book.html">Book</a></li>
-    <li><a href="https://wa.me/917999634730" target="_blank" class="nav-wa">WhatsApp</a></li>
-  </ul>
+<!-- ── Navigation ───────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <a href="index.html" class="nav-mark">
+    <svg width="36" height="18" viewBox="0 0 120 60" fill="none" stroke="var(--accent)" stroke-width="1.4">
+      <path d="M30 30 A14 14 0 1 0 30 31 Z" fill="var(--accent)" fill-opacity="0.2" />
+      <circle cx="60" cy="30" r="14" />
+      <path d="M90 30 A14 14 0 1 1 90 31 Z" fill="var(--accent)" fill-opacity="0.2" transform="rotate(180 90 30)" />
+    </svg>
+    <span>Clair de Lune</span>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">about</a>
+    <a href="services.html">readings</a>
+    <a href="book.html" style="color:var(--accent);">book</a>
+  </div>
+  <div class="nav-actions">
+    <a href="https://wa.me/917999634730" target="_blank" class="nav-wa-btn">whatsapp</a>
+  </div>
 </nav>
 
-<!-- ── Page Hero ─────────────────────────────────────────────────────── -->
+<!-- ── Page Hero ────────────────────────────────────────────────────────── -->
 <div class="page-hero">
-  <div class="ornament">☽ ✦ ☾</div>
+  <div class="eyebrow">
+    <span class="line"></span>
+    <span>· arrange a sitting ·</span>
+    <span class="line"></span>
+  </div>
   <h1>Book Your <em>Reading</em></h1>
   <p>Choose your session, pick a slot, and we'll confirm everything on WhatsApp.</p>
 </div>
 
-<!-- ── Booking Flow ───────────────────────────────────────────────────── -->
-<section>
-  <div class="container" style="max-width:780px;">
+<!-- ── Booking Flow ───────────────────────────────────────────────────────── -->
+<div class="booking-shell">
+  <div class="booking-inner">
 
-    <!-- ── Pending confirmation screen (shown after WhatsApp redirect) ── -->
+    <!-- Pending confirmation screen -->
     <div id="booking-pending" style="display:none;" class="pending-screen">
-      <div class="pending-icon">🌙</div>
+      <span class="pending-icon">☽</span>
       <h2 class="pending-title">Your request is <em>with Geetika</em></h2>
       <p class="pending-subtitle">
         You've been redirected to WhatsApp. Once you send your message,<br>
@@ -56,127 +345,115 @@
         <div class="summary-row"><span>Slot</span><span id="pending-slot">—</span></div>
         <div class="summary-row"><span>Amount</span><span id="pending-price">—</span></div>
       </div>
-      <a href="https://wa.me/917999634730" target="_blank" class="btn btn-primary" style="margin-bottom:1rem;">
-        Open WhatsApp to follow up
+      <a href="https://wa.me/917999634730" target="_blank" class="btn-primary" style="display:inline-block; margin-bottom:1rem;">
+        open whatsapp to follow up
       </a>
       <br>
-      <button class="btn-ghost" id="btn-new-booking">Make a different booking</button>
+      <button class="btn-ghost" id="btn-new-booking" style="margin-top:12px;">make a different booking</button>
     </div>
 
-    <!-- ── Normal booking flow ─────────────────────────────────────────── -->
+    <!-- Normal booking flow -->
     <div id="booking-flow">
 
-    <!-- Step indicators -->
-    <div class="booking-steps">
-      <div class="step-indicator active" data-step="1">
-        <div class="step-num">1</div>
-        <span>Choose Reading</span>
-      </div>
-      <div class="step-connector"></div>
-      <div class="step-indicator" data-step="2">
-        <div class="step-num">2</div>
-        <span>Pick a Slot</span>
-      </div>
-      <div class="step-connector"></div>
-      <div class="step-indicator" data-step="3">
-        <div class="step-num">3</div>
-        <span>Confirm</span>
-      </div>
-    </div>
-
-    <!-- Step 1: Choose service -->
-    <div class="booking-section active" data-step="1">
-      <h2 class="booking-heading">What kind of reading do you need?</h2>
-      <p class="booking-hint">Select the session that resonates with you. Not sure? <a href="https://wa.me/917999634730?text=Hi%20Geetika!%20I%20need%20help%20choosing%20a%20reading." target="_blank" style="color:var(--gold);">Ask on WhatsApp.</a></p>
-
-      <div class="service-options" id="service-options">
-        <!-- Rendered by book.js -->
-      </div>
-
-      <div class="btn-row">
-        <button class="btn btn-primary" id="btn-to-step2" disabled>Choose a Slot &rarr;</button>
-      </div>
-    </div>
-
-    <!-- Step 2: Pick slot -->
-    <div class="booking-section" data-step="2">
-      <h2 class="booking-heading">When works for you?</h2>
-      <p class="booking-hint">All times are in IST. Greyed-out slots are already booked.</p>
-
-      <p class="slots-heading">Available Slots</p>
-      <div class="slots-grid" id="slots-grid">
-        <!-- Rendered by book.js -->
-      </div>
-
-      <div class="btn-row">
-        <button class="btn-ghost" id="btn-back-1">&larr; Back</button>
-        <button class="btn btn-primary" id="btn-to-step3" disabled>Continue &rarr;</button>
-      </div>
-    </div>
-
-    <!-- Step 3: Confirm -->
-    <div class="booking-section" data-step="3">
-      <h2 class="booking-heading">Confirm your booking</h2>
-      <p class="booking-hint">We'll open WhatsApp for you with your booking details pre-filled. Geetika will confirm from there.</p>
-
-      <div class="confirm-block">
-        <label class="confirm-label" for="user-name">Your Name</label>
-        <input
-          type="text"
-          id="user-name"
-          class="name-input"
-          placeholder="e.g. Priya Sharma"
-          autocomplete="name"
-        />
-
-        <div class="booking-summary">
-          <div class="summary-row">
-            <span>Reading</span>
-            <span id="summary-service">—</span>
-          </div>
-          <div class="summary-row">
-            <span>Slot</span>
-            <span id="summary-slot">—</span>
-          </div>
-          <div class="summary-row">
-            <span>Total</span>
-            <strong id="summary-price">—</strong>
-          </div>
+      <!-- Steps -->
+      <div class="booking-steps">
+        <div class="step-indicator active" data-step="1">
+          <div class="step-num">1</div>
+          <span>choose reading</span>
         </div>
+        <div class="step-connector"></div>
+        <div class="step-indicator" data-step="2">
+          <div class="step-num">2</div>
+          <span>pick a slot</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-indicator" data-step="3">
+          <div class="step-num">3</div>
+          <span>confirm</span>
+        </div>
+      </div>
 
-        <p class="wa-note">Clicking below will open WhatsApp. Payment is arranged with Geetika directly after confirmation.</p>
-
+      <!-- Step 1 -->
+      <div class="booking-section active" data-step="1">
+        <h2 class="booking-heading">What kind of reading do you need?</h2>
+        <p class="booking-hint">Select the session that resonates with you. Not sure? <a href="https://wa.me/917999634730?text=Hi%20Geetika!%20I%20need%20help%20choosing%20a%20reading." target="_blank">Ask on WhatsApp.</a></p>
+        <div class="service-options" id="service-options"></div>
         <div class="btn-row">
-          <button class="btn-ghost" id="btn-back-2">&larr; Back</button>
-          <button class="btn btn-primary" id="btn-confirm">
-            Confirm on WhatsApp &nbsp;→
-          </button>
+          <button class="btn-primary" id="btn-to-step2" disabled>choose a slot →</button>
         </div>
       </div>
-    </div>
+
+      <!-- Step 2 -->
+      <div class="booking-section" data-step="2">
+        <h2 class="booking-heading">When works for you?</h2>
+        <p class="booking-hint">All times are in IST. Greyed-out slots are already booked.</p>
+        <p class="slots-heading">available slots</p>
+        <div class="slots-grid" id="slots-grid"></div>
+        <div class="btn-row">
+          <button class="btn-ghost" id="btn-back-1">← back</button>
+          <button class="btn-primary" id="btn-to-step3" disabled>continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="booking-section" data-step="3">
+        <h2 class="booking-heading">Confirm your booking</h2>
+        <p class="booking-hint">We'll open WhatsApp for you with your booking details pre-filled. Geetika will confirm from there.</p>
+        <div class="confirm-block">
+          <label class="confirm-label" for="user-name">your name</label>
+          <input type="text" id="user-name" class="name-input" placeholder="e.g. Priya Sharma" autocomplete="name" />
+          <div class="booking-summary">
+            <div class="summary-row"><span>Reading</span><span id="summary-service">—</span></div>
+            <div class="summary-row"><span>Slot</span><span id="summary-slot">—</span></div>
+            <div class="summary-row"><span>Total</span><strong id="summary-price">—</strong></div>
+          </div>
+          <p class="wa-note">Clicking below will open WhatsApp. Payment is arranged with Geetika directly after confirmation.</p>
+          <div class="btn-row">
+            <button class="btn-ghost" id="btn-back-2">← back</button>
+            <button class="btn-primary" id="btn-confirm">confirm on whatsapp →</button>
+          </div>
+        </div>
+      </div>
 
     </div><!-- end booking-flow -->
 
   </div>
-</section>
+</div>
 
-<!-- ── Footer ─────────────────────────────────────────────────────────── -->
-<footer>
-  <div class="container">
-    <div class="footer-logo">Clair de Lune</div>
-    <p class="footer-tagline">Tarot · Chart Reading · Spiritual Guidance</p>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="book.html">Book</a>
-      <a href="https://wa.me/917999634730" target="_blank">WhatsApp</a>
-    </nav>
-    <p class="footer-copyright">© 2026 Clair de Lune &nbsp;·&nbsp; Geetika Saha</p>
+<!-- ── Footer ────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="wordmark-sm">Clair de Lune</div>
+        <p class="footer-tag">a candle in the window for the wandering.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-h">the grove</div>
+          <a href="about.html">about</a>
+          <a href="services.html">offerings</a>
+          <a href="book.html">book a sitting</a>
+        </div>
+        <div>
+          <div class="footer-h">reach out</div>
+          <a href="https://wa.me/917999634730" target="_blank">whatsapp</a>
+          <a href="https://wa.me/917999634730?text=I%20have%20a%20question" target="_blank">ask a question</a>
+        </div>
+        <div>
+          <div class="footer-h">a quiet word</div>
+          <p class="footer-note">readings are not a replacement for medical, legal, or therapeutic guidance — only a companion alongside.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 clair de lune · geetika saha</span>
+      <span>✶ ☽ ✦</span>
+    </div>
   </div>
 </footer>
 
-<!-- ── WhatsApp Float ─────────────────────────────────────────────────── -->
+<!-- ── WhatsApp Float ────────────────────────────────────────────────────── -->
 <a href="https://wa.me/917999634730" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -186,8 +463,6 @@
 
 <script src="js/slots.js"></script>
 <script src="js/book.js"></script>
-<script src="js/nav.js"></script>
-<script src="js/animate.js"></script>
 <script src="js/analytics.js"></script>
 </body>
 </html>

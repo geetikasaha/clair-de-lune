@@ -1,12 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Clair de Lune</title>
-  <meta name="description" content="The story of Geetika Saha — a reader of chaos, a carrier of two fires. Krishna's stillness and Kaali's truth." />
+  <meta name="description" content="Clair de Lune — a small light, kept burning for the wandering. Tarot and spiritual guidance with Geetika Saha." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/enchanted.css" />
+  <style>
+    .page-hero {
+      padding: 160px 24px 80px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero .eyebrow {
+      display: flex; align-items: center; justify-content: center; gap: 18px;
+      font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--fgDim); margin-bottom: 24px;
+    }
+    .page-hero .eyebrow .line {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accentSoft), transparent);
+    }
+    .page-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: 400; line-height: 1.05; margin: 0 0 20px;
+      color: var(--fg); letter-spacing: 0.01em;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--accent); }
+    .page-hero p {
+      font-family: var(--serif); font-style: italic; font-size: 18px;
+      color: var(--fgDim); max-width: 540px; margin: 0 auto; line-height: 1.7;
+    }
+
+    /* ── About Grid ─────────────────────────────────────────────────────── */
+    .about-section {
+      position: relative;
+      padding: 40px 24px 120px;
+      z-index: 2;
+      background: linear-gradient(180deg, transparent, rgba(23,40,33,0.35), transparent);
+    }
+    .about-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.85fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    /* ── Portrait Frame ─────────────────────────────────────────────────── */
+    .portrait-frame {
+      position: relative;
+      aspect-ratio: 3/4;
+      background: linear-gradient(180deg, rgba(23,40,33,0.6), rgba(13,24,18,0.85));
+      border: 1px solid rgba(216,199,154,0.2);
+      display: flex; align-items: flex-end; justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+    .portrait-frame::before {
+      content: '';
+      position: absolute;
+      top: 20%; left: 50%;
+      transform: translateX(-50%);
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216,199,154,0.35) 0%, transparent 60%);
+    }
+    .portrait-arch {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 60px;
+    }
+    .portrait-mist {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(180deg, transparent, rgba(13,24,18,0.9));
+    }
+    .portrait-caption {
+      position: absolute;
+      bottom: 24px; left: 0; right: 0;
+      text-align: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      z-index: 3;
+    }
+
+    /* ── About Text ─────────────────────────────────────────────────────── */
+    .about-text .sec-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .about-text .sec-num {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .about-text .sec-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accentSoft), transparent);
+    }
+    .about-text .sec-text {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      color: var(--fgDim);
+    }
+    .about-text h2 {
+      font-family: var(--display);
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 400; line-height: 1.1;
+      color: var(--fg); margin: 0 0 2rem;
+    }
+    .about-text h2 em { font-style: italic; color: var(--accent); }
+    .about-text p {
+      font-family: var(--serif);
+      font-size: 19px; line-height: 1.8;
+      color: var(--fg); opacity: 0.88;
+      margin-bottom: 1.4rem;
+    }
+
+    /* ── Stats ──────────────────────────────────────────────────────────── */
+    .about-sigs {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .sig { text-align: left; }
+    .sig-num {
+      font-family: var(--display);
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .sig-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--fgDim);
+      margin-bottom: 4px;
+    }
+    .sig-val {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--fg);
+    }
+
+    /* ── CTA ─────────────────────────────────────────────────────────────── */
+    .about-cta {
+      display: flex; gap: 16px; flex-wrap: wrap; margin-top: 2.5rem;
+    }
+
+    /* ── Fade-up ──────────────────────────────────────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .portrait-frame { max-width: 360px; margin: 0 auto; }
+    }
+  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG8635ZVCL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,103 +192,149 @@
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo"><em>Clair de Lune</em></a>
-  <button class="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="book.html">Book</a></li>
-    <li><a href="https://wa.me/917999634730" target="_blank" class="nav-wa">WhatsApp</a></li>
-  </ul>
+<!-- ── Navigation ───────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <a href="index.html" class="nav-mark">
+    <svg width="36" height="18" viewBox="0 0 120 60" fill="none" stroke="var(--accent)" stroke-width="1.4">
+      <path d="M30 30 A14 14 0 1 0 30 31 Z" fill="var(--accent)" fill-opacity="0.2" />
+      <circle cx="60" cy="30" r="14" />
+      <path d="M90 30 A14 14 0 1 1 90 31 Z" fill="var(--accent)" fill-opacity="0.2" transform="rotate(180 90 30)" />
+    </svg>
+    <span>Clair de Lune</span>
+  </a>
+  <div class="nav-links">
+    <a href="about.html" style="color:var(--accent);">about</a>
+    <a href="services.html">readings</a>
+    <a href="book.html">book</a>
+  </div>
+  <div class="nav-actions">
+    <a href="https://wa.me/917999634730" target="_blank" class="nav-wa-btn">whatsapp</a>
+  </div>
 </nav>
 
+<!-- ── Page Hero ────────────────────────────────────────────────────────── -->
 <div class="page-hero">
-  <div class="ornament">☽ ✦ ☾</div>
-  <h1>The Reader <em>of Chaos</em></h1>
-  <p>Not a teacher. Not a guide. A mirror — held steady so you can finally see.</p>
+  <div class="eyebrow">
+    <span class="line"></span>
+    <span>· the keeper of the grove ·</span>
+    <span class="line"></span>
+  </div>
+  <h1>A small light, kept burning for the <em>wandering.</em></h1>
+  <p>Not a teacher. Not a guide. A mirror — gently held.</p>
 </div>
 
-<section>
-  <div class="container">
-    <div class="about-content">
+<!-- ── About Content ─────────────────────────────────────────────────────── -->
+<div class="about-section">
+  <div class="about-inner">
 
-      <h2>The Collapse That <em>Opened Everything</em></h2>
-      <p>
-        My path into the unseen did not begin with a workshop or a retreat. It began with collapse — a decade-long unraveling of everything I thought I was. Losing what I loved. Losing the version of myself I had built so carefully. When the structures fall and silence is all that remains, you either disappear into it, or you learn to listen.
-      </p>
-      <p>
-        I chose to listen.
-      </p>
-
-      <div class="about-highlight">
-        "The chaos was not my enemy. It was the first honest thing that had ever spoken to me."
+    <!-- Portrait Frame -->
+    <div class="about-portrait">
+      <div class="portrait-frame fade-up">
+        <div class="portrait-arch">
+          <!-- Inline stag SVG (no React on this page) -->
+          <svg width="260" viewBox="0 0 320 360" fill="#040a07" style="overflow:visible;">
+            <g stroke="#040a07" stroke-width="2.5" stroke-linecap="round" fill="none">
+              <path d="M140 95 Q128 70 118 55 Q108 40 95 30 M118 55 Q105 50 92 52 M118 55 Q120 38 115 22 M95 30 Q82 22 70 18 M115 22 Q108 10 100 5 M95 30 Q90 18 80 10" />
+              <path d="M132 80 Q118 75 105 78 M132 80 Q125 65 120 50" />
+              <path d="M180 95 Q192 70 202 55 Q212 40 225 30 M202 55 Q215 50 228 52 M202 55 Q200 38 205 22 M225 30 Q238 22 250 18 M205 22 Q212 10 220 5 M225 30 Q230 18 240 10" />
+              <path d="M188 80 Q202 75 215 78 M188 80 Q195 65 200 50" />
+            </g>
+            <path d="M160 100 Q138 100 132 125 Q128 145 138 165 Q145 178 160 182 Q175 178 182 165 Q192 145 188 125 Q182 100 160 100 Z" />
+            <path d="M148 178 Q145 200 152 220 L168 220 Q175 200 172 178 Z" />
+            <path d="M152 218 Q120 224 105 245 Q95 268 102 295 L118 295 L120 270 Q122 258 132 256 L188 256 Q198 258 200 270 L202 295 L218 295 Q225 268 215 245 Q200 224 168 218 Z" />
+            <rect x="115" y="290" width="10" height="60" />
+            <rect x="138" y="290" width="10" height="60" />
+            <rect x="172" y="290" width="10" height="60" />
+            <rect x="195" y="290" width="10" height="60" />
+            <path d="M218 250 Q230 248 232 238 Q228 244 220 244 Z" />
+            <circle cx="152" cy="138" r="2.5" fill="#f0ead8" />
+            <circle cx="168" cy="138" r="2.5" fill="#f0ead8" />
+          </svg>
+        </div>
+        <div class="portrait-mist"></div>
+        <div class="portrait-caption">— the keeper of the grove —</div>
       </div>
-
-      <h2>The Awakening <em>(2024 – 2025)</em></h2>
-      <p>
-        In 2024, something shifted in the silence. What I had been carrying for years — the weight, the grief, the searching — began to reorganize itself into something I could finally name. I started to see the invisible patterns in people's lives with startling clarity. Not as predictions. As truths already in motion, waiting to be acknowledged.
-      </p>
-      <p>
-        I began to sit with people in their darkest hours. And what I found, again and again, is that the answer was never missing. It was buried under noise. Under fear. Under the voice that says you are too broken to know your own way. That voice lies. I have watched people step into their exact destiny, simply because someone finally held space for them to hear themselves.
-      </p>
-
-      <h2>Two Fires: <em>Krishna & Kaali</em></h2>
-      <p>
-        I carry two forces within me, and they are not opposites — they are partners.
-      </p>
-      <p>
-        Krishna is the knowing that holds you. Still. Playful. The one who says: everything is already perfect, even this. He is the part of me that sits with you in your pain without trying to fix it — because some things are not meant to be fixed. They are meant to be felt fully, so you can finally move through them.
-      </p>
-      <p>
-        Kaali is the truth that burns. Fierce. Uncompromising. The one who looks at what you are clinging to and says: that was never yours. She is the part of me that will not let you leave a reading carrying a comfortable lie. She loves you enough to be ruthless.
-      </p>
-
-      <div class="about-highlight">
-        "In every reading, both are present. One to hold you. One to free you."
-      </div>
-
-      <h2>What I <em>Believe</em></h2>
-      <p>
-        I do not believe the answers are outside of you. I believe they live in the chaos — in the feeling you keep ignoring, in the pattern that keeps repeating, in the moment right before you understand. The cards do not predict. They reveal what is already true in your energy, in this moment.
-      </p>
-      <p>
-        My work is not to give you a roadmap. It is to help you hear the knowing that has been speaking inside you all along — the one you have been too afraid, too busy, or too hurt to trust. When you leave a session with me, I want you to feel not that I told you something, but that you finally heard yourself.
-      </p>
-      <p>
-        The chaos is not your enemy. It is your signal. And I am here to help you read it.
-      </p>
-
-      <div class="ornament" style="margin: 3rem 0;">☽ ✦ ☾</div>
-
-      <div style="text-align:center;">
-        <a href="book.html" class="btn btn-primary">Book a Session</a>
-        &nbsp;&nbsp;
-        <a href="services.html" class="btn btn-outline">View Offerings</a>
-      </div>
-
     </div>
-  </div>
-</section>
 
-<footer>
-  <div class="container">
-    <div class="footer-logo">Clair de Lune</div>
-    <p class="footer-tagline">Tarot · Chart Reading · Spiritual Guidance</p>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="book.html">Book</a>
-      <a href="https://wa.me/917999634730" target="_blank">WhatsApp</a>
-    </nav>
-    <p class="footer-copyright">© 2026 Clair de Lune &nbsp;·&nbsp; Geetika Saha</p>
+    <!-- About Text -->
+    <div class="about-text">
+      <div class="sec-label fade-up">
+        <span class="sec-num">01</span>
+        <span class="sec-line"></span>
+        <span class="sec-text">whispered beginnings</span>
+      </div>
+
+      <h2 class="fade-up">A small light, kept burning for the <em>wandering.</em></h2>
+
+      <p class="fade-up">
+        Clair de Lune began as a candle in a window — a place for those at the lowest hour and those climbing back toward themselves. I read with the moon, the cards, and a quiet ear. There is no fortune to tell here, only a mirror, gently held.
+      </p>
+
+      <p class="fade-up">
+        I believe the cards do not foretell — they remember. They speak the parts of you that the daytime cannot afford to. If you have arrived at this page, something already knew the way.
+      </p>
+
+      <div class="about-sigs fade-up">
+        <div class="sig">
+          <div class="sig-num">II</div>
+          <div class="sig-label">years reading</div>
+          <div class="sig-val">nine winters</div>
+        </div>
+        <div class="sig">
+          <div class="sig-num">III</div>
+          <div class="sig-label">deck of choice</div>
+          <div class="sig-val">smith-waite, hand-worn</div>
+        </div>
+        <div class="sig">
+          <div class="sig-num">IV</div>
+          <div class="sig-label">read by</div>
+          <div class="sig-val">candle &amp; new moon</div>
+        </div>
+      </div>
+
+      <div class="about-cta fade-up">
+        <a href="book.html" class="btn-primary">book a sitting</a>
+        <a href="services.html" class="btn-ghost">view offerings</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Footer ────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="wordmark-sm">Clair de Lune</div>
+        <p class="footer-tag">a candle in the window for the wandering.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-h">the grove</div>
+          <a href="about.html">about</a>
+          <a href="services.html">offerings</a>
+          <a href="book.html">book a sitting</a>
+        </div>
+        <div>
+          <div class="footer-h">reach out</div>
+          <a href="https://wa.me/917999634730" target="_blank">whatsapp</a>
+          <a href="https://wa.me/917999634730?text=I%20have%20a%20question" target="_blank">ask a question</a>
+        </div>
+        <div>
+          <div class="footer-h">a quiet word</div>
+          <p class="footer-note">readings are not a replacement for medical, legal, or therapeutic guidance — only a companion alongside.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 clair de lune · geetika saha</span>
+      <span>✶ ☽ ✦</span>
+    </div>
   </div>
 </footer>
 
+<!-- ── WhatsApp Float ────────────────────────────────────────────────────── -->
 <a href="https://wa.me/917999634730" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -121,8 +342,25 @@
   </svg>
 </a>
 
-<script src="js/nav.js"></script>
-<script src="js/animate.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fade-up').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.07) + 's';
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    }, 100);
+  });
+</script>
 <script src="js/analytics.js"></script>
 </body>
 </html>

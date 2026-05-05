@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clair de Lune | Tarot & Spiritual Guidance</title>
-  <meta name="description" content="Tarot and spiritual guidance with Geetika Saha. Book a 1-on-1 reading and find clarity in your energetic path." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clair de Lune | Tarot &amp; Spiritual Guidance</title>
+  <meta name="description" content="Tarot and spiritual guidance with Geetika Saha. A space for those at the lowest hour and those climbing back toward themselves." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/enchanted.css" />
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG8635ZVCL"></script>
   <script>
@@ -18,25 +20,22 @@
 </head>
 <body>
 
-<!-- ── Lead Capture Modal ─────────────────────────────────────────────── -->
+<!-- ── Lead Capture Modal (outside React) ───────────────────────────────── -->
 <div class="lead-overlay" id="lead-overlay">
   <div class="lead-modal">
     <button class="lead-modal-close" id="lead-close" aria-label="Close">✕</button>
-
     <div id="lead-form-wrap">
       <span class="lead-modal-moon">☽ ✦ ☾</span>
       <h2>Step into the <em>Moonlight</em></h2>
       <p>Leave your details and receive guidance, updates, and the occasional mystical nudge from Geetika.</p>
-
       <form class="lead-form" id="lead-form">
-        <input class="lead-input" id="lead-name"  type="text"  placeholder="Your name"           required />
-        <input class="lead-input" id="lead-email" type="email" placeholder="Your email"          required />
-        <input class="lead-input" id="lead-phone" type="tel"   placeholder="WhatsApp (optional)"          />
-        <button class="lead-submit" id="lead-submit" type="submit">Enter the Circle</button>
+        <input class="lead-input" id="lead-name"  type="text"  placeholder="your name"           required />
+        <input class="lead-input" id="lead-email" type="email" placeholder="your email"          required />
+        <input class="lead-input" id="lead-phone" type="tel"   placeholder="whatsapp (optional)"          />
+        <button class="lead-submit" id="lead-submit" type="submit">enter the circle</button>
       </form>
-      <button class="lead-skip" id="lead-skip">Maybe later</button>
+      <button class="lead-skip" id="lead-skip">maybe later</button>
     </div>
-
     <div class="lead-success" id="lead-success">
       <span class="lead-success-icon">✦</span>
       <h3>Welcome to the <em>circle</em></h3>
@@ -45,128 +44,33 @@
   </div>
 </div>
 
-<!-- ── Navigation ────────────────────────────────────────────────────── -->
-<nav>
-  <a href="index.html" class="nav-logo"><em>Clair de Lune</em></a>
-  <button class="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="book.html">Book</a></li>
-    <li><a href="https://wa.me/917999634730" target="_blank" class="nav-wa">WhatsApp</a></li>
-  </ul>
-</nav>
+<!-- ── React App Root ───────────────────────────────────────────────────── -->
+<div id="root"></div>
 
-<!-- ── Hero ──────────────────────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-moon">☽ ✦ ☾</div>
-    <h1>Clair de <em>Lune</em></h1>
-    <p class="hero-subtitle">Tarot &nbsp;·&nbsp; Chart Reading &nbsp;·&nbsp; Spiritual Guidance</p>
-    <div class="hero-divider"></div>
-    <p class="hero-tagline">"The chaos is not your enemy. It is the first honest thing that will ever speak to you."</p>
-    <div class="btn-group">
-      <a href="book.html" class="btn btn-primary">Book a Reading</a>
-      <a href="services.html" class="btn btn-outline">View Services</a>
-    </div>
-  </div>
-  <div class="hero-scroll">Scroll</div>
-</section>
-
-<!-- ── Services Preview ───────────────────────────────────────────────── -->
-<section>
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">What I offer</span>
-      <h2 class="section-title">Choose Your <em>Reading</em></h2>
-      <p class="section-subtitle">Every session is a 1-on-1 space to go inward. No scripts, no generalised spreads — just you, the cards, and the truth already waiting inside you.</p>
-    </div>
-    <div class="cards-grid">
-      <div class="card">
-        <span class="card-icon">✦</span>
-        <h3>Spiritual Guidance</h3>
-        <p>You already know. This session helps you finally hear it — through the stillness waiting beneath your chaos.</p>
-        <div class="card-price">₹1,000</div>
-        <div class="card-duration">30 minutes</div>
-      </div>
-      <div class="card">
-        <span class="card-icon">◦</span>
-        <h3>1 Question Tarot</h3>
-        <p>One thing is burning in you. The cards don't predict — they reveal what you already sense is true.</p>
-        <div class="card-price">₹200</div>
-        <div class="card-duration">~15 minutes</div>
-      </div>
-      <div class="card">
-        <span class="card-icon">⋆</span>
-        <h3>3 Question Tarot</h3>
-        <p>Three areas of your life asking to be seen. Bring them all. Leave with clarity that was already inside you.</p>
-        <div class="card-price">₹600</div>
-        <div class="card-duration">~20 minutes</div>
-      </div>
-      <div class="card">
-        <span class="card-icon">☽</span>
-        <h3>Full Reading</h3>
-        <p>A 30-card spread that lays open the full landscape of your energy — what's moving, what's blocked, what's already in motion.</p>
-        <div class="card-price">₹1,000</div>
-        <div class="card-duration">30 minutes</div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top: 2.5rem;">
-      <a href="services.html" class="btn btn-outline">See Full Details</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── About Teaser ───────────────────────────────────────────────────── -->
-<section class="about-teaser">
-  <div class="container">
-    <div class="about-teaser-inner">
-      <blockquote class="about-quote">
-        "I don't read the future. I read what you already know but have been afraid to hear."
-      </blockquote>
-      <div>
-        <span class="section-label">About Geetika</span>
-        <h2 class="section-title">The Reader <em>of Chaos</em></h2>
-        <p class="section-subtitle" style="margin-bottom:1.5rem;">
-          A decade of collapse and searching. A profound awakening in 2024. Two forces — Krishna's stillness and Kaali's truth — brought together to help you find the answer already living inside your noise.
-        </p>
-        <a href="about.html" class="btn btn-outline">Read My Story</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Testimonials ────────────────────────────────────────────────────── -->
+<!-- ── Testimonials Section (outside React, vanilla JS) ─────────────────── -->
 <section id="testimonials-section">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">What people say</span>
-      <h2 class="section-title">Voices from <em>the Circle</em></h2>
-      <p class="section-subtitle">Real words from people who sat with the chaos and finally heard themselves.</p>
-    </div>
+  <div class="section-inner">
+    <div class="sec-label" style="justify-content:center; margin-bottom:24px;">voices from the circle</div>
+    <h2>What they <em style="font-style:italic; color:var(--accent);">found here</em></h2>
+    <p class="section-subtitle">Real words from people who sat with the chaos and finally heard themselves.</p>
 
     <div class="testimonials-grid" id="testimonials-grid">
-      <div class="testimonials-loading"><span class="slots-spinner"></span> Loading…</div>
+      <div class="testimonials-loading">— gathering whispers —</div>
     </div>
 
-    <!-- Submit a testimonial -->
     <div class="testimonial-submit-wrap">
-      <button class="btn btn-outline" id="btn-open-testimonial">Share Your Experience</button>
-
+      <button class="btn-ghost" id="btn-open-testimonial">share your experience</button>
       <div class="testimonial-form-wrap" id="testimonial-form-wrap" style="display:none;">
         <h3>Your <em>words</em></h3>
-        <p>Share what shifted for you. It stays authentic — no edits, only your truth.</p>
+        <p>Share what shifted for you. Your truth, unedited.</p>
         <form id="testimonial-form">
-          <input class="lead-input" type="text" id="t-name" placeholder="Your name" required />
-          <input class="lead-input" type="text" id="t-city" placeholder="Your city" required />
-          <textarea class="lead-input t-textarea" id="t-text" placeholder="What changed after your reading?" rows="4" required></textarea>
-          <button type="submit" class="lead-submit" id="t-submit">Send My Words</button>
+          <input class="t-input" type="text" id="t-name" placeholder="your name" required />
+          <input class="t-input" type="text" id="t-city" placeholder="your city" required />
+          <textarea class="t-textarea" id="t-text" placeholder="what changed after your reading?" rows="4" required></textarea>
+          <button type="submit" class="t-submit" id="t-submit">send my words</button>
         </form>
         <div class="testimonial-thanks" id="testimonial-thanks" style="display:none;">
-          <span class="lead-success-icon">✦</span>
+          <span class="t-star">✦</span>
           <p>Thank you. Your words will appear here once Geetika has read them.</p>
         </div>
       </div>
@@ -174,33 +78,7 @@
   </div>
 </section>
 
-<!-- ── CTA Banner ─────────────────────────────────────────────────────── -->
-<section class="cta-banner">
-  <div class="container">
-    <div class="ornament">☽ ✦ ☾</div>
-    <h2>Ready to hear <em>yourself?</em></h2>
-    <p>The answer is already in you. Let's find it together.</p>
-    <a href="book.html" class="btn btn-primary">Book Your Reading</a>
-  </div>
-</section>
-
-<!-- ── Footer ─────────────────────────────────────────────────────────── -->
-<footer>
-  <div class="container">
-    <div class="footer-logo">Clair de Lune</div>
-    <p class="footer-tagline">Tarot · Chart Reading · Spiritual Guidance</p>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="book.html">Book</a>
-      <a href="https://wa.me/917999634730" target="_blank">WhatsApp</a>
-    </nav>
-    <p class="footer-copyright">© 2026 Clair de Lune &nbsp;·&nbsp; Geetika Saha</p>
-  </div>
-</footer>
-
-<!-- ── WhatsApp Float ─────────────────────────────────────────────────── -->
+<!-- ── WhatsApp Float ───────────────────────────────────────────────────── -->
 <a href="https://wa.me/917999634730" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -208,10 +86,127 @@
   </svg>
 </a>
 
-<script src="js/nav.js"></script>
-<script src="js/animate.js"></script>
+<!-- ── React + Babel (CDN) ───────────────────────────────────────────────── -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+
+<!-- ── JSX Components ───────────────────────────────────────────────────── -->
+<script type="text/babel" src="jsx/illustrations.jsx"></script>
+<script type="text/babel" src="jsx/effects.jsx"></script>
+<script type="text/babel" src="jsx/tarot.jsx"></script>
+<script type="text/babel" src="jsx/sections.jsx"></script>
+
+<!-- ── App ──────────────────────────────────────────────────────────────── -->
+<script type="text/babel">
+// Inline App (no TweaksPanel for production)
+
+const Nav = ({ soundOn, onToggleSound }) => (
+  <nav className="nav">
+    <a href="index.html" className="nav-mark">
+      <TriMoonGlyph size={36} color="var(--accent)" />
+      <span className="nav-mark-text">Clair de Lune</span>
+    </a>
+    <div className="nav-links">
+      <a href="about.html">about</a>
+      <a href="services.html">readings</a>
+      <a href="book.html">book</a>
+    </div>
+    <div className="nav-actions">
+      <a href="https://wa.me/917999634730" target="_blank" className="nav-wa-btn">whatsapp</a>
+      <button className="sound-toggle" onClick={onToggleSound} aria-label="Toggle ambient sound">
+        <span className={"sound-icon " + (soundOn ? 'on' : 'off')}>{soundOn ? '◉' : '○'}</span>
+        <span>{soundOn ? 'mute the moon' : 'hear the moon'}</span>
+      </button>
+    </div>
+  </nav>
+);
+
+const Hero = () => (
+  <header id="top" className="hero">
+    <div className="hero-art motif-moon-stag">
+      <div className="hero-moon">
+        <Moon size={520} />
+      </div>
+      <div className="hero-moon-halo" />
+      <div className="hero-stag">
+        <Stag width={380} color="#040a07" />
+      </div>
+      <div className="hero-mist" />
+      <div className="hero-forest hero-forest-back">
+        <ForestSilhouette width={1800} height={260} color="#091611" layer={0} />
+      </div>
+      <div className="hero-forest hero-forest-front">
+        <ForestSilhouette width={1900} height={300} color="#040a07" layer={1} />
+      </div>
+    </div>
+    <div className="hero-content">
+      <div className="hero-eyebrow">
+        <span className="line" />
+        <span>· a tarot reading sanctuary ·</span>
+        <span className="line" />
+      </div>
+      <h1 className="wordmark">Clair de Lune</h1>
+      <p className="hero-tag">
+        <em>"who I am is what I have —</em><br/>
+        <em>and if what I have is lost, then who am I?"</em>
+      </p>
+      <p className="hero-sub">
+        A small light, kept burning for those at the lowest hour<br/>
+        and those climbing back toward themselves.
+      </p>
+      <div className="hero-cta">
+        <a href="#card-of-day" className="btn-primary">pull a card</a>
+        <a href="book.html" className="btn-ghost">book a sitting</a>
+      </div>
+    </div>
+    <div className="hero-scroll">
+      <span>scroll, gently</span>
+      <div className="scroll-line" />
+    </div>
+  </header>
+);
+
+const CardOfDaySection = () => (
+  <section id="card-of-day" className="section section-cod">
+    <div className="section-inner">
+      <SectionLabel num="00">the moon's offering</SectionLabel>
+      <h2 className="display-h center">A card, drawn for tonight.</h2>
+      <p className="cod-intro">Hold a question — the smallest one will do — and let the moon choose for you.</p>
+      <CardOfTheDay />
+    </div>
+  </section>
+);
+
+const App = () => {
+  const { on: soundOn, toggle: toggleSound } = useAmbientSound();
+
+  return (
+    <div className="app">
+      <StarField count={140} />
+      <Constellation />
+      <FireflyCursor />
+      <Nav soundOn={soundOn} onToggleSound={toggleSound} />
+      <Hero />
+      <CardOfDaySection />
+      <About />
+      <Services />
+      <BookCTA />
+      <Footer />
+      <div className="corner-dc" aria-hidden="true">
+        <Dreamcatcher size={140} />
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+<!-- ── Vanilla JS (analytics, leads, testimonials) ───────────────────────── -->
 <script src="js/analytics.js"></script>
 <script src="js/leads.js"></script>
 <script src="js/testimonials.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Card, Drawn for Tonight | Clair de Lune</title>
+  <meta name="description" content="Draw a tarot card for tonight. Hold a question — the smallest one will do — and let the moon choose for you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/enchanted.css" />
+  <style>
+    .tarot-page-hero {
+      padding: 160px 24px 60px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .tarot-page-hero .eyebrow {
+      display: flex; align-items: center; justify-content: center; gap: 18px;
+      font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--fgDim); margin-bottom: 24px;
+    }
+    .tarot-page-hero .eyebrow .line {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accentSoft), transparent);
+    }
+    .tarot-page-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(40px, 6vw, 80px);
+      font-weight: 400; line-height: 1.05; margin: 0 0 20px;
+      color: var(--fg); letter-spacing: 0.01em;
+    }
+    .tarot-page-hero h1 em { font-style: italic; color: var(--accent); }
+    .tarot-page-hero p {
+      font-family: var(--serif); font-style: italic; font-size: 18px;
+      color: var(--fgDim); max-width: 480px; margin: 0 auto; line-height: 1.7;
+    }
+
+    .tarot-section {
+      position: relative;
+      padding: 20px 24px 100px;
+      z-index: 2;
+    }
+    .tarot-section .section-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG8635ZVCL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EG8635ZVCL');
+  </script>
+</head>
+<body>
+
+<!-- ── Navigation ───────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <a href="index.html" class="nav-mark">
+    <svg width="36" height="18" viewBox="0 0 120 60" fill="none" stroke="var(--accent)" stroke-width="1.4">
+      <path d="M30 30 A14 14 0 1 0 30 31 Z" fill="var(--accent)" fill-opacity="0.2" />
+      <circle cx="60" cy="30" r="14" />
+      <path d="M90 30 A14 14 0 1 1 90 31 Z" fill="var(--accent)" fill-opacity="0.2" transform="rotate(180 90 30)" />
+    </svg>
+    <span>Clair de Lune</span>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">about</a>
+    <a href="services.html">readings</a>
+    <a href="book.html">book</a>
+  </div>
+  <div class="nav-actions">
+    <a href="https://wa.me/917999634730" target="_blank" class="nav-wa-btn">whatsapp</a>
+  </div>
+</nav>
+
+<!-- ── Page Hero ─────────────────────────────────────────────────────────── -->
+<div class="tarot-page-hero">
+  <div class="eyebrow">
+    <span class="line"></span>
+    <span>· the moon's offering ·</span>
+    <span class="line"></span>
+  </div>
+  <h1>A card, drawn for <em>tonight.</em></h1>
+  <p>Hold a question — the smallest one will do — and let the moon choose for you.</p>
+</div>
+
+<!-- ── Card of the Day ────────────────────────────────────────────────────── -->
+<div class="tarot-section">
+  <div class="section-inner">
+    <div id="cod-root"></div>
+  </div>
+</div>
+
+<!-- ── Footer ────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="wordmark-sm">Clair de Lune</div>
+        <p class="footer-tag">a candle in the window for the wandering.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-h">the grove</div>
+          <a href="about.html">about</a>
+          <a href="services.html">offerings</a>
+          <a href="book.html">book a sitting</a>
+        </div>
+        <div>
+          <div class="footer-h">reach out</div>
+          <a href="https://wa.me/917999634730" target="_blank">whatsapp</a>
+          <a href="https://wa.me/917999634730?text=I%20have%20a%20question" target="_blank">ask a question</a>
+        </div>
+        <div>
+          <div class="footer-h">a quiet word</div>
+          <p class="footer-note">readings are not a replacement for medical, legal, or therapeutic guidance — only a companion alongside.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 clair de lune · geetika saha</span>
+      <span>✶ ☽ ✦</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WhatsApp Float ────────────────────────────────────────────────────── -->
+<a href="https://wa.me/917999634730" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.117 1.529 5.845L.057 23.428a.5.5 0 00.617.6l5.758-1.507A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 01-5.031-1.378l-.36-.214-3.732.977.998-3.645-.235-.374A9.861 9.861 0 012.1 12c0-5.462 4.438-9.9 9.9-9.9 5.462 0 9.9 4.438 9.9 9.9 0 5.462-4.438 9.9-9.9 9.9z"/>
+  </svg>
+</a>
+
+<!-- ── React + Babel (CDN) ─────────────────────────────────────────────── -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+
+<!-- ── JSX Components ─────────────────────────────────────────────────── -->
+<script type="text/babel" src="jsx/illustrations.jsx"></script>
+<script type="text/babel" src="jsx/tarot.jsx"></script>
+
+<!-- ── Mount Card of the Day ─────────────────────────────────────────── -->
+<script type="text/babel">
+  ReactDOM.createRoot(document.getElementById('cod-root')).render(<CardOfTheDay />);
+</script>
+
+<script src="js/analytics.js"></script>
+</body>
+</html>
