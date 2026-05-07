@@ -1,18 +1,56 @@
-// Replace with your deployed Apps Script URL (same script as leads, add 'testimonial' action support)
-const TESTIMONIALS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+// ── Testimonials — load from Sheet + submit form ───────────────────────────
 
-// Published CSV for the Testimonials sheet tab (gid must match your sheet tab)
-// Replace the gid= value with the gid of your Testimonials tab
-const TESTIMONIALS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1vgCy4u3R4Lg6jCKDJ_kIuFlXIGoxungXmr283KAzYh4/pub?gid=TESTIMONIALS_GID&single=true&output=csv';
+// Paste your deployed Apps Script URL here (same script handles leads + reviews)
+const TESTIMONIALS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE'; // ← update this
 
+// After deploying the Apps Script and the "Testimonials" tab appears in your sheet:
+// 1. Go to File → Share → Publish to web
+// 2. Choose the "Testimonials" tab → CSV → Publish
+// 3. Copy the URL and paste it below (replace the full string)
+const TESTIMONIALS_CSV_URL = 'YOUR_TESTIMONIALS_CSV_URL_HERE'; // ← update this
+// It will look like: https://docs.google.com/spreadsheets/d/SHEET_ID/pub?gid=GID&single=true&output=csv
+
+// ── CSV Parser (handles quoted fields with commas inside) ──────────────────
+function parseCSVLine(line) {
+  const cols = [];
+  let cur = '', inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') {
+      if (inQ && line[i + 1] === '"') { cur += '"'; i++; }
+      else inQ = !inQ;
+    } else if (c === ',' && !inQ) {
+      cols.push(cur.trim()); cur = '';
+    } else {
+      cur += c;
+    }
+  }
+  cols.push(cur.trim());
+  return cols;
+}
+
+// Sheet columns (from apps-script.gs): Name | City | Feedback | Approved | Timestamp
 function parseTestimonials(csv) {
-  const lines = csv.trim().split('\n').slice(1);
+  const lines = csv.trim().split('\n').slice(1); // skip header row
   return lines
     .map(line => {
-      const cols = line.split(',').map(c => c.trim().replace(/^"|"$/g, ''));
-      return { name: cols[0], city: cols[1], text: cols[2], approved: cols[3] };
+      const cols = parseCSVLine(line);
+      return {
+        name:     cols[0] || '',
+        city:     cols[1] || '',
+        text:     cols[2] || '',
+        approved: cols[3] || ''
+      };
     })
-    .filter(r => r.approved && r.approved.toUpperCase() === 'TRUE' && r.text);
+    .filter(r => r.approved.toUpperCase() === 'TRUE' && r.text.length > 0);
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 function renderTestimonials(list) {
@@ -20,7 +58,7 @@ function renderTestimonials(list) {
   if (!grid) return;
 
   if (!list.length) {
-    grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);grid-column:1/-1;padding:2rem;">Be the first to share your experience.</p>';
+    grid.innerHTML = '';
     return;
   }
 
@@ -33,16 +71,11 @@ function renderTestimonials(list) {
   `).join('');
 }
 
-function escapeHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
 async function loadTestimonials() {
   const grid = document.getElementById('testimonials-grid');
   if (!grid) return;
 
-  // Skip fetch if URL is still placeholder
-  if (TESTIMONIALS_CSV_URL.includes('TESTIMONIALS_GID')) {
+  if (TESTIMONIALS_CSV_URL.includes('YOUR_TESTIMONIALS')) {
     grid.innerHTML = '';
     return;
   }
@@ -71,43 +104,43 @@ function submitTestimonialJSONP(data) {
 
     window[cbName] = (resp) => {
       delete window[cbName];
-      document.body.removeChild(script);
+      try { document.body.removeChild(script); } catch {}
       resp && resp.status === 'ok' ? resolve() : reject(new Error('apps script error'));
     };
 
     script.onerror = () => {
       delete window[cbName];
-      document.body.removeChild(script);
+      try { document.body.removeChild(script); } catch {}
       reject(new Error('script load error'));
     };
 
     script.src = `${TESTIMONIALS_SCRIPT_URL}?${params}`;
     document.body.appendChild(script);
+
     setTimeout(() => {
       if (window[cbName]) {
         delete window[cbName];
         try { document.body.removeChild(script); } catch {}
         reject(new Error('timeout'));
       }
-    }, 8000);
+    }, 10000);
   });
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 loadTestimonials();
 
-const btnOpen = document.getElementById('btn-open-testimonial');
+const btnOpen  = document.getElementById('btn-open-testimonial');
 const formWrap = document.getElementById('testimonial-form-wrap');
-const form = document.getElementById('testimonial-form');
-const thanks = document.getElementById('testimonial-thanks');
+const form     = document.getElementById('testimonial-form');
+const thanks   = document.getElementById('testimonial-thanks');
 const submitBtn = document.getElementById('t-submit');
 
 if (btnOpen && formWrap) {
   btnOpen.addEventListener('click', () => {
-    formWrap.style.display = formWrap.style.display === 'none' ? 'block' : 'none';
-    if (formWrap.style.display === 'block') {
-      formWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    const open = formWrap.style.display !== 'none';
+    formWrap.style.display = open ? 'none' : 'block';
+    if (!open) formWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 }
 
@@ -120,20 +153,18 @@ if (form) {
     if (!name || !city || !text) return;
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
+    submitBtn.textContent = 'sending…';
 
     try {
       if (!TESTIMONIALS_SCRIPT_URL.includes('YOUR_APPS_SCRIPT')) {
         await submitTestimonialJSONP({ name, city, text });
       }
-      form.style.display = 'none';
-      thanks.style.display = 'flex';
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'testimonial_submitted', { name, city });
-      }
-    } catch {
-      form.style.display = 'none';
-      thanks.style.display = 'flex';
+    } catch { /* show thanks anyway */ }
+
+    form.style.display = 'none';
+    thanks.style.display = 'flex';
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'testimonial_submitted', { name, city });
     }
   });
 }
