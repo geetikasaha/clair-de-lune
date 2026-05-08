@@ -186,18 +186,25 @@ document.getElementById('btn-new-booking').addEventListener('click', () => {
 });
 
 // ── Init ──────────────────────────────────────────────────────────────────────
-const pendingBooking = JSON.parse(localStorage.getItem('cdl_pending_booking') || 'null');
-if (pendingBooking) {
+const preselect = new URLSearchParams(location.search).get('service');
+
+let pendingBooking = JSON.parse(localStorage.getItem('cdl_pending_booking') || 'null');
+
+// Auto-expire pending booking after 24 hours
+if (pendingBooking && Date.now() - pendingBooking.sentAt > 24 * 60 * 60 * 1000) {
+  localStorage.removeItem('cdl_pending_booking');
+  pendingBooking = null;
+}
+
+// If user explicitly chose a service (via URL param), always start a fresh booking
+if (preselect && SERVICES.find(s => s.id === preselect)) {
+  renderServices();
+  selectService(preselect);
+  showStep(2);
+  loadAndRenderSlots();
+} else if (pendingBooking) {
   showPendingScreen();
 } else {
   renderServices();
-  // If a service was pre-selected via URL param (e.g. from services.html), skip Step 1
-  const preselect = new URLSearchParams(location.search).get('service');
-  if (preselect && SERVICES.find(s => s.id === preselect)) {
-    selectService(preselect);
-    showStep(2);         // jump straight to slot picker
-    loadAndRenderSlots(); // populate slots (shows spinner while loading)
-  } else {
-    showStep(1);
-  }
+  showStep(1);
 }
