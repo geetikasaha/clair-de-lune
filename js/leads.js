@@ -4,23 +4,8 @@
 const LEADS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9FiVGTH7RmZYNvrRjQp8wi4bRN2Av84fhkVErKU4jgDB7Mpo4Y5SUhTqeKaTwYOit/exec';
 const STORAGE_KEY = 'cdl_lead_captured';
 
-function sendLeadJSONP(url) {
-  return new Promise((resolve) => {
-    const cbName = '__cdl_lead_' + Date.now();
-    const script = document.createElement('script');
-    window[cbName] = function() {
-      delete window[cbName];
-      document.head.removeChild(script);
-      resolve();
-    };
-    script.onerror = function() {
-      delete window[cbName];
-      if (document.head.contains(script)) document.head.removeChild(script);
-      resolve(); // resolve anyway so UX isn't blocked
-    };
-    script.src = url + '&callback=' + cbName;
-    document.head.appendChild(script);
-  });
+function sendLead(params) {
+  return fetch(`${LEADS_SCRIPT_URL}?${params}`, { mode: 'no-cors' });
 }
 
 function showModal() {
@@ -79,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.disabled = true;
 
     const params = new URLSearchParams({ action: 'lead', name, email, phone });
-    await sendLeadJSONP(`${LEADS_SCRIPT_URL}?${params}`);
+    await sendLead(params);
 
     // Track in GA4
     if (typeof gtag !== 'undefined') {

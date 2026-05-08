@@ -89,41 +89,14 @@ async function loadTestimonials() {
   }
 }
 
-function submitTestimonialJSONP(data) {
-  return new Promise((resolve, reject) => {
-    const cbName = 'cdl_t_cb_' + Date.now();
-    const script = document.createElement('script');
-    const params = new URLSearchParams({
-      action: 'testimonial',
-      name: data.name,
-      city: data.city,
-      text: data.text,
-      callback: cbName
-    });
-
-    window[cbName] = (resp) => {
-      delete window[cbName];
-      try { document.body.removeChild(script); } catch {}
-      resp && resp.status === 'ok' ? resolve() : reject(new Error('apps script error'));
-    };
-
-    script.onerror = () => {
-      delete window[cbName];
-      try { document.body.removeChild(script); } catch {}
-      reject(new Error('script load error'));
-    };
-
-    script.src = `${TESTIMONIALS_SCRIPT_URL}?${params}`;
-    document.body.appendChild(script);
-
-    setTimeout(() => {
-      if (window[cbName]) {
-        delete window[cbName];
-        try { document.body.removeChild(script); } catch {}
-        reject(new Error('timeout'));
-      }
-    }, 10000);
+function submitTestimonial(data) {
+  const params = new URLSearchParams({
+    action: 'testimonial',
+    name: data.name,
+    city: data.city,
+    text: data.text
   });
+  return fetch(`${TESTIMONIALS_SCRIPT_URL}?${params}`, { mode: 'no-cors' });
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
@@ -155,9 +128,7 @@ if (form) {
     submitBtn.textContent = 'sending…';
 
     try {
-      if (!TESTIMONIALS_SCRIPT_URL.includes('YOUR_APPS_SCRIPT')) {
-        await submitTestimonialJSONP({ name, city, text });
-      }
+      await submitTestimonial({ name, city, text });
     } catch { /* show thanks anyway */ }
 
     form.style.display = 'none';

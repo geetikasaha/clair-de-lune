@@ -1,43 +1,17 @@
 // ── Review Page — form submission to Google Apps Script ───────────────────────
 
-// Paste your deployed Apps Script URL here (same URL as in testimonials.js)
-const REVIEW_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE'; // ← update this
+const REVIEW_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9FiVGTH7RmZYNvrRjQp8wi4bRN2Av84fhkVErKU4jgDB7Mpo4Y5SUhTqeKaTwYOit/exec';
 
-function submitReviewJSONP(data) {
-  return new Promise((resolve, reject) => {
-    const cbName = 'cdl_rev_cb_' + Date.now();
-    const script = document.createElement('script');
-    const params = new URLSearchParams({
-      action: 'testimonial',
-      name: data.name,
-      city: data.city,
-      text: data.text,
-      callback: cbName
-    });
-
-    window[cbName] = (resp) => {
-      delete window[cbName];
-      document.body.removeChild(script);
-      resp && resp.status === 'ok' ? resolve() : reject(new Error('script error'));
-    };
-
-    script.onerror = () => {
-      delete window[cbName];
-      try { document.body.removeChild(script); } catch {}
-      reject(new Error('load error'));
-    };
-
-    script.src = `${REVIEW_SCRIPT_URL}?${params}`;
-    document.body.appendChild(script);
-
-    setTimeout(() => {
-      if (window[cbName]) {
-        delete window[cbName];
-        try { document.body.removeChild(script); } catch {}
-        reject(new Error('timeout'));
-      }
-    }, 10000);
+function submitReview(data) {
+  const params = new URLSearchParams({
+    action: 'testimonial',
+    name: data.name,
+    city: data.city,
+    text: data.text
   });
+  // no-cors: browser sends the request, Apps Script writes to Sheet,
+  // response is opaque — we don't need to read it
+  return fetch(`${REVIEW_SCRIPT_URL}?${params}`, { mode: 'no-cors' });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,11 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.textContent = 'sending…';
 
     try {
-      if (!REVIEW_SCRIPT_URL.includes('YOUR_APPS_SCRIPT')) {
-        await submitReviewJSONP({ name, city, text });
-      }
+      await submitReview({ name, city, text });
     } catch {
-      // Show thanks regardless — don't leave user hanging on a network error
+      // network error — still show thanks, entry may have gone through
     }
 
     form.style.display = 'none';
