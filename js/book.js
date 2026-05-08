@@ -186,11 +186,17 @@ document.getElementById('btn-new-booking').addEventListener('click', () => {
 });
 
 // ── Init ──────────────────────────────────────────────────────────────────────
-// Check if user is returning after a WhatsApp redirect
 const pendingBooking = JSON.parse(localStorage.getItem('cdl_pending_booking') || 'null');
 if (pendingBooking) {
   showPendingScreen();
 } else {
   renderServices();
-  showStep(1);
+  // If a service was pre-selected via URL param (e.g. from services.html), skip Step 1
+  const preselect = new URLSearchParams(location.search).get('service');
+  if (preselect && SERVICES.find(s => s.id === preselect)) {
+    selectService(preselect);
+    loadAndRenderSlots().then(() => showStep(2));
+  } else {
+    showStep(1);
+  }
 }

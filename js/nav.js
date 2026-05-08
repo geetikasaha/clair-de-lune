@@ -1,26 +1,33 @@
 // Scroll effect
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-// Active link highlight
-const currentPage = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    link.classList.add('active');
-  }
-});
-
-// Hamburger menu
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('open'));
+const navEl = document.querySelector('nav.nav');
+if (navEl) {
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 50);
   });
 }
+
+// Active link highlight (runs after DOM ready)
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const href = (link.getAttribute('href') || '').split('?')[0];
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.style.color = 'var(--accent)';
+    }
+  });
+});
+
+// Hamburger — event delegation so it works with React-rendered navs too
+document.addEventListener('click', (e) => {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (!hamburger || !navLinks) return;
+
+  if (e.target.closest('.hamburger')) {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  } else if (!e.target.closest('.nav-links')) {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+  }
+});
