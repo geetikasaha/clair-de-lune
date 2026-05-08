@@ -101,7 +101,7 @@
 <script type="text/babel">
 // Inline App (no TweaksPanel for production)
 
-const Nav = ({ soundOn, onToggleSound }) => (
+const Nav = () => (
   <nav className="nav">
     <a href="index.html" className="nav-mark">
       <TriMoonGlyph size={36} color="var(--accent)" />
@@ -112,13 +112,10 @@ const Nav = ({ soundOn, onToggleSound }) => (
       <a href="services.html">readings</a>
       <a href="book.html">book</a>
       <a href="#testimonials-section">testimonials</a>
+      <a href="blog.html">blog</a>
     </div>
     <div className="nav-actions">
       <a href="https://wa.me/917999634730" target="_blank" className="nav-wa-btn">whatsapp</a>
-      <button className="sound-toggle" onClick={onToggleSound} aria-label="Toggle ambient sound">
-        <span className={"sound-icon " + (soundOn ? 'on' : 'off')}>{soundOn ? '◉' : '○'}</span>
-        <span>{soundOn ? 'mute the moon' : 'hear the moon'}</span>
-      </button>
       <button className="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -177,14 +174,12 @@ const CardOfDaySection = () => (
 );
 
 const App = () => {
-  const { on: soundOn, toggle: toggleSound } = useAmbientSound();
-
   return (
     <div className="app">
       <StarField count={140} />
       <Constellation />
       <FireflyCursor />
-      <Nav soundOn={soundOn} onToggleSound={toggleSound} />
+      <Nav />
       <Hero />
       <CardOfDaySection />
       <About />
