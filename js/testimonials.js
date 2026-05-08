@@ -7,7 +7,7 @@ const TESTIMONIALS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9FiVG
 // 1. Go to File → Share → Publish to web
 // 2. Choose the "Testimonials" tab → CSV → Publish
 // 3. Copy the URL and paste it below (replace the full string)
-const TESTIMONIALS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRutoXtvjtSLyUtOnxNr4q5tpPJ1bEmGzR_c2YGQp4JUejKkJvUJri7fU7cGvLG94Ba0T7gyWljadp7/pub?gid=1667636216&single=true&output=csv';
+const TESTIMONIALS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRutoXtvjtSLyUtOnxNr4q5tpPJ1bEmGzR_c2YGQp4JUejKkJvUJri7fU7cGvLG94Ba0T7gyWljadp7/pub?gid=389019848&single=true&output=csv';
 
 // ── CSV Parser (handles quoted fields with commas inside) ──────────────────
 function parseCSVLine(line) {
