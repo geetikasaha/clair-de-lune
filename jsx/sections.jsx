@@ -55,6 +55,7 @@ const About = () => (
 // ── Services / Readings ───────────────────────────────────────────────────
 const REAL_SERVICES = [
   {
+    id: "spiritual",
     name: "Spiritual Guidance",
     sub: "a holistic session",
     duration: "30 min",
@@ -63,6 +64,7 @@ const REAL_SERVICES = [
     desc: "You already sense what's true — this session helps you hear it clearly. Sit with your energy, your life, and what your soul is asking for. Not advice. Not a roadmap. Just you, finally listening."
   },
   {
+    id: "one-q",
     name: "1 Question Tarot",
     sub: "a single truth",
     duration: "~15 min",
@@ -71,6 +73,7 @@ const REAL_SERVICES = [
     desc: "One thing is burning in you right now. The cards don't predict — they reveal what you already sense is true but haven't let yourself say out loud."
   },
   {
+    id: "three-q",
     name: "3 Question Tarot",
     sub: "layered clarity",
     duration: "~20 min",
@@ -80,6 +83,7 @@ const REAL_SERVICES = [
     desc: "Three areas of your life asking to be seen. Bring them all. Leave with clarity that was always inside you, just buried under noise and fear."
   },
   {
+    id: "full",
     name: "Full Reading",
     sub: "30-card spread",
     duration: "30 min",
@@ -106,7 +110,7 @@ const Services = () => (
               <div><span className="meta-k">time</span><span className="meta-v">{r.duration}</span></div>
               <div><span className="meta-k">offering</span><span className="meta-v">{r.price}</span></div>
             </div>
-            <a href="book.html" className="reading-cta">book this sitting →</a>
+            <a href={`book.html?service=${r.id}`} className="reading-cta">book this sitting →</a>
           </div>
         ))}
       </div>

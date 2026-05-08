@@ -195,7 +195,8 @@ if (pendingBooking) {
   const preselect = new URLSearchParams(location.search).get('service');
   if (preselect && SERVICES.find(s => s.id === preselect)) {
     selectService(preselect);
-    loadAndRenderSlots().then(() => showStep(2));
+    showStep(2);         // jump straight to slot picker
+    loadAndRenderSlots(); // populate slots (shows spinner while loading)
   } else {
     showStep(1);
   }
