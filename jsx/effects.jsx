@@ -216,6 +216,7 @@ const useAmbientSound = () => {
     }
     const AC = window.AudioContext || window.webkitAudioContext;
     const ctx = new AC();
+    ctx.resume();
     ctxRef.current = ctx;
     // soft moon drone: two detuned sine pads + filtered noise
     const master = ctx.createGain();
