@@ -1,7 +1,7 @@
 // ── Lead Capture Modal ────────────────────────────────────────────────────────
 // Appears 2.5s after landing on homepage. Skipped if already submitted.
 
-const LEADS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+const LEADS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9FiVGTH7RmZYNvrRjQp8wi4bRN2Av84fhkVErKU4jgDB7Mpo4Y5SUhTqeKaTwYOit/exec';
 const STORAGE_KEY = 'cdl_lead_captured';
 
 function sendLeadJSONP(url) {

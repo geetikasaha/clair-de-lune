@@ -1,14 +1,13 @@
 // ── Testimonials — load from Sheet + submit form ───────────────────────────
 
 // Paste your deployed Apps Script URL here (same script handles leads + reviews)
-const TESTIMONIALS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE'; // ← update this
+const TESTIMONIALS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9FiVGTH7RmZYNvrRjQp8wi4bRN2Av84fhkVErKU4jgDB7Mpo4Y5SUhTqeKaTwYOit/exec'; // ← update this
 
 // After deploying the Apps Script and the "Testimonials" tab appears in your sheet:
 // 1. Go to File → Share → Publish to web
 // 2. Choose the "Testimonials" tab → CSV → Publish
 // 3. Copy the URL and paste it below (replace the full string)
-const TESTIMONIALS_CSV_URL = 'YOUR_TESTIMONIALS_CSV_URL_HERE'; // ← update this
-// It will look like: https://docs.google.com/spreadsheets/d/SHEET_ID/pub?gid=GID&single=true&output=csv
+const TESTIMONIALS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRutoXtvjtSLyUtOnxNr4q5tpPJ1bEmGzR_c2YGQp4JUejKkJvUJri7fU7cGvLG94Ba0T7gyWljadp7/pub?gid=1667636216&single=true&output=csv';
 
 // ── CSV Parser (handles quoted fields with commas inside) ──────────────────
 function parseCSVLine(line) {
