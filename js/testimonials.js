@@ -9,38 +9,47 @@ const TESTIMONIALS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9FiVG
 // 3. Copy the URL and paste it below (replace the full string)
 const TESTIMONIALS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRutoXtvjtSLyUtOnxNr4q5tpPJ1bEmGzR_c2YGQp4JUejKkJvUJri7fU7cGvLG94Ba0T7gyWljadp7/pub?gid=389019848&single=true&output=csv';
 
-// ── CSV Parser (handles quoted fields with commas inside) ──────────────────
-function parseCSVLine(line) {
-  const cols = [];
-  let cur = '', inQ = false;
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (c === '"') {
-      if (inQ && line[i + 1] === '"') { cur += '"'; i++; }
-      else inQ = !inQ;
-    } else if (c === ',' && !inQ) {
-      cols.push(cur.trim()); cur = '';
-    } else {
-      cur += c;
-    }
-  }
-  cols.push(cur.trim());
-  return cols;
-}
-
-// Sheet columns (from apps-script.gs): Name | City | Feedback | Approved | Timestamp
+// ── CSV Parser — handles quoted fields containing commas AND newlines ──────
+// Sheet columns: Name | City | Feedback | Approved | Timestamp
 function parseTestimonials(csv) {
-  const lines = csv.trim().split('\n').slice(1); // skip header row
-  return lines
-    .map(line => {
-      const cols = parseCSVLine(line);
-      return {
-        name:     cols[0] || '',
-        city:     cols[1] || '',
-        text:     cols[2] || '',
-        approved: cols[3] || ''
-      };
-    })
+  const rows = [];
+  let i = 0;
+  const len = csv.length;
+
+  while (i < len) {
+    const cols = [];
+    // parse one row
+    while (i < len) {
+      let field = '';
+      if (csv[i] === '"') {
+        i++; // skip opening quote
+        while (i < len) {
+          if (csv[i] === '"' && csv[i + 1] === '"') { field += '"'; i += 2; }
+          else if (csv[i] === '"') { i++; break; } // closing quote
+          else { field += csv[i++]; }
+        }
+      } else {
+        while (i < len && csv[i] !== ',' && csv[i] !== '\n' && csv[i] !== '\r') {
+          field += csv[i++];
+        }
+      }
+      cols.push(field.trim());
+      if (csv[i] === ',') { i++; continue; } // next field
+      if (csv[i] === '\r') i++;              // skip \r
+      if (csv[i] === '\n') i++;              // end of row
+      break;
+    }
+    if (cols.length > 1) rows.push(cols);
+  }
+
+  return rows
+    .slice(1) // skip header
+    .map(cols => ({
+      name:     cols[0] || '',
+      city:     cols[1] || '',
+      text:     cols[2] || '',
+      approved: cols[3] || ''
+    }))
     .filter(r => r.approved.toUpperCase() === 'TRUE' && r.text.length > 0);
 }
 
