@@ -1,4 +1,4 @@
-// tarot.jsx — personalized pick-a-card reading, data sourced from Google Sheets
+// tarot.jsx — AI-powered astrological tarot reading (Gemini + natal chart)
 
 const TAROT_CARDS = [
   { name: "0. The Fool",         display: "The Fool",         arcana: "0",     definition: "New Beginnings",
@@ -134,167 +134,200 @@ const TAROT_CARDS = [
     spiritual:"You are at one with the cosmic rhythm." },
 ];
 
-const GUIDANCE = [
-  { key: 'general',   label: 'General',   symbol: '✦', desc: 'a broad view of now' },
-  { key: 'love',      label: 'Love',      symbol: '♡', desc: 'matters of the heart' },
-  { key: 'career',    label: 'Career',    symbol: '◈', desc: 'work & purpose' },
-  { key: 'spiritual', label: 'Spiritual', symbol: '☽', desc: 'soul & inner life' },
-];
+const PAC_STORAGE_KEY = 'cdl_tarot_reading';
 
+// ── Loading dots animation ────────────────────────────────────────────────────
+const LoadingDots = () => (
+  <div className="pac-loading-dots">
+    <span /><span /><span />
+  </div>
+);
+
+// ── Card display (face + meaning) ─────────────────────────────────────────────
+const CardReveal = ({ reading, firstName, showBooking, animate }) => {
+  const card = reading.cardObj;
+  if (!card) return null;
+  return (
+    <div className="cod-reveal">
+      <div className="cod-card cod-card-revealed">
+        <div className="cod-card-inner" style={animate ? {} : { animation: 'none', transform: 'rotateY(180deg)' }}>
+          <div className="cod-card-back"><TarotCardBack width={220} /></div>
+          <div className="cod-card-face">
+            <div className="cod-face-frame">
+              <div className="cod-face-arcana">{card.arcana}</div>
+              <div className="cod-face-illus"><TarotCardFace cardName={card.name} size={110} /></div>
+              <div className="cod-face-name">{card.display}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="cod-meaning">
+        <div className="pac-reading-label">
+          {reading.planet && <span>✦ {reading.planet} · </span>}{card.definition}
+        </div>
+        {reading.transit && <p className="pac-transit-line">{reading.transit}</p>}
+        <p className="cod-message">{reading.message}</p>
+        {reading.guidance && <p className="pac-guidance-line"><em>{reading.guidance}</em></p>}
+        <div className="pac-reading-for">drawn for <em>{(firstName || '').toLowerCase()}</em></div>
+
+        {showBooking && (
+          <div className="pac-actions" style={{ marginTop: '32px', flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
+            <a href="book.html?service=spiritual" className="btn-primary" style={{ fontSize: '11px', padding: '13px 28px' }}>
+              book a full reading with geetika →
+            </a>
+            <p className="pac-already-note">
+              each seeker draws once — your card was chosen by the stars for you. a full reading goes deeper.
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ── Main component ─────────────────────────────────────────────────────────────
 const PickACard = () => {
-  const [step, setStep]         = React.useState('intake');
-  const [userName, setUserName] = React.useState('');
-  const [dob, setDob]           = React.useState('');
-  const [guidance, setGuidance] = React.useState(null);
-  const [drawn, setDrawn]       = React.useState(null);
-  const [shuffleKey, setShuffleKey] = React.useState(0);
+  const [step, setStep]   = React.useState('init');
+  const [reading, setReading] = React.useState(null);
+  const [form, setForm]   = React.useState({
+    name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false
+  });
 
-  const firstName = userName.trim().split(' ')[0];
+  React.useEffect(() => {
+    const saved = localStorage.getItem(PAC_STORAGE_KEY);
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        // Re-resolve cardObj from TAROT_CARDS (can't store React-ready objects)
+        if (parsed.card) {
+          const key = parsed.card.toLowerCase().replace(/^the /, '').trim();
+          parsed.cardObj = TAROT_CARDS.find(c =>
+            c.display.toLowerCase().replace(/^the /, '').trim() === key ||
+            c.name.toLowerCase().includes(key)
+          ) || TAROT_CARDS[0];
+        }
+        setReading(parsed);
+        setStep('already_pulled');
+        return;
+      } catch { /* fall through to intake */ }
+    }
+    setStep('intake');
+  }, []);
 
-  const submitIntake = (e) => {
+  const firstName = (form.name || reading?.name || '').trim().split(' ')[0];
+
+  const submitIntake = async (e) => {
     e.preventDefault();
-    if (userName.trim()) setStep('guidance');
-  };
+    setStep('loading');
 
-  const selectGuidance = (key) => {
-    setGuidance(key);
-    setStep('draw');
-  };
-
-  const draw = () => {
-    if (step === 'shuffling') return;
-    setStep('shuffling');
-    setShuffleKey(k => k + 1);
-    setTimeout(() => {
-      const card = TAROT_CARDS[Math.floor(Math.random() * TAROT_CARDS.length)];
-      setDrawn(card);
+    try {
+      const result = await getGeminiReading({
+        name: form.name,
+        birthdate: form.birthdate,
+        birthtime: form.noTime ? '' : form.birthtime,
+        birthplace: form.birthplace
+      });
+      const toStore = { ...result, name: form.name, pulledAt: Date.now() };
+      // Store card name string only (cardObj is not JSON-serialisable safely)
+      const { cardObj, ...storeable } = toStore;
+      localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
+      setReading(toStore);
       setStep('revealed');
-    }, 1800);
+    } catch {
+      // Fallback: random card with default message
+      const card = TAROT_CARDS[Math.floor(Math.random() * TAROT_CARDS.length)];
+      const fallback = {
+        cardObj: card,
+        card: card.display,
+        planet: 'the cosmos',
+        transit: 'the stars are moving in quiet ways today.',
+        message: card.general,
+        guidance: 'sit with this — the answer is already within you.',
+        name: form.name,
+        pulledAt: Date.now()
+      };
+      const { cardObj: _c, ...storeable } = fallback;
+      localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
+      setReading(fallback);
+      setStep('revealed');
+    }
   };
 
-  const currentGuidance = GUIDANCE.find(g => g.key === guidance);
+  const startFresh = () => {
+    localStorage.removeItem(PAC_STORAGE_KEY);
+    setReading(null);
+    setForm({ name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false });
+    setStep('intake');
+  };
+
+  if (step === 'init') return null;
 
   return (
     <div className="cod-wrap">
 
-      {/* ── Step 1: Intake ──────────────────────────────────────────────── */}
+      {/* ── Already pulled ──────────────────────────────────────────────── */}
+      {step === 'already_pulled' && reading && (
+        <div className="cod-stage">
+          <CardReveal reading={reading} firstName={reading.name?.split(' ')[0]} showBooking animate={false} />
+          <div style={{ textAlign: 'center', marginTop: '24px' }}>
+            <button className="pac-start-over" onClick={startFresh}>I am someone new</button>
+          </div>
+        </div>
+      )}
+
+      {/* ── Intake form ─────────────────────────────────────────────────── */}
       {step === 'intake' && (
         <div className="pac-intake">
           <div className="pac-ornament"><Ornament width={160} /></div>
-          <p className="pac-prompt">before the cards speak, let them know you.</p>
+          <p className="pac-prompt">the stars need to know you first.</p>
           <form className="pac-form" onSubmit={submitIntake}>
             <div className="pac-field">
               <label className="pac-label">your name</label>
-              <input
-                className="pac-input"
-                type="text"
-                value={userName}
-                onChange={e => setUserName(e.target.value)}
-                placeholder="as the moon would call you"
-                required
-              />
+              <input className="pac-input" type="text" required placeholder="as the moon would call you"
+                value={form.name} onChange={e => setForm(f => ({...f, name: e.target.value}))} />
             </div>
             <div className="pac-field">
-              <label className="pac-label">date of birth <span className="pac-optional">(optional)</span></label>
-              <input
-                className="pac-input pac-input-date"
-                type="date"
-                value={dob}
-                onChange={e => setDob(e.target.value)}
-              />
+              <label className="pac-label">date of birth</label>
+              <input className="pac-input pac-input-date" type="date" required
+                value={form.birthdate} onChange={e => setForm(f => ({...f, birthdate: e.target.value}))} />
             </div>
-            <button className="pac-continue" type="submit">continue ›</button>
+            <div className="pac-field">
+              <label className="pac-label">
+                time of birth <span className="pac-optional">(as close as you know)</span>
+              </label>
+              <input className="pac-input" type="time" disabled={form.noTime}
+                value={form.birthtime} onChange={e => setForm(f => ({...f, birthtime: e.target.value}))} />
+              <label className="pac-check-label">
+                <input type="checkbox" checked={form.noTime}
+                  onChange={e => setForm(f => ({...f, noTime: e.target.checked, birthtime: ''}))} />
+                <span>I don't know my birth time</span>
+              </label>
+            </div>
+            <div className="pac-field">
+              <label className="pac-label">place of birth</label>
+              <input className="pac-input" type="text" required placeholder="city, country"
+                value={form.birthplace} onChange={e => setForm(f => ({...f, birthplace: e.target.value}))} />
+            </div>
+            <button className="pac-continue" type="submit">read my stars ›</button>
           </form>
         </div>
       )}
 
-      {/* ── Step 2: Choose Guidance ─────────────────────────────────────── */}
-      {step === 'guidance' && (
-        <div className="pac-guidance-wrap">
-          <div className="pac-ornament"><Ornament width={160} /></div>
-          <p className="pac-greeting">welcome, <em>{firstName}</em>.</p>
-          <p className="pac-prompt">what calls to you tonight?</p>
-          <div className="pac-guidance-grid">
-            {GUIDANCE.map(g => (
-              <button key={g.key} className="pac-guidance-btn" onClick={() => selectGuidance(g.key)}>
-                <span className="pac-guidance-symbol">{g.symbol}</span>
-                <span className="pac-guidance-label">{g.label}</span>
-                <span className="pac-guidance-desc">{g.desc}</span>
-              </button>
-            ))}
-          </div>
+      {/* ── Loading ─────────────────────────────────────────────────────── */}
+      {step === 'loading' && (
+        <div className="pac-loading">
+          <div className="pac-loading-moon">☽</div>
+          <p className="pac-loading-text">reading the sky for <em>{firstName}</em>…</p>
+          <p className="pac-loading-sub">tracing where Saturn sits, what Venus is asking of you</p>
+          <LoadingDots />
         </div>
       )}
 
-      {/* ── Step 3: Draw ────────────────────────────────────────────────── */}
-      {step === 'draw' && (
-        <div className="cod-stage" style={{ flexDirection: 'column', gap: '48px' }}>
-          <div className="pac-draw-prompt">
-            <p className="pac-draw-hint">hold your question, <em>{firstName}</em> — then draw.</p>
-            <p className="pac-draw-sub">{currentGuidance?.symbol} {currentGuidance?.label} reading · the cards are waiting</p>
-          </div>
-          <div className="cod-deck" onClick={draw}>
-            {[0,1,2,3,4].map(i => (
-              <div key={i} className="cod-card cod-card-stack" style={{
-                transform: `translate(${i*3}px,${-i*2}px) rotate(${(i-2)*1.5}deg)`,
-                zIndex: 5-i
-              }}>
-                <TarotCardBack width={180} />
-              </div>
-            ))}
-            <div className="cod-cta">click to draw</div>
-          </div>
-        </div>
-      )}
-
-      {/* ── Step 3b: Shuffling ──────────────────────────────────────────── */}
-      {step === 'shuffling' && (
+      {/* ── Revealed ────────────────────────────────────────────────────── */}
+      {step === 'revealed' && reading && (
         <div className="cod-stage">
-          <div className="cod-shuffle" key={shuffleKey}>
-            {[0,1,2,3,4,5,6].map(i => (
-              <div key={i} className="cod-card cod-card-shuffle" style={{
-                animationDelay: `${i*0.08}s`,
-                zIndex: 7-i
-              }}>
-                <TarotCardBack width={180} />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* ── Step 4: Revealed ────────────────────────────────────────────── */}
-      {step === 'revealed' && drawn && (
-        <div className="cod-stage">
-          <div className="cod-reveal">
-            <div className="cod-card cod-card-revealed">
-              <div className="cod-card-inner">
-                <div className="cod-card-back"><TarotCardBack width={220} /></div>
-                <div className="cod-card-face">
-                  <div className="cod-face-frame">
-                    <div className="cod-face-arcana">{drawn.arcana}</div>
-                    <div className="cod-face-illus">
-                      <TarotCardFace cardName={drawn.name} size={110} />
-                    </div>
-                    <div className="cod-face-name">{drawn.display}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="cod-meaning">
-              <div className="pac-reading-label">
-                {currentGuidance?.symbol} {currentGuidance?.label} · {drawn.definition}
-              </div>
-              <p className="cod-message">{drawn[guidance]}</p>
-              <div className="pac-reading-for">drawn for <em>{firstName}</em>{dob && <span className="pac-dob"> · born {new Date(dob + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</span>}</div>
-              <div className="pac-actions">
-                <button className="cod-redraw" onClick={draw}>draw again</button>
-                <button className="pac-guidance-change" onClick={() => setStep('guidance')}>change guidance</button>
-                <button className="pac-start-over" onClick={() => { setStep('intake'); setUserName(''); setDob(''); setGuidance(null); setDrawn(null); }}>start over</button>
-              </div>
-            </div>
-          </div>
+          <CardReveal reading={reading} firstName={firstName} showBooking={false} animate />
         </div>
       )}
 
@@ -303,5 +336,4 @@ const PickACard = () => {
 };
 
 const CardOfTheDay = PickACard;
-
 Object.assign(window, { TAROT_CARDS, PickACard, CardOfTheDay });

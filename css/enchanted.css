@@ -844,6 +844,71 @@ body::after {
   .pac-draw-hint { font-size: 20px; }
 }
 
+/* ── Gemini Tarot: loading + reveal extras ───────────────────────────────── */
+.pac-loading {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 18px; padding: 80px 24px; text-align: center;
+}
+.pac-loading-moon {
+  font-size: 48px; color: var(--accent);
+  animation: moonFloat 3s ease-in-out infinite;
+}
+@keyframes moonFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50%       { transform: translateY(-10px); opacity: 1; }
+}
+.pac-loading-text {
+  font-family: var(--display); font-size: 22px;
+  color: var(--fg); font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.pac-loading-text em { color: var(--accent); font-style: italic; }
+.pac-loading-sub {
+  font-family: var(--serif); font-style: italic;
+  font-size: 15px; color: var(--fgDim);
+  max-width: 320px; line-height: 1.6;
+}
+.pac-loading-dots {
+  display: flex; gap: 8px; margin-top: 8px;
+}
+.pac-loading-dots span {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accentSoft); opacity: 0.4;
+  animation: dotPulse 1.4s ease-in-out infinite;
+}
+.pac-loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.pac-loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dotPulse {
+  0%, 80%, 100% { transform: scale(1); opacity: 0.4; }
+  40%           { transform: scale(1.4); opacity: 1; }
+}
+
+.pac-transit-line {
+  font-family: var(--serif); font-style: italic;
+  font-size: 15px; color: var(--fgDim);
+  margin: 0 0 16px; line-height: 1.65;
+}
+.pac-guidance-line {
+  font-family: var(--serif); font-style: italic;
+  font-size: 16px; color: var(--accentSoft);
+  margin: 16px 0 0; line-height: 1.65;
+}
+.pac-already-note {
+  font-family: var(--serif); font-style: italic;
+  font-size: 14px; color: var(--fgDim);
+  line-height: 1.6; max-width: 340px;
+}
+.pac-check-label {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--serif); font-size: 14px;
+  color: var(--fgDim); cursor: pointer; margin-top: 8px;
+}
+.pac-check-label input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 15px; height: 15px; cursor: pointer;
+}
+
 /* ── About ───────────────────────────────────────────────────────────────── */
 .section-about {
   background: linear-gradient(180deg, transparent, rgba(23,40,33,0.4), transparent);
