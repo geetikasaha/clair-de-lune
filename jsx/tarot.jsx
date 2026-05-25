@@ -165,6 +165,7 @@ const CardReveal = ({ reading, firstName, showBooking, animate }) => {
       <div className="cod-meaning">
         <div className="pac-reading-label">
           {reading.planet && <span>✦ {reading.planet} · </span>}{card.definition}
+          {reading.readingType && <span className="pac-focus-tag"> · {reading.readingType}</span>}
         </div>
         {reading.transit && <p className="pac-transit-line">{reading.transit}</p>}
         <p className="cod-message">{reading.message}</p>
@@ -191,7 +192,7 @@ const PickACard = () => {
   const [step, setStep]   = React.useState('init');
   const [reading, setReading] = React.useState(null);
   const [form, setForm]   = React.useState({
-    name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false
+    name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false, readingType: ''
   });
 
   React.useEffect(() => {
@@ -226,9 +227,10 @@ const PickACard = () => {
         name: form.name,
         birthdate: form.birthdate,
         birthtime: form.noTime ? '' : form.birthtime,
-        birthplace: form.birthplace
+        birthplace: form.birthplace,
+        readingType: form.readingType
       });
-      const toStore = { ...result, name: form.name, pulledAt: Date.now() };
+      const toStore = { ...result, name: form.name, readingType: form.readingType, pulledAt: Date.now() };
       // Store card name string only (cardObj is not JSON-serialisable safely)
       const { cardObj, ...storeable } = toStore;
       localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
@@ -257,7 +259,7 @@ const PickACard = () => {
   const startFresh = () => {
     localStorage.removeItem(PAC_STORAGE_KEY);
     setReading(null);
-    setForm({ name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false });
+    setForm({ name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false, readingType: '' });
     setStep('intake');
   };
 
@@ -309,7 +311,28 @@ const PickACard = () => {
               <input className="pac-input" type="text" required placeholder="city, country"
                 value={form.birthplace} onChange={e => setForm(f => ({...f, birthplace: e.target.value}))} />
             </div>
-            <button className="pac-continue" type="submit">read my stars ›</button>
+            <div className="pac-field">
+              <label className="pac-label">what calls to you most right now?</label>
+              <div className="pac-focus-grid">
+                {[
+                  { id: 'love',    symbol: '♀', label: 'love' },
+                  { id: 'career',  symbol: '☽', label: 'career' },
+                  { id: 'self',    symbol: '✦', label: 'self' },
+                  { id: 'general', symbol: '◎', label: 'general' },
+                ].map(opt => (
+                  <button key={opt.id} type="button"
+                    className={`pac-focus-btn${form.readingType === opt.id ? ' pac-focus-active' : ''}`}
+                    onClick={() => setForm(f => ({...f, readingType: opt.id}))}>
+                    <span className="pac-focus-symbol">{opt.symbol}</span>
+                    <span className="pac-focus-label">{opt.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <button className="pac-continue" type="submit" disabled={!form.readingType}
+              style={!form.readingType ? { opacity: 0.4, cursor: 'not-allowed' } : {}}>
+              read my stars ›
+            </button>
           </form>
         </div>
       )}
