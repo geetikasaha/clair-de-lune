@@ -803,6 +803,13 @@ body::after {
 }
 .pac-focus-tag { color: var(--accent); }
 
+.pac-ascendant-line {
+  font-family: var(--serif); font-style: italic;
+  font-size: 13px; color: var(--accentSoft);
+  letter-spacing: 0.18em; text-transform: uppercase;
+  margin-bottom: 14px; opacity: 0.85;
+}
+
 .pac-reading-for {
   font-family: var(--serif);
   font-style: italic;

@@ -50,19 +50,21 @@ Today: ${today}
 Reading focus: ${focusLabel}
 
 TASK:
-1. Calculate the approximate current positions of Sun, Moon, Jupiter, Venus, and Saturn based on today's date.
-2. Using the seeker's birth data, estimate which natal houses these planets are currently transiting (approximate is fine — this is an intuitive reading, not a precise calculation).
-3. Identify the single most dominant planetary energy for this seeker right now, specifically as it relates to their focus: ${focusLabel}.
-4. From this exact list, choose the one major arcana card that most resonates with that energy AND their focus area:
+1. Using the seeker's birth date, time, and place, calculate their approximate Ascendant (Rising sign). Show your reasoning briefly — use the latitude of the birth city, the Local Sidereal Time, and the approximate degree of the ecliptic rising. State the Ascendant sign clearly.
+2. Calculate the approximate current positions of Sun, Moon, Jupiter, Venus, and Saturn based on today's date.
+3. Using the seeker's birth data and Ascendant, estimate which natal houses these transiting planets currently occupy. Note especially any planets transiting the 1st house (conjunct Ascendant), 7th (relationships), 10th (career), or any angular houses.
+4. Identify the single most dominant planetary energy for this seeker right now — one that is most activated by both their natal chart and current transits — specifically as it relates to their focus: ${focusLabel}.
+5. From this exact list, choose the one major arcana card that most resonates with that dominant energy AND their focus area:
 ${GEMINI_CARD_NAMES.join(', ')}
-5. Write a personal reading in Geetika's voice, focused entirely on ${focusLabel}.
+6. Write a personal reading in Geetika's voice, woven through with the seeker's Ascendant energy and current transits, focused entirely on ${focusLabel}.
 
 Respond with ONLY valid JSON — no markdown fences, no text before or after:
 {
+  "ascendant": "the rising sign (e.g. Scorpio Rising, Leo Rising)",
   "card": "exact card name from the list above",
   "planet": "dominant planet (e.g. Saturn, Venus, Moon)",
-  "transit": "one sentence about the key transit as it touches ${focusLabel}, in plain felt human language",
-  "message": "3 sentences of personal reading in Geetika's voice, addressed as 'you', focused on ${focusLabel}",
+  "transit": "one sentence naming the key transit and how it is touching the seeker's chart right now, in plain felt human language",
+  "message": "3–4 sentences of personal reading in Geetika's voice, addressed as 'you', woven with the ascendant and current planetary energy, focused on ${focusLabel}",
   "guidance": "one closing line — a gentle invitation or direction for ${focusLabel}, not a prediction"
 }`;
 
@@ -73,7 +75,7 @@ Respond with ONLY valid JSON — no markdown fences, no text before or after:
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.75, maxOutputTokens: 600 }
+        generationConfig: { temperature: 0.75, maxOutputTokens: 900 }
       })
     }
   );

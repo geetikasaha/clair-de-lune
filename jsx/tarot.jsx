@@ -163,6 +163,9 @@ const CardReveal = ({ reading, firstName, showBooking, animate }) => {
       </div>
 
       <div className="cod-meaning">
+        {reading.ascendant && (
+          <div className="pac-ascendant-line">☽ {reading.ascendant}</div>
+        )}
         <div className="pac-reading-label">
           {reading.planet && <span>✦ {reading.planet} · </span>}{card.definition}
           {reading.readingType && <span className="pac-focus-tag"> · {reading.readingType}</span>}
