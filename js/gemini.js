@@ -22,7 +22,7 @@ function resolveCard(geminiName) {
 }
 
 async function getGeminiReading(userData) {
-  if (!GEMINI_API_KEY || GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+  if (!GEMINI_API_KEY || GEMINI_API_KEY.startsWith('YOUR_')) {
     throw new Error('no-key');
   }
 
