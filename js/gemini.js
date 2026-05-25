@@ -78,7 +78,10 @@ Respond with ONLY valid JSON — no markdown fences, no text before or after:
     }
   );
 
-  if (!res.ok) throw new Error(`gemini-${res.status}`);
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`gemini-${res.status}: ${errText}`);
+  }
 
   const data = await res.json();
   const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '';

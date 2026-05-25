@@ -236,7 +236,8 @@ const PickACard = () => {
       localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
       setReading(toStore);
       setStep('revealed');
-    } catch {
+    } catch (err) {
+      console.error('[tarot] Gemini failed:', err);
       // Fallback: random card with default message
       const card = TAROT_CARDS[Math.floor(Math.random() * TAROT_CARDS.length)];
       const fallback = {
