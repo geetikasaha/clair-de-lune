@@ -2,7 +2,7 @@
 // Get a free API key at: aistudio.google.com
 // Paste it below, then push to GitHub.
 
-const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE';
+const GEMINI_API_KEY = 'AIzaSyBanRoYw72l_dmISNO1bRiWXkxaU0sWUSQ';
 
 const GEMINI_CARD_NAMES = [
   'The Fool', 'The Magician', 'The High Priestess', 'The Empress',
