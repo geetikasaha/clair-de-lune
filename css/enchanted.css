@@ -860,9 +860,9 @@ body::after {
 }
 .pac-loading-moon {
   font-size: 48px; color: var(--accent);
-  animation: moonFloat 3s ease-in-out infinite;
+  animation: loadingMoonBob 3s ease-in-out infinite;
 }
-@keyframes moonFloat {
+@keyframes loadingMoonBob {
   0%, 100% { transform: translateY(0); opacity: 0.8; }
   50%       { transform: translateY(-10px); opacity: 1; }
 }
