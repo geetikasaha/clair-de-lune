@@ -239,6 +239,7 @@ const PickACard = () => {
       localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
       setReading(toStore);
       setStep('revealed');
+      setTimeout(() => document.getElementById('card-of-day')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     } catch (err) {
       console.error('[tarot] Gemini failed:', err);
       // Fallback: random card with default message
@@ -257,6 +258,7 @@ const PickACard = () => {
       localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
       setReading(fallback);
       setStep('revealed');
+      setTimeout(() => document.getElementById('card-of-day')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     }
   };
 

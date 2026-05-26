@@ -615,10 +615,11 @@ body::after {
 }
 .cod-message {
   font-family: var(--serif);
-  font-size: 22px;
-  line-height: 1.55;
+  font-size: 24px;
+  line-height: 1.65;
   color: var(--fg);
   margin: 0 0 32px;
+  font-weight: 300;
 }
 .cod-redraw {
   background: transparent;
@@ -805,9 +806,9 @@ body::after {
 
 .pac-ascendant-line {
   font-family: var(--serif); font-style: italic;
-  font-size: 13px; color: var(--accentSoft);
+  font-size: 15px; color: var(--accent);
   letter-spacing: 0.18em; text-transform: uppercase;
-  margin-bottom: 14px; opacity: 0.85;
+  margin-bottom: 14px;
 }
 
 .pac-reading-for {
@@ -894,18 +895,18 @@ body::after {
 
 .pac-transit-line {
   font-family: var(--serif); font-style: italic;
-  font-size: 15px; color: var(--fgDim);
-  margin: 0 0 16px; line-height: 1.65;
+  font-size: 17px; color: rgba(240,232,208,0.75);
+  margin: 0 0 18px; line-height: 1.7;
 }
 .pac-guidance-line {
   font-family: var(--serif); font-style: italic;
-  font-size: 16px; color: var(--accentSoft);
-  margin: 16px 0 0; line-height: 1.65;
+  font-size: 18px; color: var(--accent);
+  margin: 16px 0 0; line-height: 1.7;
 }
 .pac-already-note {
   font-family: var(--serif); font-style: italic;
-  font-size: 14px; color: var(--fgDim);
-  line-height: 1.6; max-width: 340px;
+  font-size: 16px; color: rgba(240,232,208,0.7);
+  line-height: 1.65; max-width: 340px;
 }
 .pac-check-label {
   display: flex; align-items: center; gap: 10px;
