@@ -197,6 +197,15 @@ const PickACard = () => {
   const [form, setForm]   = React.useState({
     name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false, readingType: '', rising: ''
   });
+  const revealRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (step === 'revealed' && revealRef.current) {
+      setTimeout(() => {
+        revealRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 200);
+    }
+  }, [step]);
 
   React.useEffect(() => {
     const saved = localStorage.getItem(PAC_STORAGE_KEY);
@@ -240,7 +249,6 @@ const PickACard = () => {
       localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
       setReading(toStore);
       setStep('revealed');
-      setTimeout(() => document.getElementById('card-of-day')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     } catch (err) {
       console.error('[tarot] Gemini failed:', err);
       // Fallback: random card with default message
@@ -259,7 +267,6 @@ const PickACard = () => {
       localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
       setReading(fallback);
       setStep('revealed');
-      setTimeout(() => document.getElementById('card-of-day')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     }
   };
 
@@ -369,7 +376,7 @@ const PickACard = () => {
 
       {/* ── Revealed ────────────────────────────────────────────────────── */}
       {step === 'revealed' && reading && (
-        <div className="cod-stage">
+        <div className="cod-stage" ref={revealRef}>
           <CardReveal reading={reading} firstName={firstName} showBooking={false} animate />
         </div>
       )}
