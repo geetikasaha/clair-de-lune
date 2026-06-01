@@ -146,17 +146,21 @@ const Hero = () => (
         <span className="line" />
       </div>
       <h1 className="wordmark">Clair de Lune</h1>
-      <p className="hero-tag">
-        <em>"who I am is what I have —</em><br/>
-        <em>and if what I have is lost, then who am I?"</em>
-      </p>
       <p className="hero-sub">
-        A small light, kept burning for those at the lowest hour<br/>
-        and those climbing back toward themselves.
+        Feeling stuck, blocked, or like something in life has gone quiet?<br/>
+        A reading helps you find <em>clarity, purpose,</em> and a way to move forward.
       </p>
+      <div className="hero-for">
+        <span className="hero-for-label">a reading is for you if you are</span>
+        <div className="hero-for-tags">
+          {['feeling stuck in life', 'going through grief', 'at a crossroads', 'feeling blocked', 'lost your direction'].map((t, i) => (
+            <span key={i} className="hero-for-tag">{t}</span>
+          ))}
+        </div>
+      </div>
       <div className="hero-cta">
-        <a href="#card-of-day" className="btn-primary">pull a card</a>
-        <a href="book.html" className="btn-ghost">book a sitting</a>
+        <a href="#card-of-day" className="btn-primary">pull your free card →</a>
+        <a href="book.html" className="btn-ghost">book a reading with geetika</a>
       </div>
     </div>
   </header>
