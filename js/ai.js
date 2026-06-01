@@ -38,26 +38,30 @@ async function getGeminiReading(userData) {
 
   const systemPrompt = READING_CONTEXT;
 
+  const risingLine = userData.rising
+    ? `Ascendant (confirmed by seeker): ${userData.rising} Rising`
+    : `Ascendant: unknown — do not guess or calculate it, leave the ascendant field as empty string ""`;
+
   const userPrompt = `SEEKER:
 Name: ${userData.name}
 Date of birth: ${userData.birthdate}
 Time of birth: ${userData.birthtime || 'unknown — use 12:00 noon as default'}
 Place of birth: ${userData.birthplace}
+${risingLine}
 Today: ${today}
 Reading focus: ${focusLabel}
 
 TASK:
-1. Using the seeker's birth date, time, and place, calculate their approximate Ascendant (Rising sign). Use the latitude of the birth city and Local Sidereal Time to estimate the rising degree. State the Ascendant sign clearly.
-2. Calculate the approximate current positions of Sun, Moon, Jupiter, Venus, and Saturn for today's date.
-3. Using the seeker's birth data and Ascendant, estimate which natal houses these transiting planets currently occupy. Note especially planets transiting the 1st, 7th, or 10th house.
-4. Identify the single most dominant planetary energy for this seeker right now, specifically as it relates to: ${focusLabel}.
-5. From this exact list, choose the one major arcana card that most resonates with that energy AND their focus area:
+1. Calculate the approximate current positions of Sun, Moon, Jupiter, Venus, and Saturn for today's date.
+2. Using the seeker's birth data${userData.rising ? ` and their confirmed ${userData.rising} Rising` : ''}, estimate which natal houses these transiting planets currently occupy. Note especially planets transiting the 1st, 7th, or 10th house.
+3. Identify the single most dominant planetary energy for this seeker right now, specifically as it relates to: ${focusLabel}.
+4. From this exact list, choose the one major arcana card that most resonates with that energy AND their focus area:
 ${TAROT_CARD_NAMES.join(', ')}
-6. Write a personal reading in Geetika's voice, woven with the seeker's Ascendant and current transits, focused entirely on ${focusLabel}.
+5. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, focused entirely on ${focusLabel}.
 
 Respond with ONLY valid JSON — no markdown fences, no extra text:
 {
-  "ascendant": "the rising sign (e.g. Scorpio Rising)",
+  "ascendant": "${userData.rising ? userData.rising + ' Rising' : ''}",
   "card": "exact card name from the list above",
   "planet": "dominant planet (e.g. Saturn, Venus, Moon)",
   "transit": "one sentence about the key transit in plain, felt human language",

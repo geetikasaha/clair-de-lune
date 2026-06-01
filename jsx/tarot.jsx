@@ -195,7 +195,7 @@ const PickACard = () => {
   const [step, setStep]   = React.useState('init');
   const [reading, setReading] = React.useState(null);
   const [form, setForm]   = React.useState({
-    name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false, readingType: ''
+    name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false, readingType: '', rising: ''
   });
 
   React.useEffect(() => {
@@ -231,7 +231,8 @@ const PickACard = () => {
         birthdate: form.birthdate,
         birthtime: form.noTime ? '' : form.birthtime,
         birthplace: form.birthplace,
-        readingType: form.readingType
+        readingType: form.readingType,
+        rising: form.rising
       });
       const toStore = { ...result, name: form.name, readingType: form.readingType, pulledAt: Date.now() };
       // Store card name string only (cardObj is not JSON-serialisable safely)
@@ -265,7 +266,7 @@ const PickACard = () => {
   const startFresh = () => {
     localStorage.removeItem(PAC_STORAGE_KEY);
     setReading(null);
-    setForm({ name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false, readingType: '' });
+    setForm({ name: '', birthdate: '', birthtime: '', birthplace: '', noTime: false, readingType: '', rising: '' });
     setStep('intake');
   };
 
@@ -316,6 +317,19 @@ const PickACard = () => {
               <label className="pac-label">place of birth</label>
               <input className="pac-input" type="text" required placeholder="city, country"
                 value={form.birthplace} onChange={e => setForm(f => ({...f, birthplace: e.target.value}))} />
+            </div>
+            <div className="pac-field">
+              <label className="pac-label">
+                your rising sign <span className="pac-optional">(if you know it)</span>
+              </label>
+              <select className="pac-input pac-select" value={form.rising}
+                onChange={e => setForm(f => ({...f, rising: e.target.value}))}>
+                <option value="">I don't know</option>
+                {['Aries','Taurus','Gemini','Cancer','Leo','Virgo',
+                  'Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'].map(s => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
             </div>
             <div className="pac-field">
               <label className="pac-label">what calls to you most right now?</label>
