@@ -175,16 +175,20 @@ const CardReveal = ({ reading, firstName, showBooking, animate }) => {
         {reading.guidance && <p className="pac-guidance-line"><em>{reading.guidance}</em></p>}
         <div className="pac-reading-for">drawn for <em>{(firstName || '').toLowerCase()}</em></div>
 
-        {showBooking && (
-          <div className="pac-actions" style={{ marginTop: '32px', flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
-            <a href="book.html?service=spiritual" className="btn-primary" style={{ fontSize: '11px', padding: '13px 28px' }}>
-              book a full reading with geetika →
-            </a>
-            <p className="pac-already-note">
-              each seeker draws once — your card was chosen by the stars for you. a full reading goes deeper.
-            </p>
-          </div>
-        )}
+        <div className="pac-cta-block">
+          <div className="pac-cta-rule" />
+          <p className="pac-cta-prompt">
+            your card has shown you the energy. a full reading with geetika will show you <em>what to do with it</em> — the blocks, the path, and what your soul is truly asking for.
+          </p>
+          <a href="book.html" className="pac-cta-btn">
+            book a reading with geetika →
+          </a>
+          <p className="pac-cta-note">
+            {showBooking
+              ? 'each seeker draws once — your card was chosen by the stars for you.'
+              : 'one-on-one · tarot · astrology · spiritual guidance · via whatsapp'}
+          </p>
+        </div>
       </div>
     </div>
   );
