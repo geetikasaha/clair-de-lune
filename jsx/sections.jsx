@@ -121,24 +121,36 @@ const Services = () => (
 // ── Book CTA ───────────────────────────────────────────────────────────────
 const BookCTA = () => (
   <section id="book" className="section section-book" data-screen-label="05 Book">
-    <div className="section-inner" style={{ textAlign: 'center' }}>
+    <div className="section-inner">
       <SectionLabel num="03">arrange a sitting</SectionLabel>
-      <h2 className="display-h center">Light a candle.<br />Then we'll meet.</h2>
-      <div className="book-shell book-cta-shell">
-        <div style={{ fontSize: '3rem', color: 'var(--accent)', animation: 'pulse 3s ease-in-out infinite', display: 'block', marginBottom: '1.5rem' }}>☽</div>
-        <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', color: 'var(--fgDim)', fontSize: '20px', lineHeight: '1.7', maxWidth: '540px', margin: '0 auto 2.5rem' }}>
-          The answer is already inside you. A reading is not a prediction — it is a space where you finally hear yourself. Choose a slot. I will be waiting.
+      <h2 className="display-h center">Ready to go deeper?</h2>
+
+      <div className="book-cta-why">
+        <p className="book-cta-lead">
+          People come here when something feels stuck. When a decision won't settle.
+          When they <em>know</em> something is shifting — but can't name it yet.
         </p>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="book.html" className="btn-primary">choose my sitting →</a>
-          <a href="https://wa.me/917999634730?text=Hi%20Geetika!%20I'd%20like%20to%20know%20more%20about%20a%20reading." target="_blank" className="btn-ghost">ask on whatsapp</a>
-        </div>
-        <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }}>
-          {['all sessions online', 'confirmed via whatsapp', 'payment after confirmation'].map((note, i) => (
-            <div key={i} style={{ textAlign: 'center' }}>
-              <div style={{ color: 'var(--accent)', fontSize: '16px', marginBottom: '6px' }}>✶</div>
-              <div style={{ fontSize: '11px', letterSpacing: '0.18em', textTransform: 'lowercase', color: 'var(--fgDim)' }}>{note}</div>
+        <div className="book-cta-outcomes">
+          {[
+            { icon: '◎', text: 'understand why you keep circling the same patterns' },
+            { icon: '◎', text: 'see where your energy is blocked — and what is moving' },
+            { icon: '◎', text: 'hear yourself clearly, without the noise' },
+            { icon: '◎', text: 'know what your soul is actually asking for right now' },
+          ].map((item, i) => (
+            <div key={i} className="book-cta-outcome-item">
+              <span className="book-cta-outcome-icon">{item.icon}</span>
+              <span>{item.text}</span>
             </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="book-cta-action">
+        <a href="book.html" className="btn-primary btn-large">book a reading with geetika →</a>
+        <a href="https://wa.me/917999634730?text=Hi%20Geetika!%20I'd%20like%20to%20know%20more%20about%20a%20reading." target="_blank" className="btn-ghost">not sure? ask on whatsapp</a>
+        <div className="book-cta-trust">
+          {['one-on-one · online', 'confirmed via whatsapp', 'pay after confirmation'].map((note, i) => (
+            <span key={i} className="book-cta-trust-note">{note}</span>
           ))}
         </div>
       </div>
