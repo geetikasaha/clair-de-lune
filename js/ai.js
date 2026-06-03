@@ -120,23 +120,29 @@ async function getGeminiReading(userData) {
     ? calculateHouses(userData.rising || null, natal.planets, userData.readingType)
     : null;
 
-  const transitBlock = buildTransitBlock(transits);
-  const natalBlock   = buildNatalBlock(natal);
-  const aspectBlock  = buildAspectBlock(aspects);
-  const houseBlock   = buildHouseBlock(houseData);
+  const transitHouseData = (typeof getTransitHousePositions !== 'undefined')
+    ? getTransitHousePositions(userData.rising || null, natal?.planets?.sun?.sign || null, transits)
+    : null;
+
+  const transitBlock      = buildTransitBlock(transits);
+  const natalBlock        = buildNatalBlock(natal);
+  const houseBlock        = buildHouseBlock(houseData);
+  const transitHouseBlock = transitHouseData?.formatted || null;
+  const aspectBlock       = buildAspectBlock(aspects);
 
   const hasFullData = !!(transitBlock && natalBlock && aspectBlock);
 
   // ── Build task section based on data availability ─────────────────────────
   let taskSection;
   if (hasFullData) {
-    taskSection = `TASK:
-1. All astronomical data above has been pre-calculated — do NOT recalculate or override any positions, houses, or aspects.
-2. Using the natal house analysis, identify which houses are activated by the active transits. A transit to the ruler of a key house, or a planet transiting through that house, is highly significant.
-3. Focus on the 2-3 active transits most directly relevant to: ${focusLabel}. Anchor each transit to the specific house it touches.
-4. From this exact list, choose the ONE major arcana card that best embodies the dominant transit + house energy for ${focusLabel}:
+    taskSection = `TASK — follow this reasoning chain exactly:
+1. All astronomical data above is pre-calculated. Do NOT recalculate or override any positions, houses, or aspects.
+2. For the reading focus (${focusLabel}), identify the key houses from the natal house analysis above.
+3. For each key house: note its sign, find its natal ruler, and check where that ruler is CURRENTLY transiting (see "Transiting Planets in Natal Houses" above). A ruler transiting its own house or an angular house is especially powerful.
+4. Cross-reference with the active aspects list — any transiting planet aspecting a natal planet in (or ruling) a key house is the core event of this reading.
+5. From this exact list, choose the ONE major arcana card that best embodies the dominant house activation + transit energy for ${focusLabel}:
 ${TAROT_CARD_NAMES.join(', ')}
-5. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, grounded in the specific transits and house activations today — speak to what this means for the seeker's ${focusLabel} right now. Make it felt, not academic.`;
+6. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''} — ground it in the specific house being activated and what the transit means for this seeker's ${focusLabel} right now. Make it felt, not academic.`;
   } else {
     taskSection = `TASK:
 1. Calculate the approximate current positions of Sun, Moon, Jupiter, Venus, and Saturn for today's date.
@@ -147,7 +153,7 @@ ${TAROT_CARD_NAMES.join(', ')}
 5. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, focused on ${focusLabel}.`;
   }
 
-  const dataSections = [transitBlock, natalBlock, houseBlock, aspectBlock]
+  const dataSections = [transitBlock, natalBlock, houseBlock, transitHouseBlock, aspectBlock]
     .filter(Boolean)
     .join('\n\n');
 

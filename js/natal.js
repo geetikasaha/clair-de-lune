@@ -190,3 +190,40 @@ function houseNumOf(sign, anchorIdx) {
   const houseNum = ((signIdx - anchorIdx + 12) % 12) + 1;
   return `${houseNum}${['','st','nd','rd'][houseNum] || 'th'} house`;
 }
+
+// ── Transit House Positions ───────────────────────────────────────────────────
+// Shows WHERE today's transiting planets are currently sitting in the natal
+// house system. This closes the loop: natal ruler + transit house + aspect.
+
+function getTransitHousePositions(rising, natalSunSign, transits) {
+  if (!transits) return null;
+
+  const anchorSign = rising || natalSunSign;
+  if (!anchorSign) return null;
+
+  const anchorIdx = NATAL_SIGNS.indexOf(anchorSign);
+  if (anchorIdx === -1) return null;
+
+  const isSolar = !rising;
+  const cap = s => s[0].toUpperCase() + s.slice(1);
+
+  const lines = ['sun', 'moon', 'venus', 'jupiter', 'saturn']
+    .filter(b => transits.planets[b])
+    .map(b => {
+      const p = transits.planets[b];
+      const houseNum = ((NATAL_SIGNS.indexOf(p.sign) - anchorIdx + 12) % 12) + 1;
+      const ordinal = `${houseNum}${['','st','nd','rd'][houseNum] || 'th'}`;
+      const theme = HOUSE_THEMES[houseNum] || '';
+      return `${cap(b)} (${p.sign} ${p.degree}) → currently transiting your ${ordinal} house (${theme})`;
+    });
+
+  const label = isSolar
+    ? `Solar houses (${anchorSign} as 1st)`
+    : `${anchorSign} Rising`;
+
+  return {
+    label,
+    lines,
+    formatted: `TRANSITING PLANETS IN NATAL HOUSES TODAY (${label}):\n${lines.join('\n')}`
+  };
+}
