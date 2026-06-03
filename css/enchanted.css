@@ -577,6 +577,12 @@ body::after {
 }
 .cod-reveal {
   display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+.cod-reveal-main {
+  display: flex;
   gap: 48px;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -851,25 +857,38 @@ body::after {
 .pac-focus-tag { color: var(--accent); }
 
 .pac-cta-block {
-  margin-top: 20px;
-  padding: 20px 24px;
-  background: linear-gradient(180deg, rgba(23,40,33,0.6), rgba(13,24,18,0.8));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 28px;
+  background: linear-gradient(90deg, rgba(23,40,33,0.7), rgba(13,24,18,0.85));
   border: 1px solid rgba(216,199,154,0.22);
   border-radius: 4px;
-  display: flex; flex-direction: column; gap: 12px;
-  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
 }
-.pac-cta-rule {
-  width: 50px; height: 1px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  margin-bottom: 2px;
+.pac-cta-accent {
+  width: 3px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--accent), transparent);
 }
 .pac-cta-prompt {
+  flex: 1;
   font-family: var(--serif); font-size: 15px;
-  line-height: 1.65; color: rgba(240,232,208,0.88);
-  font-weight: 300;
+  line-height: 1.6; color: rgba(240,232,208,0.88);
+  font-weight: 300; margin: 0;
 }
 .pac-cta-prompt em { color: var(--accent); font-style: italic; }
+.pac-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
 .pac-cta-btn {
   display: inline-block;
   font-family: var(--sans); font-weight: 500;
@@ -880,12 +899,14 @@ body::after {
   text-decoration: none;
   transition: all 0.3s;
   box-shadow: 0 6px 24px rgba(216,199,154,0.2);
+  white-space: nowrap;
 }
 .pac-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(216,199,154,0.3); }
 .pac-cta-note {
   font-family: var(--serif); font-style: italic;
-  font-size: 13px; color: var(--fgDim);
-  letter-spacing: 0.06em; line-height: 1.5;
+  font-size: 12px; color: var(--fgDim);
+  letter-spacing: 0.05em; line-height: 1.4;
+  text-align: right; max-width: 200px;
 }
 
 .pac-ascendant-line {
@@ -1825,4 +1846,9 @@ body::after {
   /* Slots */
   .slots-grid { grid-template-columns: repeat(2, 1fr); }
   .slot-btn { padding: 0.75rem 0.5rem; }
+
+  /* Reading reveal — stack CTA vertically on mobile */
+  .pac-cta-block { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .pac-cta-actions { align-items: flex-start; }
+  .pac-cta-note { text-align: left; max-width: 100%; }
 }

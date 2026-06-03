@@ -149,37 +149,44 @@ const CardReveal = ({ reading, firstName, showBooking, animate }) => {
   if (!card) return null;
   return (
     <div className="cod-reveal">
-      <div className="cod-card cod-card-revealed">
-        <div className="cod-card-inner" style={animate ? {} : { animation: 'none', transform: 'rotateY(180deg)' }}>
-          <div className="cod-card-back"><TarotCardBack width={220} /></div>
-          <div className="cod-card-face">
-            <div className="cod-face-frame">
-              <div className="cod-face-arcana">{card.arcana}</div>
-              <div className="cod-face-illus"><TarotCardFace cardName={card.name} size={110} /></div>
-              <div className="cod-face-name">{card.display}</div>
+
+      {/* ── Row 1: card + reading text side by side ── */}
+      <div className="cod-reveal-main">
+        <div className="cod-card cod-card-revealed">
+          <div className="cod-card-inner" style={animate ? {} : { animation: 'none', transform: 'rotateY(180deg)' }}>
+            <div className="cod-card-back"><TarotCardBack width={220} /></div>
+            <div className="cod-card-face">
+              <div className="cod-face-frame">
+                <div className="cod-face-arcana">{card.arcana}</div>
+                <div className="cod-face-illus"><TarotCardFace cardName={card.name} size={110} /></div>
+                <div className="cod-face-name">{card.display}</div>
+              </div>
             </div>
           </div>
         </div>
+
+        <div className="cod-meaning">
+          {reading.ascendant && (
+            <div className="pac-ascendant-line">☽ {reading.ascendant}</div>
+          )}
+          <div className="pac-reading-label">
+            {reading.planet && <span>✦ {reading.planet} · </span>}{card.definition}
+            {reading.readingType && <span className="pac-focus-tag"> · {reading.readingType}</span>}
+          </div>
+          {reading.transit && <p className="pac-transit-line">{reading.transit}</p>}
+          <p className="cod-message">{reading.message}</p>
+          {reading.guidance && <p className="pac-guidance-line"><em>{reading.guidance}</em></p>}
+          <div className="pac-reading-for">drawn for <em>{(firstName || '').toLowerCase()}</em></div>
+        </div>
       </div>
 
-      <div className="cod-meaning">
-        {reading.ascendant && (
-          <div className="pac-ascendant-line">☽ {reading.ascendant}</div>
-        )}
-        <div className="pac-reading-label">
-          {reading.planet && <span>✦ {reading.planet} · </span>}{card.definition}
-          {reading.readingType && <span className="pac-focus-tag"> · {reading.readingType}</span>}
-        </div>
-        {reading.transit && <p className="pac-transit-line">{reading.transit}</p>}
-        <p className="cod-message">{reading.message}</p>
-        {reading.guidance && <p className="pac-guidance-line"><em>{reading.guidance}</em></p>}
-        <div className="pac-reading-for">drawn for <em>{(firstName || '').toLowerCase()}</em></div>
-
-        <div className="pac-cta-block">
-          <div className="pac-cta-rule" />
-          <p className="pac-cta-prompt">
-            your card has shown you the energy. a full reading with geetika will show you <em>what to do with it</em> — the blocks, the path, and what your soul is truly asking for.
-          </p>
+      {/* ── Row 2: CTA full width ── */}
+      <div className="pac-cta-block">
+        <div className="pac-cta-accent" />
+        <p className="pac-cta-prompt">
+          your card has shown you the energy. a full reading with geetika will show you <em>what to do with it</em> — the blocks, the path, and what your soul is truly asking for.
+        </p>
+        <div className="pac-cta-actions">
           <a href="book.html" className="pac-cta-btn">
             book a reading with geetika →
           </a>
@@ -190,6 +197,7 @@ const CardReveal = ({ reading, firstName, showBooking, animate }) => {
           </p>
         </div>
       </div>
+
     </div>
   );
 };
