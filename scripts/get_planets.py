@@ -53,6 +53,7 @@ def get_position(planet_obj, ephem_date):
     return {
         'sign': sign,
         'degree': f"{deg}°{mins:02d}'",
+        'longitude': round(lon_deg, 2),
         'energy': SIGN_ENERGY[sign]
     }
 

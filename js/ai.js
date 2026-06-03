@@ -12,9 +12,7 @@ const TAROT_CARD_NAMES = [
   'The Tower', 'The Star', 'The Moon', 'The Sun', 'Judgement', 'The World'
 ];
 
-// ── Daily Planetary Positions ─────────────────────────────────────────────────
-// Loaded from js/planets-today.json, updated daily at 10am IST via GitHub Actions.
-// Injected into every reading so the AI uses real positions rather than estimating.
+// ── Daily transits (updated by GitHub Actions cron at 10am IST) ───────────────
 
 let _planetsCache = null;
 
@@ -23,24 +21,37 @@ async function loadPlanetsToday() {
   try {
     const bust = new Date().toDateString().replace(/\s/g, '-');
     const res = await fetch(`js/planets-today.json?d=${bust}`);
-    if (res.ok) {
-      _planetsCache = await res.json();
-    }
+    if (res.ok) _planetsCache = await res.json();
   } catch (e) {
-    console.warn('[tarot] Could not load planets-today.json — AI will estimate positions');
+    console.warn('[tarot] Could not load planets-today.json');
   }
   return _planetsCache;
 }
 
-function buildPlanetPromptBlock(planetsData) {
-  if (!planetsData || !planetsData.prompt_block) return null;
-  return `TODAY'S VERIFIED PLANETARY POSITIONS — recorded at 10:00 AM IST on ${planetsData.date}.
-Do NOT recalculate or override these. Use them exactly as given:
+// ── Prompt builders ───────────────────────────────────────────────────────────
 
-${planetsData.prompt_block}`;
+function buildTransitBlock(planetsData) {
+  if (!planetsData) return null;
+  return `TODAY'S TRANSITING PLANETS (verified positions, recorded 10:00 AM IST on ${planetsData.date}):\n${planetsData.prompt_block}`;
 }
 
-// ── Reading ───────────────────────────────────────────────────────────────────
+function buildNatalBlock(natal) {
+  if (!natal) return null;
+  const p = natal.planets;
+  const cap = s => s[0].toUpperCase() + s.slice(1);
+  const lines = ['sun','moon','venus','jupiter','saturn']
+    .filter(b => p[b])
+    .map(b => `Natal ${cap(b)}: ${p[b].sign} ${p[b].degree}`);
+  return `SEEKER'S NATAL CHART (calculated from birth: ${natal.birthdate}, ${natal.birthtime}, ${natal.birthplace}):\n${lines.join('\n')}`;
+}
+
+function buildAspectBlock(aspects) {
+  if (!aspects || !aspects.length) return null;
+  const lines = aspects.slice(0, 6).map((a, i) => `${i + 1}. ${a.label}`);
+  return `ACTIVE TRANSITS FOR THIS SEEKER TODAY (calculated, tightest orb first):\n${lines.join('\n')}`;
+}
+
+// ── Card resolver ─────────────────────────────────────────────────────────────
 
 function resolveCard(name) {
   const key = (name || '').toLowerCase().replace(/^the /, '').trim();
@@ -49,6 +60,8 @@ function resolveCard(name) {
     c.name.toLowerCase().includes(key)
   ) || TAROT_CARDS[Math.floor(Math.random() * TAROT_CARDS.length)];
 }
+
+// ── Main reading function ─────────────────────────────────────────────────────
 
 async function getGeminiReading(userData) {
   if (!GROQ_API_KEY || GROQ_API_KEY.startsWith('YOUR_')) {
@@ -66,27 +79,52 @@ async function getGeminiReading(userData) {
     general: 'general life guidance'
   }[userData.readingType] || 'general life guidance';
 
-  const systemPrompt = READING_CONTEXT;
-
   const risingLine = userData.rising
     ? `Ascendant (confirmed by seeker): ${userData.rising} Rising`
-    : `Ascendant: unknown — do not guess or calculate it, leave the ascendant field as empty string ""`;
+    : `Ascendant: unknown — leave the ascendant field as ""`;
 
-  // Load real planet positions (updated daily by GitHub Actions)
-  const planetsData = await loadPlanetsToday();
-  const planetBlock = buildPlanetPromptBlock(planetsData);
+  // ── Fetch transits + natal chart in parallel ──────────────────────────────
+  const [transits, natal] = await Promise.all([
+    loadPlanetsToday(),
+    (typeof calculateNatalChart !== 'undefined')
+      ? calculateNatalChart(userData.birthdate, userData.birthtime, userData.birthplace)
+      : Promise.resolve(null)
+  ]);
 
-  const planetTaskLines = planetBlock
-    ? `1. You have been given today's verified planetary positions above — do not recalculate them.
-2. Using the seeker's birth data${userData.rising ? ` and their confirmed ${userData.rising} Rising` : ''}, identify which natal houses the transiting planets currently occupy. Pay special attention to planets in the 1st, 5th, 7th, or 10th house.
-3. Identify the single most dominant planetary energy for this seeker right now, specifically as it relates to: ${focusLabel}. Consider the sign energies described above.
-4. From this exact list, choose the one major arcana card that best embodies that planetary energy AND their focus area:`
-    : `1. Calculate the approximate current positions of Sun, Moon, Jupiter, Venus, and Saturn for today's date.
-2. Using the seeker's birth data${userData.rising ? ` and their confirmed ${userData.rising} Rising` : ''}, estimate which natal houses these transiting planets currently occupy. Note especially planets transiting the 1st, 7th, or 10th house.
-3. Identify the single most dominant planetary energy for this seeker right now, specifically as it relates to: ${focusLabel}.
-4. From this exact list, choose the one major arcana card that most resonates with that energy AND their focus area:`;
+  const aspects = (typeof calculateTransitAspects !== 'undefined')
+    ? calculateTransitAspects(natal, transits)
+    : [];
 
-  const userPrompt = `${planetBlock ? planetBlock + '\n\n' : ''}SEEKER:
+  const transitBlock = buildTransitBlock(transits);
+  const natalBlock   = buildNatalBlock(natal);
+  const aspectBlock  = buildAspectBlock(aspects);
+
+  const hasFullData = !!(transitBlock && natalBlock && aspectBlock);
+
+  // ── Build task section based on data availability ─────────────────────────
+  let taskSection;
+  if (hasFullData) {
+    taskSection = `TASK:
+1. The natal chart and active transits have been calculated and given above — do NOT recalculate them.
+2. Focus on the 2-3 active transits most relevant to: ${focusLabel}. Consider the nature of the aspecting planets and the signs involved.
+3. From this exact list, choose the ONE major arcana card that best embodies the dominant transit energy for ${focusLabel}:
+${TAROT_CARD_NAMES.join(', ')}
+4. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, grounded in the specific transits active today — speak directly to what these planetary movements mean for this seeker's ${focusLabel}. Make it felt, not academic.`;
+  } else {
+    taskSection = `TASK:
+1. Calculate the approximate current positions of Sun, Moon, Jupiter, Venus, and Saturn for today's date.
+2. Using the seeker's birth data, estimate which natal houses these transiting planets occupy.
+3. Identify the single most dominant planetary energy for this seeker related to: ${focusLabel}.
+4. From this exact list, choose the one major arcana card that resonates with that energy:
+${TAROT_CARD_NAMES.join(', ')}
+5. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, focused on ${focusLabel}.`;
+  }
+
+  const dataSections = [transitBlock, natalBlock, aspectBlock]
+    .filter(Boolean)
+    .join('\n\n');
+
+  const userPrompt = `${dataSections ? dataSections + '\n\n' : ''}SEEKER:
 Name: ${userData.name}
 Date of birth: ${userData.birthdate}
 Time of birth: ${userData.birthtime || 'unknown — use 12:00 noon as default'}
@@ -95,18 +133,15 @@ ${risingLine}
 Today: ${today}
 Reading focus: ${focusLabel}
 
-TASK:
-${planetTaskLines}
-${TAROT_CARD_NAMES.join(', ')}
-5. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, rooted in the specific planetary energies active today and focused entirely on ${focusLabel}.
+${taskSection}
 
 Respond with ONLY valid JSON — no markdown fences, no extra text:
 {
   "ascendant": "${userData.rising ? userData.rising + ' Rising' : ''}",
   "card": "exact card name from the list above",
-  "planet": "dominant planet (e.g. Saturn, Venus, Moon)",
-  "transit": "one sentence naming the key transit — e.g. 'Jupiter moving through Cancer is drawing your attention to...' — in plain, felt human language",
-  "message": "3–4 sentences in Geetika's voice, addressed as 'you', rooted in today's planetary energies and focused on ${focusLabel}",
+  "planet": "dominant transiting planet (e.g. Saturn, Venus, Moon)",
+  "transit": "one sentence naming the key transit in plain, felt human language — e.g. 'Jupiter moving through Cancer is touching your natal Venus, expanding what you thought love could feel like'",
+  "message": "3–4 sentences in Geetika's voice, addressed as 'you', rooted in today's specific transits and focused on ${focusLabel}",
   "guidance": "one closing line — a gentle invitation, not a prediction"
 }`;
 
@@ -119,7 +154,7 @@ Respond with ONLY valid JSON — no markdown fences, no extra text:
     body: JSON.stringify({
       model: 'llama-3.3-70b-versatile',
       messages: [
-        { role: 'system', content: systemPrompt },
+        { role: 'system', content: READING_CONTEXT },
         { role: 'user',   content: userPrompt }
       ],
       temperature: 0.75,

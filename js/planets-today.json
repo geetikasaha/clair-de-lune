@@ -5,26 +5,31 @@
     "sun": {
       "sign": "Gemini",
       "degree": "13°02'",
+      "longitude": 73.03,
       "energy": "communication, duality, curiosity"
     },
     "moon": {
       "sign": "Scorpio",
       "degree": "6°44'",
+      "longitude": 216.73,
       "energy": "transformation, depth, intensity"
     },
     "venus": {
       "sign": "Cancer",
       "degree": "2°18'",
+      "longitude": 92.30,
       "energy": "emotion, nurturing, home and roots"
     },
     "jupiter": {
       "sign": "Cancer",
       "degree": "3°51'",
+      "longitude": 93.85,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Pisces",
       "degree": "20°34'",
+      "longitude": 350.57,
       "energy": "intuition, dissolution, boundless compassion"
     }
   },
