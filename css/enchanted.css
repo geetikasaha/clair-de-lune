@@ -513,20 +513,24 @@ body::after {
 }
 
 /* ── Card of the Day ─────────────────────────────────────────────────────── */
-.section-cod { padding-top: 100px; }
+.section-cod { padding-top: 52px; padding-bottom: 40px; }
+.section-cod .sec-label { margin-bottom: 12px; }
+.section-cod .display-h {
+  font-size: clamp(26px, 3.2vw, 46px);
+  margin-bottom: 16px;
+}
 .cod-intro {
   text-align: center;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--fgDim);
-  margin: -32px 0 60px;
+  margin: 0 0 32px;
 }
 .cod-wrap { display: flex; justify-content: center; }
 .cod-stage {
   position: relative;
   width: 100%;
-  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;

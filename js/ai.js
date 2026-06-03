@@ -173,9 +173,9 @@ Respond with ONLY valid JSON — no markdown fences, no extra text:
   "ascendant": "${userData.rising ? userData.rising + ' Rising' : ''}",
   "card": "exact card name from the list above",
   "planet": "dominant transiting planet (e.g. Saturn, Venus, Moon)",
-  "transit": "one sentence naming the key transit in plain, felt human language — e.g. 'Jupiter moving through Cancer is touching your natal Venus, expanding what you thought love could feel like'",
-  "message": "3–4 sentences in Geetika's voice, addressed as 'you', rooted in today's specific transits and focused on ${focusLabel}",
-  "guidance": "one closing line — a gentle invitation, not a prediction"
+  "transit": "one SHORT sentence naming the key transit in plain, felt human language — e.g. 'Jupiter moving through Cancer is touching your natal Venus, expanding what you thought love could feel like'",
+  "message": "EXACTLY 2 sentences in Geetika's voice, addressed as 'you', rooted in today's specific transits and focused on ${focusLabel}. Each sentence maximum 20 words. Be direct and felt, not poetic or elaborate.",
+  "guidance": "one short closing line — a gentle invitation, not a prediction, maximum 15 words"
 }`;
 
   const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
