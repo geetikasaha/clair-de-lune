@@ -51,6 +51,27 @@ function buildAspectBlock(aspects) {
   return `ACTIVE TRANSITS FOR THIS SEEKER TODAY (calculated, tightest orb first):\n${lines.join('\n')}`;
 }
 
+function buildHouseBlock(houseData) {
+  if (!houseData) return null;
+  const cap = s => s[0].toUpperCase() + s.slice(1);
+  const solarNote = houseData.isSolar
+    ? ` (Solar houses — rising unknown, Sun sign ${houseData.anchor} used as 1st house)`
+    : ` (Whole Sign, ${houseData.anchor} Rising)`;
+  const header = `NATAL HOUSE ANALYSIS${solarNote}\nFocused on: ${houseData.focusLabel}`;
+  const lines = houseData.houses.map(h => {
+    const planets = h.planetsInHouse.length
+      ? `Natal planets here: ${h.planetsInHouse.join(', ')}`
+      : `Natal planets here: none`;
+    return [
+      ``,
+      `${h.house}${['','st','nd','rd'][h.house] || 'th'} House (${h.theme}) → ${h.sign}`,
+      `  Sign ruler: ${h.ruler} — natally in ${h.rulerPlacement}`,
+      `  ${planets}`
+    ].join('\n');
+  });
+  return header + lines.join('');
+}
+
 // ── Card resolver ─────────────────────────────────────────────────────────────
 
 function resolveCard(name) {
@@ -95,9 +116,14 @@ async function getGeminiReading(userData) {
     ? calculateTransitAspects(natal, transits)
     : [];
 
+  const houseData = (typeof calculateHouses !== 'undefined' && natal)
+    ? calculateHouses(userData.rising || null, natal.planets, userData.readingType)
+    : null;
+
   const transitBlock = buildTransitBlock(transits);
   const natalBlock   = buildNatalBlock(natal);
   const aspectBlock  = buildAspectBlock(aspects);
+  const houseBlock   = buildHouseBlock(houseData);
 
   const hasFullData = !!(transitBlock && natalBlock && aspectBlock);
 
@@ -105,11 +131,12 @@ async function getGeminiReading(userData) {
   let taskSection;
   if (hasFullData) {
     taskSection = `TASK:
-1. The natal chart and active transits have been calculated and given above — do NOT recalculate them.
-2. Focus on the 2-3 active transits most relevant to: ${focusLabel}. Consider the nature of the aspecting planets and the signs involved.
-3. From this exact list, choose the ONE major arcana card that best embodies the dominant transit energy for ${focusLabel}:
+1. All astronomical data above has been pre-calculated — do NOT recalculate or override any positions, houses, or aspects.
+2. Using the natal house analysis, identify which houses are activated by the active transits. A transit to the ruler of a key house, or a planet transiting through that house, is highly significant.
+3. Focus on the 2-3 active transits most directly relevant to: ${focusLabel}. Anchor each transit to the specific house it touches.
+4. From this exact list, choose the ONE major arcana card that best embodies the dominant transit + house energy for ${focusLabel}:
 ${TAROT_CARD_NAMES.join(', ')}
-4. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, grounded in the specific transits active today — speak directly to what these planetary movements mean for this seeker's ${focusLabel}. Make it felt, not academic.`;
+5. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, grounded in the specific transits and house activations today — speak to what this means for the seeker's ${focusLabel} right now. Make it felt, not academic.`;
   } else {
     taskSection = `TASK:
 1. Calculate the approximate current positions of Sun, Moon, Jupiter, Venus, and Saturn for today's date.
@@ -120,7 +147,7 @@ ${TAROT_CARD_NAMES.join(', ')}
 5. Write a personal reading in Geetika's voice${userData.rising ? `, woven with their ${userData.rising} Rising nature` : ''}, focused on ${focusLabel}.`;
   }
 
-  const dataSections = [transitBlock, natalBlock, aspectBlock]
+  const dataSections = [transitBlock, natalBlock, houseBlock, aspectBlock]
     .filter(Boolean)
     .join('\n\n');
 

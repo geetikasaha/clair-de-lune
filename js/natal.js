@@ -106,3 +106,87 @@ function calculateTransitAspects(natal, transits) {
 
   return aspects.sort((a, b) => a.orb - b.orb); // tightest orb first
 }
+
+// ── Whole Sign House Analysis ─────────────────────────────────────────────────
+// Whole Sign: 1st house = entire rising sign, 2nd = next sign, etc.
+// If rising is unknown, falls back to Solar houses (1st house = Sun sign).
+
+const SIGN_RULERS = {
+  Aries: 'Mars', Taurus: 'Venus', Gemini: 'Mercury', Cancer: 'Moon',
+  Leo: 'Sun', Virgo: 'Mercury', Libra: 'Venus', Scorpio: 'Mars',
+  Sagittarius: 'Jupiter', Capricorn: 'Saturn', Aquarius: 'Saturn', Pisces: 'Jupiter'
+};
+
+const HOUSE_THEMES = {
+  1:  'Self, identity, physical body, how you appear and begin things',
+  2:  'Personal wealth, income, material resources, self-worth',
+  3:  'Communication, siblings, short journeys, immediate environment',
+  4:  'Home, roots, family, emotional foundation, inner life',
+  5:  'Romance, dating, creative self-expression, pleasure, children',
+  6:  'Daily work, health, service, colleagues, skills and routine',
+  7:  'Marriage, committed partnership, open relationships, contracts',
+  8:  'Shared resources, transformation, depth, sexuality, inheritance',
+  9:  'Higher learning, philosophy, long journeys, beliefs, spirituality',
+  10: 'Career, public reputation, life achievement, authority figures',
+  11: 'Friendships, community, hopes, social networks, ideals',
+  12: 'Hidden self, solitude, spiritual retreat, past karma, what you release'
+};
+
+// Houses to show for each reading focus
+const FOCUS_HOUSES = {
+  love:    { houses: [5, 7],     label: 'love & relationships (5th — romance, 7th — partnership)' },
+  career:  { houses: [2, 6, 10], label: 'wealth & career (2nd — income, 6th — daily work, 10th — career peak)' },
+  self:    { houses: [1, 9, 12], label: 'self & spirit (1st — identity, 9th — beliefs, 12th — hidden self)' },
+  general: { houses: [1, 4, 7, 10], label: 'general life themes (angular houses: 1st, 4th, 7th, 10th)' }
+};
+
+function calculateHouses(rising, natalPlanets, readingFocus) {
+  if (!natalPlanets) return null;
+
+  // Determine anchor sign: use rising if known, else fall back to natal Sun sign
+  const anchorSign = rising || natalPlanets.sun?.sign;
+  const isSolar = !rising;
+  if (!anchorSign) return null;
+
+  const anchorIdx = NATAL_SIGNS.indexOf(anchorSign);
+  if (anchorIdx === -1) return null;
+
+  const focus = FOCUS_HOUSES[readingFocus] || FOCUS_HOUSES.general;
+  const cap = s => s[0].toUpperCase() + s.slice(1);
+
+  const houses = focus.houses.map(num => {
+    const houseSignIdx = (anchorIdx + num - 1) % 12;
+    const houseSign = NATAL_SIGNS[houseSignIdx];
+
+    // Which natal planets fall in this house (= this sign, whole sign)?
+    const planetsHere = Object.entries(natalPlanets)
+      .filter(([, pos]) => pos.sign === houseSign)
+      .map(([planet, pos]) => `${cap(planet)} (${pos.degree})`);
+
+    // Where is the house ruler placed natally?
+    const ruler = SIGN_RULERS[houseSign];
+    const rulerPlanetKey = ruler.toLowerCase();
+    const rulerNatalPos = natalPlanets[rulerPlanetKey];
+    const rulerPlacement = rulerNatalPos
+      ? `${rulerNatalPos.sign} ${rulerNatalPos.degree} (${houseNumOf(rulerNatalPos.sign, anchorIdx)})`
+      : 'not tracked';
+
+    return {
+      house: num,
+      sign: houseSign,
+      theme: HOUSE_THEMES[num],
+      ruler,
+      rulerPlacement,
+      planetsInHouse: planetsHere
+    };
+  });
+
+  return { anchor: anchorSign, isSolar, focusLabel: focus.label, houses };
+}
+
+// Helper: which house number does a sign fall in, given the anchor sign index?
+function houseNumOf(sign, anchorIdx) {
+  const signIdx = NATAL_SIGNS.indexOf(sign);
+  const houseNum = ((signIdx - anchorIdx + 12) % 12) + 1;
+  return `${houseNum}${['','st','nd','rd'][houseNum] || 'th'} house`;
+}
