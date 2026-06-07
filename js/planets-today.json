@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-06",
-  "updated_ist": "2026-06-06T13:03:58+05:30",
+  "date": "2026-06-07",
+  "updated_ist": "2026-06-07T13:37:35+05:30",
   "planets": {
     "sun": {
       "sign": "Gemini",
-      "degree": "15\u00b037'",
-      "longitude": 75.63,
+      "degree": "16\u00b036'",
+      "longitude": 76.61,
       "energy": "communication, duality, curiosity"
     },
     "moon": {
-      "sign": "Aquarius",
-      "degree": "21\u00b008'",
-      "longitude": 321.14,
-      "energy": "innovation, community, higher ideals"
+      "sign": "Pisces",
+      "degree": "3\u00b052'",
+      "longitude": 333.87,
+      "energy": "intuition, dissolution, boundless compassion"
     },
     "venus": {
       "sign": "Cancer",
-      "degree": "21\u00b039'",
-      "longitude": 111.66,
+      "degree": "22\u00b051'",
+      "longitude": 112.86,
       "energy": "emotion, nurturing, home and roots"
     },
     "jupiter": {
       "sign": "Cancer",
-      "degree": "25\u00b005'",
-      "longitude": 115.09,
+      "degree": "25\u00b017'",
+      "longitude": 115.29,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "12\u00b040'",
-      "longitude": 12.68,
+      "degree": "12\u00b045'",
+      "longitude": 12.76,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Gemini (15\u00b037') \u2014 identity and life force through communication, duality, curiosity\nMoon in Aquarius (21\u00b008') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Cancer (21\u00b039') \u2014 love, beauty and values through emotion, nurturing, home and roots\nJupiter in Cancer (25\u00b005') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (12\u00b040') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Gemini (16\u00b036') \u2014 identity and life force through communication, duality, curiosity\nMoon in Pisces (3\u00b052') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Cancer (22\u00b051') \u2014 love, beauty and values through emotion, nurturing, home and roots\nJupiter in Cancer (25\u00b017') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (12\u00b045') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
