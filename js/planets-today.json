@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-07",
-  "updated_ist": "2026-06-07T13:37:35+05:30",
+  "date": "2026-06-08",
+  "updated_ist": "2026-06-08T14:43:20+05:30",
   "planets": {
     "sun": {
       "sign": "Gemini",
-      "degree": "16\u00b036'",
-      "longitude": 76.61,
+      "degree": "17\u00b036'",
+      "longitude": 77.61,
       "energy": "communication, duality, curiosity"
     },
     "moon": {
       "sign": "Pisces",
-      "degree": "3\u00b052'",
-      "longitude": 333.87,
+      "degree": "17\u00b012'",
+      "longitude": 347.21,
       "energy": "intuition, dissolution, boundless compassion"
     },
     "venus": {
       "sign": "Cancer",
-      "degree": "22\u00b051'",
-      "longitude": 112.86,
+      "degree": "24\u00b005'",
+      "longitude": 114.08,
       "energy": "emotion, nurturing, home and roots"
     },
     "jupiter": {
       "sign": "Cancer",
-      "degree": "25\u00b017'",
-      "longitude": 115.29,
+      "degree": "25\u00b029'",
+      "longitude": 115.49,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "12\u00b045'",
-      "longitude": 12.76,
+      "degree": "12\u00b050'",
+      "longitude": 12.84,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Gemini (16\u00b036') \u2014 identity and life force through communication, duality, curiosity\nMoon in Pisces (3\u00b052') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Cancer (22\u00b051') \u2014 love, beauty and values through emotion, nurturing, home and roots\nJupiter in Cancer (25\u00b017') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (12\u00b045') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Gemini (17\u00b036') \u2014 identity and life force through communication, duality, curiosity\nMoon in Pisces (17\u00b012') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Cancer (24\u00b005') \u2014 love, beauty and values through emotion, nurturing, home and roots\nJupiter in Cancer (25\u00b029') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (12\u00b050') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
