@@ -256,14 +256,20 @@ const PickACard = () => {
         rising: form.rising
       });
       const toStore = { ...result, name: form.name, readingType: form.readingType, pulledAt: Date.now() };
-      // Store card name string only (cardObj is not JSON-serialisable safely)
       const { cardObj, ...storeable } = toStore;
       localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
       setReading(toStore);
       setStep('revealed');
+      if (typeof trackCardPull !== 'undefined') trackCardPull({
+        readingFocus: form.readingType,
+        card: result.card,
+        planet: result.planet,
+        rising: form.rising,
+        birthYear: form.birthdate ? form.birthdate.slice(0, 4) : '',
+        aiSuccess: true
+      });
     } catch (err) {
       console.error('[tarot] Gemini failed:', err);
-      // Fallback: random card with default message
       const card = TAROT_CARDS[Math.floor(Math.random() * TAROT_CARDS.length)];
       const fallback = {
         cardObj: card,
@@ -279,6 +285,14 @@ const PickACard = () => {
       localStorage.setItem(PAC_STORAGE_KEY, JSON.stringify(storeable));
       setReading(fallback);
       setStep('revealed');
+      if (typeof trackCardPull !== 'undefined') trackCardPull({
+        readingFocus: form.readingType,
+        card: fallback.card,
+        planet: '',
+        rising: form.rising,
+        birthYear: form.birthdate ? form.birthdate.slice(0, 4) : '',
+        aiSuccess: false
+      });
     }
   };
 
