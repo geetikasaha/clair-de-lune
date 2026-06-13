@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-12",
-  "updated_ist": "2026-06-12T14:16:45+05:30",
+  "date": "2026-06-13",
+  "updated_ist": "2026-06-13T13:32:36+05:30",
   "planets": {
     "sun": {
       "sign": "Gemini",
-      "degree": "21\u00b025'",
-      "longitude": 81.42,
+      "degree": "22\u00b020'",
+      "longitude": 82.35,
       "energy": "communication, duality, curiosity"
     },
     "moon": {
       "sign": "Taurus",
-      "degree": "12\u00b020'",
-      "longitude": 42.33,
+      "degree": "26\u00b048'",
+      "longitude": 56.81,
       "energy": "stability, sensuality, endurance"
     },
     "venus": {
       "sign": "Cancer",
-      "degree": "28\u00b044'",
-      "longitude": 118.74,
+      "degree": "29\u00b052'",
+      "longitude": 119.87,
       "energy": "emotion, nurturing, home and roots"
     },
     "jupiter": {
       "sign": "Cancer",
-      "degree": "26\u00b017'",
-      "longitude": 116.29,
+      "degree": "26\u00b028'",
+      "longitude": 116.48,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b007'",
-      "longitude": 13.13,
+      "degree": "13\u00b011'",
+      "longitude": 13.19,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Gemini (21\u00b025') \u2014 identity and life force through communication, duality, curiosity\nMoon in Taurus (12\u00b020') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Cancer (28\u00b044') \u2014 love, beauty and values through emotion, nurturing, home and roots\nJupiter in Cancer (26\u00b017') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b007') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Gemini (22\u00b020') \u2014 identity and life force through communication, duality, curiosity\nMoon in Taurus (26\u00b048') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Cancer (29\u00b052') \u2014 love, beauty and values through emotion, nurturing, home and roots\nJupiter in Cancer (26\u00b028') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b011') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
