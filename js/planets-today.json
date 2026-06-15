@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-14",
-  "updated_ist": "2026-06-14T14:02:09+05:30",
+  "date": "2026-06-15",
+  "updated_ist": "2026-06-15T16:14:21+05:30",
   "planets": {
     "sun": {
       "sign": "Gemini",
-      "degree": "23\u00b019'",
-      "longitude": 83.32,
+      "degree": "24\u00b021'",
+      "longitude": 84.37,
       "energy": "communication, duality, curiosity"
     },
     "moon": {
       "sign": "Gemini",
-      "degree": "12\u00b019'",
-      "longitude": 72.33,
+      "degree": "29\u00b002'",
+      "longitude": 89.04,
       "energy": "communication, duality, curiosity"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "1\u00b003'",
-      "longitude": 121.06,
+      "degree": "2\u00b019'",
+      "longitude": 122.33,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Cancer",
-      "degree": "26\u00b041'",
-      "longitude": 116.69,
+      "degree": "26\u00b054'",
+      "longitude": 116.91,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b015'",
-      "longitude": 13.26,
+      "degree": "13\u00b020'",
+      "longitude": 13.34,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Gemini (23\u00b019') \u2014 identity and life force through communication, duality, curiosity\nMoon in Gemini (12\u00b019') \u2014 emotions and instincts through communication, duality, curiosity\nVenus in Leo (1\u00b003') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (26\u00b041') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b015') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Gemini (24\u00b021') \u2014 identity and life force through communication, duality, curiosity\nMoon in Gemini (29\u00b002') \u2014 emotions and instincts through communication, duality, curiosity\nVenus in Leo (2\u00b019') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (26\u00b054') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b020') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
