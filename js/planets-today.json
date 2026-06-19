@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-18",
-  "updated_ist": "2026-06-18T14:34:39+05:30",
+  "date": "2026-06-19",
+  "updated_ist": "2026-06-19T14:50:55+05:30",
   "planets": {
     "sun": {
       "sign": "Gemini",
-      "degree": "27\u00b009'",
-      "longitude": 87.17,
+      "degree": "28\u00b007'",
+      "longitude": 88.13,
       "energy": "communication, duality, curiosity"
     },
     "moon": {
       "sign": "Leo",
-      "degree": "12\u00b042'",
-      "longitude": 132.71,
+      "degree": "26\u00b058'",
+      "longitude": 146.97,
       "energy": "creativity, confidence, self-expression"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "5\u00b043'",
-      "longitude": 125.73,
+      "degree": "6\u00b053'",
+      "longitude": 126.9,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Cancer",
-      "degree": "27\u00b030'",
-      "longitude": 117.51,
+      "degree": "27\u00b043'",
+      "longitude": 117.72,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b031'",
-      "longitude": 13.52,
+      "degree": "13\u00b035'",
+      "longitude": 13.58,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Gemini (27\u00b009') \u2014 identity and life force through communication, duality, curiosity\nMoon in Leo (12\u00b042') \u2014 emotions and instincts through creativity, confidence, self-expression\nVenus in Leo (5\u00b043') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (27\u00b030') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b031') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Gemini (28\u00b007') \u2014 identity and life force through communication, duality, curiosity\nMoon in Leo (26\u00b058') \u2014 emotions and instincts through creativity, confidence, self-expression\nVenus in Leo (6\u00b053') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (27\u00b043') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b035') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
