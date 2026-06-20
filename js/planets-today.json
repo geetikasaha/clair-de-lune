@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-19",
-  "updated_ist": "2026-06-19T14:50:55+05:30",
+  "date": "2026-06-20",
+  "updated_ist": "2026-06-20T13:33:26+05:30",
   "planets": {
     "sun": {
       "sign": "Gemini",
-      "degree": "28\u00b007'",
-      "longitude": 88.13,
+      "degree": "29\u00b002'",
+      "longitude": 89.04,
       "energy": "communication, duality, curiosity"
     },
     "moon": {
-      "sign": "Leo",
-      "degree": "26\u00b058'",
-      "longitude": 146.97,
-      "energy": "creativity, confidence, self-expression"
+      "sign": "Virgo",
+      "degree": "9\u00b052'",
+      "longitude": 159.87,
+      "energy": "analysis, devotion, refinement"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "6\u00b053'",
-      "longitude": 126.9,
+      "degree": "7\u00b059'",
+      "longitude": 127.99,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Cancer",
-      "degree": "27\u00b043'",
-      "longitude": 117.72,
+      "degree": "27\u00b054'",
+      "longitude": 117.91,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b035'",
-      "longitude": 13.58,
+      "degree": "13\u00b038'",
+      "longitude": 13.64,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Gemini (28\u00b007') \u2014 identity and life force through communication, duality, curiosity\nMoon in Leo (26\u00b058') \u2014 emotions and instincts through creativity, confidence, self-expression\nVenus in Leo (6\u00b053') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (27\u00b043') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b035') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Gemini (29\u00b002') \u2014 identity and life force through communication, duality, curiosity\nMoon in Virgo (9\u00b052') \u2014 emotions and instincts through analysis, devotion, refinement\nVenus in Leo (7\u00b059') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (27\u00b054') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b038') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
