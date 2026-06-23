@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-22",
-  "updated_ist": "2026-06-22T15:52:44+05:30",
+  "date": "2026-06-23",
+  "updated_ist": "2026-06-23T13:34:30+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "1\u00b002'",
-      "longitude": 91.04,
+      "degree": "1\u00b053'",
+      "longitude": 91.9,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
       "sign": "Libra",
-      "degree": "7\u00b007'",
-      "longitude": 187.13,
+      "degree": "18\u00b025'",
+      "longitude": 198.42,
       "energy": "balance, partnership, harmony"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "10\u00b024'",
-      "longitude": 130.41,
+      "degree": "11\u00b026'",
+      "longitude": 131.45,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Cancer",
-      "degree": "28\u00b021'",
-      "longitude": 118.35,
+      "degree": "28\u00b032'",
+      "longitude": 118.54,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b045'",
-      "longitude": 13.76,
+      "degree": "13\u00b048'",
+      "longitude": 13.81,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (1\u00b002') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Libra (7\u00b007') \u2014 emotions and instincts through balance, partnership, harmony\nVenus in Leo (10\u00b024') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (28\u00b021') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b045') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (1\u00b053') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Libra (18\u00b025') \u2014 emotions and instincts through balance, partnership, harmony\nVenus in Leo (11\u00b026') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (28\u00b032') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b048') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
