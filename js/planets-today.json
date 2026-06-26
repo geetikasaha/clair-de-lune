@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-25",
-  "updated_ist": "2026-06-25T13:30:23+05:30",
+  "date": "2026-06-26",
+  "updated_ist": "2026-06-26T13:38:52+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "3\u00b048'",
-      "longitude": 93.8,
+      "degree": "4\u00b045'",
+      "longitude": 94.76,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
       "sign": "Scorpio",
-      "degree": "12\u00b044'",
-      "longitude": 222.73,
+      "degree": "24\u00b046'",
+      "longitude": 234.77,
       "energy": "transformation, depth, intensity"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "13\u00b044'",
-      "longitude": 133.74,
+      "degree": "14\u00b053'",
+      "longitude": 134.89,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Cancer",
-      "degree": "28\u00b057'",
-      "longitude": 118.96,
+      "degree": "29\u00b010'",
+      "longitude": 119.17,
       "energy": "emotion, nurturing, home and roots"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b055'",
-      "longitude": 13.92,
+      "degree": "13\u00b058'",
+      "longitude": 13.97,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (3\u00b048') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Scorpio (12\u00b044') \u2014 emotions and instincts through transformation, depth, intensity\nVenus in Leo (13\u00b044') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (28\u00b057') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b055') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (4\u00b045') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Scorpio (24\u00b046') \u2014 emotions and instincts through transformation, depth, intensity\nVenus in Leo (14\u00b053') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Cancer (29\u00b010') \u2014 expansion, wisdom and abundance through emotion, nurturing, home and roots\nSaturn in Aries (13\u00b058') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
