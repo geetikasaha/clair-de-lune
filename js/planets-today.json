@@ -1,37 +1,37 @@
 {
-  "date": "2026-06-30",
-  "updated_ist": "2026-06-30T13:36:20+05:30",
+  "date": "2026-07-01",
+  "updated_ist": "2026-07-01T14:06:38+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "8\u00b034'",
-      "longitude": 98.57,
+      "degree": "9\u00b032'",
+      "longitude": 99.55,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
       "sign": "Capricorn",
-      "degree": "12\u00b017'",
-      "longitude": 282.3,
+      "degree": "24\u00b031'",
+      "longitude": 294.52,
       "energy": "ambition, discipline, long-term structure"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "19\u00b026'",
-      "longitude": 139.44,
+      "degree": "20\u00b036'",
+      "longitude": 140.6,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "0\u00b001'",
-      "longitude": 120.02,
+      "degree": "0\u00b014'",
+      "longitude": 120.24,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b009'",
-      "longitude": 14.16,
+      "degree": "14\u00b012'",
+      "longitude": 14.2,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (8\u00b034') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Capricorn (12\u00b017') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Leo (19\u00b026') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (0\u00b001') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b009') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (9\u00b032') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Capricorn (24\u00b031') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Leo (20\u00b036') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (0\u00b014') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b012') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
