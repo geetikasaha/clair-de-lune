@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-02",
-  "updated_ist": "2026-07-02T13:20:43+05:30",
+  "date": "2026-07-03",
+  "updated_ist": "2026-07-03T13:16:48+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "10\u00b028'",
-      "longitude": 100.47,
+      "degree": "11\u00b025'",
+      "longitude": 101.42,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
       "sign": "Aquarius",
-      "degree": "6\u00b011'",
-      "longitude": 306.19,
+      "degree": "18\u00b019'",
+      "longitude": 318.33,
       "energy": "innovation, community, higher ideals"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "21\u00b041'",
-      "longitude": 141.7,
+      "degree": "22\u00b049'",
+      "longitude": 142.82,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "0\u00b026'",
-      "longitude": 120.45,
+      "degree": "0\u00b039'",
+      "longitude": 120.66,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b014'",
-      "longitude": 14.24,
+      "degree": "14\u00b016'",
+      "longitude": 14.28,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (10\u00b028') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Aquarius (6\u00b011') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Leo (21\u00b041') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (0\u00b026') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b014') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (11\u00b025') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Aquarius (18\u00b019') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Leo (22\u00b049') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (0\u00b039') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b016') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
