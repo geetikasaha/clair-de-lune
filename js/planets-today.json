@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-03",
-  "updated_ist": "2026-07-03T13:16:48+05:30",
+  "date": "2026-07-04",
+  "updated_ist": "2026-07-04T12:54:18+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "11\u00b025'",
-      "longitude": 101.42,
+      "degree": "12\u00b021'",
+      "longitude": 102.36,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
-      "sign": "Aquarius",
-      "degree": "18\u00b019'",
-      "longitude": 318.33,
-      "energy": "innovation, community, higher ideals"
+      "sign": "Pisces",
+      "degree": "0\u00b027'",
+      "longitude": 330.47,
+      "energy": "intuition, dissolution, boundless compassion"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "22\u00b049'",
-      "longitude": 142.82,
+      "degree": "23\u00b056'",
+      "longitude": 143.93,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "0\u00b039'",
-      "longitude": 120.66,
+      "degree": "0\u00b052'",
+      "longitude": 120.88,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b016'",
-      "longitude": 14.28,
+      "degree": "14\u00b019'",
+      "longitude": 14.32,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (11\u00b025') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Aquarius (18\u00b019') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Leo (22\u00b049') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (0\u00b039') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b016') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (12\u00b021') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Pisces (0\u00b027') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Leo (23\u00b056') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (0\u00b052') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b019') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
