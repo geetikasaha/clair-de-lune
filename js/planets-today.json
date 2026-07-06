@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-05",
-  "updated_ist": "2026-07-05T13:14:04+05:30",
+  "date": "2026-07-06",
+  "updated_ist": "2026-07-06T14:17:01+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "13\u00b019'",
-      "longitude": 103.33,
+      "degree": "14\u00b019'",
+      "longitude": 104.32,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
       "sign": "Pisces",
-      "degree": "13\u00b010'",
-      "longitude": 343.18,
+      "degree": "26\u00b033'",
+      "longitude": 356.56,
       "energy": "intuition, dissolution, boundless compassion"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "25\u00b004'",
-      "longitude": 145.08,
+      "degree": "26\u00b014'",
+      "longitude": 146.25,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "1\u00b005'",
-      "longitude": 121.1,
+      "degree": "1\u00b019'",
+      "longitude": 121.32,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b021'",
-      "longitude": 14.36,
+      "degree": "14\u00b023'",
+      "longitude": 14.39,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (13\u00b019') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Pisces (13\u00b010') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Leo (25\u00b004') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (1\u00b005') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b021') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (14\u00b019') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Pisces (26\u00b033') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Leo (26\u00b014') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (1\u00b019') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b023') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
