@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-07",
-  "updated_ist": "2026-07-07T13:30:00+05:30",
+  "date": "2026-07-08",
+  "updated_ist": "2026-07-08T12:35:04+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "15\u00b014'",
-      "longitude": 105.24,
+      "degree": "16\u00b009'",
+      "longitude": 106.16,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
       "sign": "Aries",
-      "degree": "9\u00b016'",
-      "longitude": 9.28,
+      "degree": "22\u00b016'",
+      "longitude": 22.27,
       "energy": "initiative, courage, new beginnings"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "27\u00b019'",
-      "longitude": 147.33,
+      "degree": "28\u00b024'",
+      "longitude": 148.41,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "1\u00b031'",
-      "longitude": 121.53,
+      "degree": "1\u00b044'",
+      "longitude": 121.74,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b025'",
-      "longitude": 14.42,
+      "degree": "14\u00b027'",
+      "longitude": 14.46,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (15\u00b014') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Aries (9\u00b016') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Leo (27\u00b019') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (1\u00b031') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b025') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (16\u00b009') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Aries (22\u00b016') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Leo (28\u00b024') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (1\u00b044') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b027') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
