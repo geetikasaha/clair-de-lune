@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-08",
-  "updated_ist": "2026-07-08T12:35:04+05:30",
+  "date": "2026-07-09",
+  "updated_ist": "2026-07-09T13:32:12+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "16\u00b009'",
-      "longitude": 106.16,
+      "degree": "17\u00b009'",
+      "longitude": 107.15,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
-      "sign": "Aries",
-      "degree": "22\u00b016'",
-      "longitude": 22.27,
-      "energy": "initiative, courage, new beginnings"
+      "sign": "Taurus",
+      "degree": "6\u00b044'",
+      "longitude": 36.74,
+      "energy": "stability, sensuality, endurance"
     },
     "venus": {
       "sign": "Leo",
-      "degree": "28\u00b024'",
-      "longitude": 148.41,
+      "degree": "29\u00b034'",
+      "longitude": 149.57,
       "energy": "creativity, confidence, self-expression"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "1\u00b044'",
-      "longitude": 121.74,
+      "degree": "1\u00b057'",
+      "longitude": 121.97,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b027'",
-      "longitude": 14.46,
+      "degree": "14\u00b029'",
+      "longitude": 14.49,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (16\u00b009') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Aries (22\u00b016') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Leo (28\u00b024') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (1\u00b044') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b027') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (17\u00b009') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Taurus (6\u00b044') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Leo (29\u00b034') \u2014 love, beauty and values through creativity, confidence, self-expression\nJupiter in Leo (1\u00b057') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b029') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
