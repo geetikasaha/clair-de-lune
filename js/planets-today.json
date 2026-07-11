@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-10",
-  "updated_ist": "2026-07-10T13:29:34+05:30",
+  "date": "2026-07-11",
+  "updated_ist": "2026-07-11T12:06:48+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "18\u00b006'",
-      "longitude": 108.1,
+      "degree": "19\u00b000'",
+      "longitude": 109.0,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
-      "sign": "Taurus",
-      "degree": "21\u00b002'",
-      "longitude": 51.04,
-      "energy": "stability, sensuality, endurance"
+      "sign": "Gemini",
+      "degree": "4\u00b052'",
+      "longitude": 64.88,
+      "energy": "communication, duality, curiosity"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "0\u00b040'",
-      "longitude": 150.68,
+      "degree": "1\u00b043'",
+      "longitude": 151.73,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "2\u00b011'",
-      "longitude": 122.18,
+      "degree": "2\u00b023'",
+      "longitude": 122.39,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b030'",
-      "longitude": 14.52,
+      "degree": "14\u00b032'",
+      "longitude": 14.54,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (18\u00b006') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Taurus (21\u00b002') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Virgo (0\u00b040') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (2\u00b011') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b030') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (19\u00b000') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Gemini (4\u00b052') \u2014 emotions and instincts through communication, duality, curiosity\nVenus in Virgo (1\u00b043') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (2\u00b023') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b032') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
