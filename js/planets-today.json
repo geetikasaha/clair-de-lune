@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-15",
-  "updated_ist": "2026-07-15T12:07:13+05:30",
+  "date": "2026-07-16",
+  "updated_ist": "2026-07-16T12:32:30+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "22\u00b049'",
-      "longitude": 112.82,
+      "degree": "23\u00b047'",
+      "longitude": 113.79,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
       "sign": "Leo",
-      "degree": "4\u00b057'",
-      "longitude": 124.97,
+      "degree": "19\u00b050'",
+      "longitude": 139.84,
       "energy": "creativity, confidence, self-expression"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "6\u00b008'",
-      "longitude": 156.15,
+      "degree": "7\u00b015'",
+      "longitude": 157.26,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "3\u00b016'",
-      "longitude": 123.27,
+      "degree": "3\u00b029'",
+      "longitude": 123.49,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b037'",
-      "longitude": 14.63,
+      "degree": "14\u00b039'",
+      "longitude": 14.65,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (22\u00b049') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Leo (4\u00b057') \u2014 emotions and instincts through creativity, confidence, self-expression\nVenus in Virgo (6\u00b008') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (3\u00b016') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b037') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (23\u00b047') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Leo (19\u00b050') \u2014 emotions and instincts through creativity, confidence, self-expression\nVenus in Virgo (7\u00b015') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (3\u00b029') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b039') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
