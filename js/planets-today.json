@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-17",
-  "updated_ist": "2026-07-17T12:10:25+05:30",
+  "date": "2026-07-18",
+  "updated_ist": "2026-07-18T11:59:13+05:30",
   "planets": {
     "sun": {
       "sign": "Cancer",
-      "degree": "24\u00b043'",
-      "longitude": 114.73,
+      "degree": "25\u00b040'",
+      "longitude": 115.68,
       "energy": "emotion, nurturing, home and roots"
     },
     "moon": {
       "sign": "Virgo",
-      "degree": "3\u00b050'",
-      "longitude": 153.84,
+      "degree": "17\u00b030'",
+      "longitude": 167.51,
       "energy": "analysis, devotion, refinement"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "8\u00b020'",
-      "longitude": 158.34,
+      "degree": "9\u00b025'",
+      "longitude": 159.43,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "3\u00b042'",
-      "longitude": 123.71,
+      "degree": "3\u00b055'",
+      "longitude": 123.93,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b040'",
-      "longitude": 14.67,
+      "degree": "14\u00b041'",
+      "longitude": 14.68,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (24\u00b043') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Virgo (3\u00b050') \u2014 emotions and instincts through analysis, devotion, refinement\nVenus in Virgo (8\u00b020') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (3\u00b042') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b040') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Cancer (25\u00b040') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Virgo (17\u00b030') \u2014 emotions and instincts through analysis, devotion, refinement\nVenus in Virgo (9\u00b025') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (3\u00b055') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b041') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
