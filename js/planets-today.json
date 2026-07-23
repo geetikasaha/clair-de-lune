@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-22",
-  "updated_ist": "2026-07-22T12:44:32+05:30",
+  "date": "2026-07-23",
+  "updated_ist": "2026-07-23T12:38:01+05:30",
   "planets": {
     "sun": {
-      "sign": "Cancer",
-      "degree": "29\u00b031'",
-      "longitude": 119.53,
-      "energy": "emotion, nurturing, home and roots"
+      "sign": "Leo",
+      "degree": "0\u00b028'",
+      "longitude": 120.48,
+      "energy": "creativity, confidence, self-expression"
     },
     "moon": {
       "sign": "Scorpio",
-      "degree": "9\u00b000'",
-      "longitude": 219.02,
+      "degree": "21\u00b002'",
+      "longitude": 231.04,
       "energy": "transformation, depth, intensity"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "13\u00b047'",
-      "longitude": 163.8,
+      "degree": "14\u00b052'",
+      "longitude": 164.87,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "4\u00b049'",
-      "longitude": 124.82,
+      "degree": "5\u00b002'",
+      "longitude": 125.04,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b043'",
-      "longitude": 14.73,
+      "degree": "14\u00b044'",
+      "longitude": 14.74,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Cancer (29\u00b031') \u2014 identity and life force through emotion, nurturing, home and roots\nMoon in Scorpio (9\u00b000') \u2014 emotions and instincts through transformation, depth, intensity\nVenus in Virgo (13\u00b047') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (4\u00b049') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b043') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (0\u00b028') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Scorpio (21\u00b002') \u2014 emotions and instincts through transformation, depth, intensity\nVenus in Virgo (14\u00b052') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (5\u00b002') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b044') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
