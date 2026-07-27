@@ -1,29 +1,29 @@
 {
-  "date": "2026-07-26",
-  "updated_ist": "2026-07-26T12:42:16+05:30",
+  "date": "2026-07-27",
+  "updated_ist": "2026-07-27T13:33:18+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "3\u00b020'",
-      "longitude": 123.34,
+      "degree": "4\u00b020'",
+      "longitude": 124.33,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
-      "sign": "Sagittarius",
-      "degree": "26\u00b045'",
-      "longitude": 266.76,
-      "energy": "expansion, truth, freedom"
+      "sign": "Capricorn",
+      "degree": "9\u00b005'",
+      "longitude": 279.09,
+      "energy": "ambition, discipline, long-term structure"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "18\u00b004'",
-      "longitude": 168.07,
+      "degree": "19\u00b010'",
+      "longitude": 169.17,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "5\u00b042'",
-      "longitude": 125.7,
+      "degree": "5\u00b055'",
+      "longitude": 125.93,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
@@ -33,5 +33,5 @@
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (3\u00b020') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Sagittarius (26\u00b045') \u2014 emotions and instincts through expansion, truth, freedom\nVenus in Virgo (18\u00b004') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (5\u00b042') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b044') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (4\u00b020') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Capricorn (9\u00b005') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Virgo (19\u00b010') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (5\u00b055') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b044') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
