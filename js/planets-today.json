@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-27",
-  "updated_ist": "2026-07-27T13:33:18+05:30",
+  "date": "2026-07-28",
+  "updated_ist": "2026-07-28T12:46:58+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "4\u00b020'",
-      "longitude": 124.33,
+      "degree": "5\u00b015'",
+      "longitude": 125.26,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
       "sign": "Capricorn",
-      "degree": "9\u00b005'",
-      "longitude": 279.09,
+      "degree": "20\u00b041'",
+      "longitude": 290.69,
       "energy": "ambition, discipline, long-term structure"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "19\u00b010'",
-      "longitude": 169.17,
+      "degree": "20\u00b011'",
+      "longitude": 170.19,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "5\u00b055'",
-      "longitude": 125.93,
+      "degree": "6\u00b008'",
+      "longitude": 126.15,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
       "degree": "14\u00b044'",
-      "longitude": 14.75,
+      "longitude": 14.74,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (4\u00b020') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Capricorn (9\u00b005') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Virgo (19\u00b010') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (5\u00b055') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b044') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (5\u00b015') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Capricorn (20\u00b041') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Virgo (20\u00b011') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (6\u00b008') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b044') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
