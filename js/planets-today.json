@@ -1,37 +1,37 @@
 {
-  "date": "2026-07-29",
-  "updated_ist": "2026-07-29T12:52:03+05:30",
+  "date": "2026-07-30",
+  "updated_ist": "2026-07-30T12:45:30+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "6\u00b013'",
-      "longitude": 126.22,
+      "degree": "7\u00b010'",
+      "longitude": 127.17,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
       "sign": "Aquarius",
-      "degree": "2\u00b049'",
-      "longitude": 302.83,
+      "degree": "15\u00b000'",
+      "longitude": 315.01,
       "energy": "innovation, community, higher ideals"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "21\u00b014'",
-      "longitude": 171.25,
+      "degree": "22\u00b017'",
+      "longitude": 172.29,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "6\u00b022'",
-      "longitude": 126.37,
+      "degree": "6\u00b035'",
+      "longitude": 126.59,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
       "degree": "14\u00b044'",
-      "longitude": 14.74,
+      "longitude": 14.73,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (6\u00b013') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Aquarius (2\u00b049') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Virgo (21\u00b014') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (6\u00b022') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b044') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (7\u00b010') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Aquarius (15\u00b000') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Virgo (22\u00b017') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (6\u00b035') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b044') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
