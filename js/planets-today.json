@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-02",
-  "updated_ist": "2026-08-02T12:38:38+05:30",
+  "date": "2026-08-03",
+  "updated_ist": "2026-08-03T13:28:43+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "10\u00b001'",
-      "longitude": 130.03,
+      "degree": "11\u00b001'",
+      "longitude": 131.02,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
-      "sign": "Pisces",
-      "degree": "22\u00b043'",
-      "longitude": 352.72,
-      "energy": "intuition, dissolution, boundless compassion"
+      "sign": "Aries",
+      "degree": "6\u00b012'",
+      "longitude": 6.2,
+      "energy": "initiative, courage, new beginnings"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "25\u00b024'",
-      "longitude": 175.4,
+      "degree": "26\u00b028'",
+      "longitude": 176.47,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "7\u00b015'",
-      "longitude": 127.25,
+      "degree": "7\u00b028'",
+      "longitude": 127.48,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b042'",
-      "longitude": 14.71,
+      "degree": "14\u00b041'",
+      "longitude": 14.7,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (10\u00b001') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Pisces (22\u00b043') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Virgo (25\u00b024') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (7\u00b015') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b042') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (11\u00b001') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Aries (6\u00b012') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Virgo (26\u00b028') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (7\u00b028') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b041') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
