@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-04",
-  "updated_ist": "2026-08-04T12:46:02+05:30",
+  "date": "2026-08-05",
+  "updated_ist": "2026-08-05T12:46:54+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "11\u00b057'",
-      "longitude": 131.95,
+      "degree": "12\u00b054'",
+      "longitude": 132.91,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
-      "sign": "Aries",
-      "degree": "19\u00b005'",
-      "longitude": 19.1,
-      "energy": "initiative, courage, new beginnings"
+      "sign": "Taurus",
+      "degree": "2\u00b040'",
+      "longitude": 32.67,
+      "energy": "stability, sensuality, endurance"
     },
     "venus": {
       "sign": "Virgo",
-      "degree": "27\u00b027'",
-      "longitude": 177.46,
+      "degree": "28\u00b029'",
+      "longitude": 178.48,
       "energy": "analysis, devotion, refinement"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "7\u00b041'",
-      "longitude": 127.7,
+      "degree": "7\u00b055'",
+      "longitude": 127.92,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b041'",
-      "longitude": 14.68,
+      "degree": "14\u00b040'",
+      "longitude": 14.67,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (11\u00b057') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Aries (19\u00b005') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Virgo (27\u00b027') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (7\u00b041') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b041') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (12\u00b054') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Taurus (2\u00b040') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Virgo (28\u00b029') \u2014 love, beauty and values through analysis, devotion, refinement\nJupiter in Leo (7\u00b055') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b040') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
