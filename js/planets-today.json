@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-07",
-  "updated_ist": "2026-08-07T11:26:22+05:30",
+  "date": "2026-08-08",
+  "updated_ist": "2026-08-08T10:51:09+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "14\u00b046'",
-      "longitude": 134.77,
+      "degree": "15\u00b042'",
+      "longitude": 135.71,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
-      "sign": "Taurus",
-      "degree": "29\u00b053'",
-      "longitude": 59.89,
-      "energy": "stability, sensuality, endurance"
+      "sign": "Gemini",
+      "degree": "13\u00b055'",
+      "longitude": 73.93,
+      "energy": "communication, duality, curiosity"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "0\u00b027'",
-      "longitude": 180.45,
+      "degree": "1\u00b025'",
+      "longitude": 181.43,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "8\u00b020'",
-      "longitude": 128.35,
+      "degree": "8\u00b033'",
+      "longitude": 128.56,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b038'",
-      "longitude": 14.63,
+      "degree": "14\u00b036'",
+      "longitude": 14.61,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (14\u00b046') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Taurus (29\u00b053') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Libra (0\u00b027') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (8\u00b020') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b038') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (15\u00b042') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Gemini (13\u00b055') \u2014 emotions and instincts through communication, duality, curiosity\nVenus in Libra (1\u00b025') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (8\u00b033') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b036') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
