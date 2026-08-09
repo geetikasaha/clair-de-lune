@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-08",
-  "updated_ist": "2026-08-08T10:51:09+05:30",
+  "date": "2026-08-09",
+  "updated_ist": "2026-08-09T10:59:48+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "15\u00b042'",
-      "longitude": 135.71,
+      "degree": "16\u00b040'",
+      "longitude": 136.67,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
       "sign": "Gemini",
-      "degree": "13\u00b055'",
-      "longitude": 73.93,
+      "degree": "28\u00b036'",
+      "longitude": 88.61,
       "energy": "communication, duality, curiosity"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "1\u00b025'",
-      "longitude": 181.43,
+      "degree": "2\u00b026'",
+      "longitude": 182.44,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "8\u00b033'",
-      "longitude": 128.56,
+      "degree": "8\u00b046'",
+      "longitude": 128.78,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b036'",
-      "longitude": 14.61,
+      "degree": "14\u00b035'",
+      "longitude": 14.59,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (15\u00b042') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Gemini (13\u00b055') \u2014 emotions and instincts through communication, duality, curiosity\nVenus in Libra (1\u00b025') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (8\u00b033') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b036') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (16\u00b040') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Gemini (28\u00b036') \u2014 emotions and instincts through communication, duality, curiosity\nVenus in Libra (2\u00b026') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (8\u00b046') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b035') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
