@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-10",
-  "updated_ist": "2026-08-10T11:27:05+05:30",
+  "date": "2026-08-11",
+  "updated_ist": "2026-08-11T11:06:43+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "17\u00b038'",
-      "longitude": 137.65,
+      "degree": "18\u00b035'",
+      "longitude": 138.6,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
       "sign": "Cancer",
-      "degree": "13\u00b036'",
-      "longitude": 103.61,
+      "degree": "28\u00b008'",
+      "longitude": 118.15,
       "energy": "emotion, nurturing, home and roots"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "3\u00b026'",
-      "longitude": 183.45,
+      "degree": "4\u00b025'",
+      "longitude": 184.42,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "9\u00b000'",
-      "longitude": 129.01,
+      "degree": "9\u00b013'",
+      "longitude": 129.22,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b034'",
-      "longitude": 14.57,
+      "degree": "14\u00b032'",
+      "longitude": 14.54,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (17\u00b038') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Cancer (13\u00b036') \u2014 emotions and instincts through emotion, nurturing, home and roots\nVenus in Libra (3\u00b026') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (9\u00b000') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b034') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (18\u00b035') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Cancer (28\u00b008') \u2014 emotions and instincts through emotion, nurturing, home and roots\nVenus in Libra (4\u00b025') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (9\u00b013') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b032') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
