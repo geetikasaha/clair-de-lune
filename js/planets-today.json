@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-16",
-  "updated_ist": "2026-08-16T10:32:13+05:30",
+  "date": "2026-08-17",
+  "updated_ist": "2026-08-17T10:40:06+05:30",
   "planets": {
     "sun": {
       "sign": "Leo",
-      "degree": "23\u00b022'",
-      "longitude": 143.38,
+      "degree": "24\u00b020'",
+      "longitude": 144.34,
       "energy": "creativity, confidence, self-expression"
     },
     "moon": {
       "sign": "Libra",
-      "degree": "8\u00b009'",
-      "longitude": 188.15,
+      "degree": "21\u00b013'",
+      "longitude": 201.22,
       "energy": "balance, partnership, harmony"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "9\u00b014'",
-      "longitude": 189.24,
+      "degree": "10\u00b011'",
+      "longitude": 190.2,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "10\u00b018'",
-      "longitude": 130.31,
+      "degree": "10\u00b032'",
+      "longitude": 130.53,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b023'",
-      "longitude": 14.39,
+      "degree": "14\u00b021'",
+      "longitude": 14.36,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (23\u00b022') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Libra (8\u00b009') \u2014 emotions and instincts through balance, partnership, harmony\nVenus in Libra (9\u00b014') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (10\u00b018') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b023') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Leo (24\u00b020') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Libra (21\u00b013') \u2014 emotions and instincts through balance, partnership, harmony\nVenus in Libra (10\u00b011') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (10\u00b032') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b021') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
