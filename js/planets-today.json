@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-22",
-  "updated_ist": "2026-08-22T10:30:21+05:30",
+  "date": "2026-08-23",
+  "updated_ist": "2026-08-23T10:33:18+05:30",
   "planets": {
     "sun": {
-      "sign": "Leo",
-      "degree": "29\u00b008'",
-      "longitude": 149.15,
-      "energy": "creativity, confidence, self-expression"
+      "sign": "Virgo",
+      "degree": "0\u00b006'",
+      "longitude": 150.11,
+      "energy": "analysis, devotion, refinement"
     },
     "moon": {
-      "sign": "Sagittarius",
-      "degree": "22\u00b005'",
-      "longitude": 262.09,
-      "energy": "expansion, truth, freedom"
+      "sign": "Capricorn",
+      "degree": "3\u00b059'",
+      "longitude": 274.0,
+      "energy": "ambition, discipline, long-term structure"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "14\u00b048'",
-      "longitude": 194.81,
+      "degree": "15\u00b042'",
+      "longitude": 195.71,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "11\u00b036'",
-      "longitude": 131.62,
+      "degree": "11\u00b049'",
+      "longitude": 131.83,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b009'",
-      "longitude": 14.16,
+      "degree": "14\u00b007'",
+      "longitude": 14.12,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Leo (29\u00b008') \u2014 identity and life force through creativity, confidence, self-expression\nMoon in Sagittarius (22\u00b005') \u2014 emotions and instincts through expansion, truth, freedom\nVenus in Libra (14\u00b048') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (11\u00b036') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b009') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (0\u00b006') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Capricorn (3\u00b059') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Libra (15\u00b042') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (11\u00b049') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b007') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
