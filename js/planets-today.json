@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-23",
-  "updated_ist": "2026-08-23T10:33:18+05:30",
+  "date": "2026-08-24",
+  "updated_ist": "2026-08-24T10:49:59+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "0\u00b006'",
-      "longitude": 150.11,
+      "degree": "1\u00b005'",
+      "longitude": 151.09,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
       "sign": "Capricorn",
-      "degree": "3\u00b059'",
-      "longitude": 274.0,
+      "degree": "16\u00b004'",
+      "longitude": 286.07,
       "energy": "ambition, discipline, long-term structure"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "15\u00b042'",
-      "longitude": 195.71,
+      "degree": "16\u00b036'",
+      "longitude": 196.61,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "11\u00b049'",
-      "longitude": 131.83,
+      "degree": "12\u00b002'",
+      "longitude": 132.05,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "14\u00b007'",
-      "longitude": 14.12,
+      "degree": "14\u00b004'",
+      "longitude": 14.07,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (0\u00b006') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Capricorn (3\u00b059') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Libra (15\u00b042') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (11\u00b049') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b007') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (1\u00b005') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Capricorn (16\u00b004') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Libra (16\u00b036') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (12\u00b002') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (14\u00b004') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
