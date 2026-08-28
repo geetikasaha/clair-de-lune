@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-27",
-  "updated_ist": "2026-08-27T20:55:05+05:30",
+  "date": "2026-08-28",
+  "updated_ist": "2026-08-28T22:21:39+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "4\u00b023'",
-      "longitude": 154.39,
+      "degree": "5\u00b024'",
+      "longitude": 155.41,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
-      "sign": "Aquarius",
-      "degree": "28\u00b004'",
-      "longitude": 328.08,
-      "energy": "innovation, community, higher ideals"
+      "sign": "Pisces",
+      "degree": "11\u00b036'",
+      "longitude": 341.61,
+      "energy": "intuition, dissolution, boundless compassion"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "19\u00b034'",
-      "longitude": 199.58,
+      "degree": "20\u00b028'",
+      "longitude": 200.48,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "12\u00b046'",
-      "longitude": 132.78,
+      "degree": "13\u00b000'",
+      "longitude": 133.01,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b054'",
-      "longitude": 13.91,
+      "degree": "13\u00b051'",
+      "longitude": 13.85,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (4\u00b023') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Aquarius (28\u00b004') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Libra (19\u00b034') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (12\u00b046') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (13\u00b054') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (5\u00b024') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Pisces (11\u00b036') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Libra (20\u00b028') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (13\u00b000') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (13\u00b051') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
