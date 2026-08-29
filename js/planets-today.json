@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-28",
-  "updated_ist": "2026-08-28T22:21:39+05:30",
+  "date": "2026-08-29",
+  "updated_ist": "2026-08-29T16:48:21+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "5\u00b024'",
-      "longitude": 155.41,
+      "degree": "6\u00b009'",
+      "longitude": 156.15,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
       "sign": "Pisces",
-      "degree": "11\u00b036'",
-      "longitude": 341.61,
+      "degree": "21\u00b035'",
+      "longitude": 351.6,
       "energy": "intuition, dissolution, boundless compassion"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "20\u00b028'",
-      "longitude": 200.48,
+      "degree": "21\u00b006'",
+      "longitude": 201.12,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "13\u00b000'",
-      "longitude": 133.01,
+      "degree": "13\u00b010'",
+      "longitude": 133.17,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b051'",
-      "longitude": 13.85,
+      "degree": "13\u00b048'",
+      "longitude": 13.81,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (5\u00b024') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Pisces (11\u00b036') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Libra (20\u00b028') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (13\u00b000') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (13\u00b051') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (6\u00b009') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Pisces (21\u00b035') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Libra (21\u00b006') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (13\u00b010') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (13\u00b048') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
