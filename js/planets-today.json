@@ -1,37 +1,37 @@
 {
-  "date": "2026-08-30",
-  "updated_ist": "2026-08-30T15:33:59+05:30",
+  "date": "2026-08-31",
+  "updated_ist": "2026-08-31T16:34:56+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "7\u00b004'",
-      "longitude": 157.07,
+      "degree": "8\u00b004'",
+      "longitude": 158.08,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
       "sign": "Aries",
-      "degree": "4\u00b006'",
-      "longitude": 4.11,
+      "degree": "18\u00b006'",
+      "longitude": 18.11,
       "energy": "initiative, courage, new beginnings"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "21\u00b053'",
-      "longitude": 201.9,
+      "degree": "22\u00b044'",
+      "longitude": 202.74,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "13\u00b022'",
-      "longitude": 133.37,
+      "degree": "13\u00b035'",
+      "longitude": 133.59,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b045'",
-      "longitude": 13.76,
+      "degree": "13\u00b042'",
+      "longitude": 13.7,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (7\u00b004') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Aries (4\u00b006') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Libra (21\u00b053') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (13\u00b022') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (13\u00b045') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (8\u00b004') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Aries (18\u00b006') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Libra (22\u00b044') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (13\u00b035') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (13\u00b042') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
