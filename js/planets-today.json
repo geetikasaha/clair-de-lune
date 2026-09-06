@@ -1,37 +1,37 @@
 {
-  "date": "2026-09-05",
-  "updated_ist": "2026-09-05T14:01:10+05:30",
+  "date": "2026-09-06",
+  "updated_ist": "2026-09-06T14:18:54+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "12\u00b048'",
-      "longitude": 162.81,
+      "degree": "13\u00b047'",
+      "longitude": 163.8,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
-      "sign": "Gemini",
-      "degree": "26\u00b026'",
-      "longitude": 86.44,
-      "energy": "communication, duality, curiosity"
+      "sign": "Cancer",
+      "degree": "10\u00b054'",
+      "longitude": 100.91,
+      "energy": "emotion, nurturing, home and roots"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "26\u00b031'",
-      "longitude": 206.52,
+      "degree": "27\u00b015'",
+      "longitude": 207.26,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "14\u00b036'",
-      "longitude": 134.61,
+      "degree": "14\u00b049'",
+      "longitude": 134.82,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "13\u00b025'",
-      "longitude": 13.42,
+      "degree": "13\u00b021'",
+      "longitude": 13.35,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (12\u00b048') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Gemini (26\u00b026') \u2014 emotions and instincts through communication, duality, curiosity\nVenus in Libra (26\u00b031') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (14\u00b036') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (13\u00b025') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (13\u00b047') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Cancer (10\u00b054') \u2014 emotions and instincts through emotion, nurturing, home and roots\nVenus in Libra (27\u00b015') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (14\u00b049') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (13\u00b021') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
