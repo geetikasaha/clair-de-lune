@@ -1,37 +1,37 @@
 {
-  "date": "2026-09-14",
-  "updated_ist": "2026-09-14T15:34:40+05:30",
+  "date": "2026-09-15",
+  "updated_ist": "2026-09-15T15:03:12+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "21\u00b037'",
-      "longitude": 171.62,
+      "degree": "22\u00b034'",
+      "longitude": 172.58,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
       "sign": "Scorpio",
-      "degree": "1\u00b046'",
-      "longitude": 211.77,
+      "degree": "14\u00b004'",
+      "longitude": 224.07,
       "energy": "transformation, depth, intensity"
     },
     "venus": {
       "sign": "Scorpio",
-      "degree": "2\u00b031'",
-      "longitude": 212.52,
+      "degree": "3\u00b004'",
+      "longitude": 213.07,
       "energy": "transformation, depth, intensity"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "16\u00b027'",
-      "longitude": 136.45,
+      "degree": "16\u00b038'",
+      "longitude": 136.65,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "12\u00b049'",
-      "longitude": 12.82,
+      "degree": "12\u00b044'",
+      "longitude": 12.75,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (21\u00b037') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Scorpio (1\u00b046') \u2014 emotions and instincts through transformation, depth, intensity\nVenus in Scorpio (2\u00b031') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (16\u00b027') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b049') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (22\u00b034') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Scorpio (14\u00b004') \u2014 emotions and instincts through transformation, depth, intensity\nVenus in Scorpio (3\u00b004') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (16\u00b038') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b044') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
