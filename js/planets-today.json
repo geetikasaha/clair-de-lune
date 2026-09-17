@@ -1,37 +1,37 @@
 {
-  "date": "2026-09-16",
-  "updated_ist": "2026-09-16T14:58:13+05:30",
+  "date": "2026-09-17",
+  "updated_ist": "2026-09-17T15:06:26+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "23\u00b032'",
-      "longitude": 173.55,
+      "degree": "24\u00b031'",
+      "longitude": 174.53,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
-      "sign": "Scorpio",
-      "degree": "26\u00b020'",
-      "longitude": 236.34,
-      "energy": "transformation, depth, intensity"
+      "sign": "Sagittarius",
+      "degree": "8\u00b030'",
+      "longitude": 248.5,
+      "energy": "expansion, truth, freedom"
     },
     "venus": {
       "sign": "Scorpio",
-      "degree": "3\u00b036'",
-      "longitude": 213.61,
+      "degree": "4\u00b008'",
+      "longitude": 214.14,
       "energy": "transformation, depth, intensity"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "16\u00b050'",
-      "longitude": 136.84,
+      "degree": "17\u00b002'",
+      "longitude": 137.04,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "12\u00b040'",
-      "longitude": 12.68,
+      "degree": "12\u00b036'",
+      "longitude": 12.6,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (23\u00b032') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Scorpio (26\u00b020') \u2014 emotions and instincts through transformation, depth, intensity\nVenus in Scorpio (3\u00b036') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (16\u00b050') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b040') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (24\u00b031') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Sagittarius (8\u00b030') \u2014 emotions and instincts through expansion, truth, freedom\nVenus in Scorpio (4\u00b008') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (17\u00b002') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b036') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
