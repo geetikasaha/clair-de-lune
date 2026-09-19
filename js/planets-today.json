@@ -1,37 +1,37 @@
 {
-  "date": "2026-09-18",
-  "updated_ist": "2026-09-18T14:38:19+05:30",
+  "date": "2026-09-19",
+  "updated_ist": "2026-09-19T14:26:00+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "25\u00b029'",
-      "longitude": 175.49,
+      "degree": "26\u00b027'",
+      "longitude": 176.45,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
-      "sign": "Sagittarius",
-      "degree": "20\u00b012'",
-      "longitude": 260.22,
-      "energy": "expansion, truth, freedom"
+      "sign": "Capricorn",
+      "degree": "1\u00b059'",
+      "longitude": 271.98,
+      "energy": "ambition, discipline, long-term structure"
     },
     "venus": {
       "sign": "Scorpio",
-      "degree": "4\u00b037'",
-      "longitude": 214.62,
+      "degree": "5\u00b005'",
+      "longitude": 215.09,
       "energy": "transformation, depth, intensity"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "17\u00b013'",
-      "longitude": 137.23,
+      "degree": "17\u00b025'",
+      "longitude": 137.42,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "12\u00b031'",
-      "longitude": 12.53,
+      "degree": "12\u00b027'",
+      "longitude": 12.46,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (25\u00b029') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Sagittarius (20\u00b012') \u2014 emotions and instincts through expansion, truth, freedom\nVenus in Scorpio (4\u00b037') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (17\u00b013') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b031') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (26\u00b027') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Capricorn (1\u00b059') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Scorpio (5\u00b005') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (17\u00b025') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b027') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
