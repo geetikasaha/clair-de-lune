@@ -1,37 +1,37 @@
 {
-  "date": "2026-09-20",
-  "updated_ist": "2026-09-20T14:54:57+05:30",
+  "date": "2026-09-21",
+  "updated_ist": "2026-09-21T15:39:21+05:30",
   "planets": {
     "sun": {
       "sign": "Virgo",
-      "degree": "27\u00b027'",
-      "longitude": 177.45,
+      "degree": "28\u00b027'",
+      "longitude": 178.46,
       "energy": "analysis, devotion, refinement"
     },
     "moon": {
       "sign": "Capricorn",
-      "degree": "14\u00b006'",
-      "longitude": 284.1,
+      "degree": "26\u00b026'",
+      "longitude": 296.44,
       "energy": "ambition, discipline, long-term structure"
     },
     "venus": {
       "sign": "Scorpio",
-      "degree": "5\u00b032'",
-      "longitude": 215.54,
+      "degree": "5\u00b058'",
+      "longitude": 215.97,
       "energy": "transformation, depth, intensity"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "17\u00b037'",
-      "longitude": 137.62,
+      "degree": "17\u00b049'",
+      "longitude": 137.82,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "12\u00b023'",
-      "longitude": 12.38,
+      "degree": "12\u00b018'",
+      "longitude": 12.31,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (27\u00b027') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Capricorn (14\u00b006') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Scorpio (5\u00b032') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (17\u00b037') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b023') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Virgo (28\u00b027') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Capricorn (26\u00b026') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Scorpio (5\u00b058') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (17\u00b049') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b018') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
