@@ -1,37 +1,37 @@
 {
-  "date": "2026-09-22",
-  "updated_ist": "2026-09-22T14:56:06+05:30",
+  "date": "2026-09-23",
+  "updated_ist": "2026-09-23T14:58:33+05:30",
   "planets": {
     "sun": {
-      "sign": "Virgo",
-      "degree": "29\u00b024'",
-      "longitude": 179.41,
-      "energy": "analysis, devotion, refinement"
+      "sign": "Libra",
+      "degree": "0\u00b023'",
+      "longitude": 180.39,
+      "energy": "balance, partnership, harmony"
     },
     "moon": {
       "sign": "Aquarius",
-      "degree": "8\u00b012'",
-      "longitude": 308.2,
+      "degree": "20\u00b035'",
+      "longitude": 320.59,
       "energy": "innovation, community, higher ideals"
     },
     "venus": {
       "sign": "Scorpio",
-      "degree": "6\u00b021'",
-      "longitude": 216.35,
+      "degree": "6\u00b042'",
+      "longitude": 216.71,
       "energy": "transformation, depth, intensity"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "18\u00b000'",
-      "longitude": 138.0,
+      "degree": "18\u00b011'",
+      "longitude": 138.19,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "12\u00b014'",
-      "longitude": 12.23,
+      "degree": "12\u00b009'",
+      "longitude": 12.16,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Virgo (29\u00b024') \u2014 identity and life force through analysis, devotion, refinement\nMoon in Aquarius (8\u00b012') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Scorpio (6\u00b021') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (18\u00b000') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b014') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Libra (0\u00b023') \u2014 identity and life force through balance, partnership, harmony\nMoon in Aquarius (20\u00b035') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Scorpio (6\u00b042') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (18\u00b011') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (12\u00b009') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
