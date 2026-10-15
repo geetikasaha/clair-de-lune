@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-14",
-  "updated_ist": "2026-10-14T15:10:08+05:30",
+  "date": "2026-10-15",
+  "updated_ist": "2026-10-15T14:49:23+05:30",
   "planets": {
     "sun": {
       "sign": "Libra",
-      "degree": "21\u00b004'",
-      "longitude": 201.07,
+      "degree": "22\u00b002'",
+      "longitude": 202.05,
       "energy": "balance, partnership, harmony"
     },
     "moon": {
       "sign": "Sagittarius",
-      "degree": "4\u00b024'",
-      "longitude": 244.4,
+      "degree": "16\u00b017'",
+      "longitude": 256.29,
       "energy": "expansion, truth, freedom"
     },
     "venus": {
       "sign": "Scorpio",
-      "degree": "6\u00b004'",
-      "longitude": 216.08,
+      "degree": "5\u00b038'",
+      "longitude": 215.64,
       "energy": "transformation, depth, intensity"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "21\u00b051'",
-      "longitude": 141.85,
+      "degree": "22\u00b000'",
+      "longitude": 142.01,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "10\u00b031'",
-      "longitude": 10.52,
+      "degree": "10\u00b026'",
+      "longitude": 10.45,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Libra (21\u00b004') \u2014 identity and life force through balance, partnership, harmony\nMoon in Sagittarius (4\u00b024') \u2014 emotions and instincts through expansion, truth, freedom\nVenus in Scorpio (6\u00b004') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (21\u00b051') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (10\u00b031') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Libra (22\u00b002') \u2014 identity and life force through balance, partnership, harmony\nMoon in Sagittarius (16\u00b017') \u2014 emotions and instincts through expansion, truth, freedom\nVenus in Scorpio (5\u00b038') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (22\u00b000') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (10\u00b026') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
