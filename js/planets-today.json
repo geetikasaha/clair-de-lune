@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-18",
-  "updated_ist": "2026-10-18T14:30:08+05:30",
+  "date": "2026-10-19",
+  "updated_ist": "2026-10-19T15:40:45+05:30",
   "planets": {
     "sun": {
       "sign": "Libra",
-      "degree": "25\u00b000'",
-      "longitude": 205.01,
+      "degree": "26\u00b002'",
+      "longitude": 206.05,
       "energy": "balance, partnership, harmony"
     },
     "moon": {
-      "sign": "Capricorn",
-      "degree": "21\u00b043'",
-      "longitude": 291.73,
-      "energy": "ambition, discipline, long-term structure"
+      "sign": "Aquarius",
+      "degree": "4\u00b014'",
+      "longitude": 304.25,
+      "energy": "innovation, community, higher ideals"
     },
     "venus": {
       "sign": "Scorpio",
-      "degree": "4\u00b008'",
-      "longitude": 214.15,
+      "degree": "3\u00b034'",
+      "longitude": 213.57,
       "energy": "transformation, depth, intensity"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "22\u00b027'",
-      "longitude": 142.47,
+      "degree": "22\u00b037'",
+      "longitude": 142.62,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "10\u00b013'",
-      "longitude": 10.22,
+      "degree": "10\u00b008'",
+      "longitude": 10.15,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Libra (25\u00b000') \u2014 identity and life force through balance, partnership, harmony\nMoon in Capricorn (21\u00b043') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Scorpio (4\u00b008') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (22\u00b027') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (10\u00b013') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Libra (26\u00b002') \u2014 identity and life force through balance, partnership, harmony\nMoon in Aquarius (4\u00b014') \u2014 emotions and instincts through innovation, community, higher ideals\nVenus in Scorpio (3\u00b034') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (22\u00b037') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (10\u00b008') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
