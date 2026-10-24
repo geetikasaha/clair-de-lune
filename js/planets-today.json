@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-23",
-  "updated_ist": "2026-10-23T15:00:04+05:30",
+  "date": "2026-10-24",
+  "updated_ist": "2026-10-24T14:32:44+05:30",
   "planets": {
     "sun": {
-      "sign": "Libra",
-      "degree": "29\u00b059'",
-      "longitude": 210.0,
-      "energy": "balance, partnership, harmony"
+      "sign": "Scorpio",
+      "degree": "0\u00b058'",
+      "longitude": 210.97,
+      "energy": "transformation, depth, intensity"
     },
     "moon": {
-      "sign": "Pisces",
-      "degree": "24\u00b011'",
-      "longitude": 354.2,
-      "energy": "intuition, dissolution, boundless compassion"
+      "sign": "Aries",
+      "degree": "7\u00b027'",
+      "longitude": 7.46,
+      "energy": "initiative, courage, new beginnings"
     },
     "venus": {
       "sign": "Scorpio",
-      "degree": "1\u00b013'",
-      "longitude": 211.22,
+      "degree": "0\u00b037'",
+      "longitude": 210.62,
       "energy": "transformation, depth, intensity"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "23\u00b011'",
-      "longitude": 143.2,
+      "degree": "23\u00b019'",
+      "longitude": 143.33,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "9\u00b051'",
-      "longitude": 9.86,
+      "degree": "9\u00b047'",
+      "longitude": 9.79,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Libra (29\u00b059') \u2014 identity and life force through balance, partnership, harmony\nMoon in Pisces (24\u00b011') \u2014 emotions and instincts through intuition, dissolution, boundless compassion\nVenus in Scorpio (1\u00b013') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (23\u00b011') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (9\u00b051') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Scorpio (0\u00b058') \u2014 identity and life force through transformation, depth, intensity\nMoon in Aries (7\u00b027') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Scorpio (0\u00b037') \u2014 love, beauty and values through transformation, depth, intensity\nJupiter in Leo (23\u00b019') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (9\u00b047') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
