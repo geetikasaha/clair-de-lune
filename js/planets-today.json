@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-25",
-  "updated_ist": "2026-10-25T14:48:49+05:30",
+  "date": "2026-10-26",
+  "updated_ist": "2026-10-26T15:54:40+05:30",
   "planets": {
     "sun": {
       "sign": "Scorpio",
-      "degree": "1\u00b058'",
-      "longitude": 211.98,
+      "degree": "3\u00b001'",
+      "longitude": 213.02,
       "energy": "transformation, depth, intensity"
     },
     "moon": {
-      "sign": "Aries",
-      "degree": "21\u00b032'",
-      "longitude": 21.54,
-      "energy": "initiative, courage, new beginnings"
+      "sign": "Taurus",
+      "degree": "6\u00b029'",
+      "longitude": 36.49,
+      "energy": "stability, sensuality, endurance"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "29\u00b059'",
-      "longitude": 210.0,
+      "degree": "29\u00b021'",
+      "longitude": 209.36,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "23\u00b028'",
-      "longitude": 143.47,
+      "degree": "23\u00b036'",
+      "longitude": 143.61,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "9\u00b043'",
-      "longitude": 9.72,
+      "degree": "9\u00b038'",
+      "longitude": 9.65,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Scorpio (1\u00b058') \u2014 identity and life force through transformation, depth, intensity\nMoon in Aries (21\u00b032') \u2014 emotions and instincts through initiative, courage, new beginnings\nVenus in Libra (29\u00b059') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (23\u00b028') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (9\u00b043') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Scorpio (3\u00b001') \u2014 identity and life force through transformation, depth, intensity\nMoon in Taurus (6\u00b029') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Libra (29\u00b021') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (23\u00b036') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (9\u00b038') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
