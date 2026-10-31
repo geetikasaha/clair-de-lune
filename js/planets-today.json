@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-30",
-  "updated_ist": "2026-10-30T16:29:02+05:30",
+  "date": "2026-10-31",
+  "updated_ist": "2026-10-31T16:02:05+05:30",
   "planets": {
     "sun": {
       "sign": "Scorpio",
-      "degree": "7\u00b002'",
-      "longitude": 217.04,
+      "degree": "8\u00b001'",
+      "longitude": 218.02,
       "energy": "transformation, depth, intensity"
     },
     "moon": {
       "sign": "Cancer",
-      "degree": "5\u00b022'",
-      "longitude": 95.38,
+      "degree": "19\u00b030'",
+      "longitude": 109.5,
       "energy": "emotion, nurturing, home and roots"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "27\u00b002'",
-      "longitude": 207.05,
+      "degree": "26\u00b032'",
+      "longitude": 206.53,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "24\u00b007'",
-      "longitude": 144.13,
+      "degree": "24\u00b015'",
+      "longitude": 144.25,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "9\u00b022'",
-      "longitude": 9.38,
+      "degree": "9\u00b018'",
+      "longitude": 9.31,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Scorpio (7\u00b002') \u2014 identity and life force through transformation, depth, intensity\nMoon in Cancer (5\u00b022') \u2014 emotions and instincts through emotion, nurturing, home and roots\nVenus in Libra (27\u00b002') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (24\u00b007') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (9\u00b022') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Scorpio (8\u00b001') \u2014 identity and life force through transformation, depth, intensity\nMoon in Cancer (19\u00b030') \u2014 emotions and instincts through emotion, nurturing, home and roots\nVenus in Libra (26\u00b032') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (24\u00b015') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (9\u00b018') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
