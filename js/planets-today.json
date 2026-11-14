@@ -1,17 +1,17 @@
 {
-  "date": "2026-11-13",
-  "updated_ist": "2026-11-13T18:01:37+05:30",
+  "date": "2026-11-14",
+  "updated_ist": "2026-11-14T17:11:05+05:30",
   "planets": {
     "sun": {
       "sign": "Scorpio",
-      "degree": "21\u00b008'",
-      "longitude": 231.15,
+      "degree": "22\u00b007'",
+      "longitude": 232.12,
       "energy": "transformation, depth, intensity"
     },
     "moon": {
       "sign": "Capricorn",
-      "degree": "7\u00b055'",
-      "longitude": 277.93,
+      "degree": "19\u00b018'",
+      "longitude": 289.32,
       "energy": "ambition, discipline, long-term structure"
     },
     "venus": {
@@ -22,16 +22,16 @@
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "25\u00b039'",
-      "longitude": 145.65,
+      "degree": "25\u00b044'",
+      "longitude": 145.74,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "8\u00b035'",
-      "longitude": 8.59,
+      "degree": "8\u00b032'",
+      "longitude": 8.54,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Scorpio (21\u00b008') \u2014 identity and life force through transformation, depth, intensity\nMoon in Capricorn (7\u00b055') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Libra (22\u00b052') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (25\u00b039') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (8\u00b035') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Scorpio (22\u00b007') \u2014 identity and life force through transformation, depth, intensity\nMoon in Capricorn (19\u00b018') \u2014 emotions and instincts through ambition, discipline, long-term structure\nVenus in Libra (22\u00b052') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (25\u00b044') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (8\u00b032') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
