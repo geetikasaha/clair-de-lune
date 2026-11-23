@@ -1,37 +1,37 @@
 {
-  "date": "2026-11-22",
-  "updated_ist": "2026-11-22T18:17:30+05:30",
+  "date": "2026-11-23",
+  "updated_ist": "2026-11-23T20:42:06+05:30",
   "planets": {
     "sun": {
       "sign": "Sagittarius",
-      "degree": "0\u00b013'",
-      "longitude": 240.23,
+      "degree": "1\u00b020'",
+      "longitude": 241.34,
       "energy": "expansion, truth, freedom"
     },
     "moon": {
       "sign": "Taurus",
-      "degree": "1\u00b034'",
-      "longitude": 31.57,
+      "degree": "17\u00b036'",
+      "longitude": 47.61,
       "energy": "stability, sensuality, endurance"
     },
     "venus": {
       "sign": "Libra",
-      "degree": "24\u00b014'",
-      "longitude": 204.25,
+      "degree": "24\u00b036'",
+      "longitude": 204.62,
       "energy": "balance, partnership, harmony"
     },
     "jupiter": {
       "sign": "Leo",
-      "degree": "26\u00b020'",
-      "longitude": 146.35,
+      "degree": "26\u00b024'",
+      "longitude": 146.42,
       "energy": "creativity, confidence, self-expression"
     },
     "saturn": {
       "sign": "Aries",
-      "degree": "8\u00b013'",
-      "longitude": 8.23,
+      "degree": "8\u00b011'",
+      "longitude": 8.2,
       "energy": "initiative, courage, new beginnings"
     }
   },
-  "prompt_block": "Sun in Sagittarius (0\u00b013') \u2014 identity and life force through expansion, truth, freedom\nMoon in Taurus (1\u00b034') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Libra (24\u00b014') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (26\u00b020') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (8\u00b013') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
+  "prompt_block": "Sun in Sagittarius (1\u00b020') \u2014 identity and life force through expansion, truth, freedom\nMoon in Taurus (17\u00b036') \u2014 emotions and instincts through stability, sensuality, endurance\nVenus in Libra (24\u00b036') \u2014 love, beauty and values through balance, partnership, harmony\nJupiter in Leo (26\u00b024') \u2014 expansion, wisdom and abundance through creativity, confidence, self-expression\nSaturn in Aries (8\u00b011') \u2014 discipline, karma and long cycles through initiative, courage, new beginnings"
 }
